@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from ..app import db
+from src.server.app import db
 
 
 class Message(db.Model):
@@ -8,7 +8,7 @@ class Message(db.Model):
 
 	sent = db.Column(db.DateTime, default=datetime.utcnow)
 	message_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-	client_id = db.Column(db.Integer, db.ForeignKey('clients.client_id'))
+	client_id = db.Column(db.String(24), db.ForeignKey('clients.client_id'))
 	user_id = db.Column(db.String(200), db.ForeignKey('users.user_id'))
 	content = db.Column(db.Text, nullable=False)
 

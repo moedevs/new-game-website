@@ -6,6 +6,7 @@ class User(db.Model):
 
 	user_id = db.Column(db.String, primary_key=True)
 	user_name = db.Column(db.String(200), nullable=True)
+	client_id = db.Column(db.String(24), db.ForeignKey('clients.client_id'))
 
 	@property
 	def serialize(self):

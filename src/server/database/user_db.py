@@ -1,13 +1,16 @@
-from src.server.models.users import User
+from src.server.database.models.users import User
 from src.server.app import db, app
-def create_user(id: str, name: str=None):
-	if not id:
+
+
+def create_user(user_id: str, client_id, user_name: str=None, ):
+	if not user_id or not client_id:
 		raise ValueError("User must have an 'id' attribute")
-	user = User(user_id=id, user_name=name)
+	user = User(user_id=user_id, user_name=user_name, client_id=client_id)
 	db.session.add(user)
 	db.session.commit()
 	app.logger.info('Create a new user with id {} and name {}'.format(user.user_id, user.user_name))
 	return user
+
 
 def get_all_users(raw: bool=False):
 	users = User.query.all()

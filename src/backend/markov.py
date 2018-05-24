@@ -1,6 +1,16 @@
 import markovify
 
 
+class Chain:
+	@staticmethod
+	def load_messages(client_id):
+		pass
+
+	@staticmethod
+	def generate_message(messages):
+		pass
+
+
 with open('corpus/test.txt') as f:
 	text = f.read()
 
