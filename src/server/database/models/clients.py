@@ -7,7 +7,7 @@ class Client(db.Model):
 
 	client_id = db.Column(db.String(24), primary_key=True, default=generate_token)
 	client_name = db.Column(db.String(200))
-	
+
 	# def __init__(self, client_name):
 	# 	self.client_name = client_name
 	# 	self.client_id = uuid4()
