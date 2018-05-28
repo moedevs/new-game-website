@@ -1,7 +1,15 @@
-nav {
+:root {
+    --textbox-header: #6b3a4e;
+    --textbox-body: #ad455f;
+}
 
-    background: -webkit-linear-gradient(to right, #c33764, #1d2671); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #c33764, #1d2671); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+@font-face {
+    font-family: Baron Neue;
+    src: url("Baron_Neue.otf") format("opentype");
+}
+
+nav {
+    background:var(--textbox-header);
 }
 
 body {
@@ -20,7 +28,7 @@ a.menu-link {
 }
 
 .info h1 {
-    font-family: Panton,sans-serif;
+    font-family: 'Baron Neue' ,sans-serif;
     font-size: 3rem;
     margin-bottom: 1rem;
     text-transform: uppercase
@@ -50,16 +58,22 @@ a.menu-link {
     transform: translateY(-10%);
 }
 
+div > p {
+    margin-left: 5%; margin-right: 5%
+}
+
 p {
     color: #fff;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .textbox {
-    background-color: #ad455f;
+    background-color: var(--textbox-body);
 }
 
 .textbox-header {
-    background-color: #532d3d;
+    background-color: var(--textbox-header);
     border-radius: 10px;
     color: #ffffff;
 }
