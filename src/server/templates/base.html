@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png"
+          href="http://icons.iconarchive.com/icons/hydrattz/multipurpose-alphabet/256/Letter-H-pink-icon.png">
+    <title>-Hifumi-</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light"
+     style="background: #99466e; background-repeat: repeat-x">
+    <!--<a class="navbar-brand" href="#">Hifumi</a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="slide mx-auto">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item pr-3">
+                    <p><a id="home-link" class="menu-link  btn btn-pink navbar-btn" href="{{ url_for('.home') }}">
+                        <img class="menu-icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/82865-200.png" alt="">
+                        Home <span
+                            class="sr-only">(current)</span></a></p>
+                </li>
+                <li class="nav-item pr-3">
+                    <a id="commands-link" class="menu-link btn " href="{{ url_for('.commands') }}">
+                        <img class="menu-icon"
+                             src="https://www.svgrepo.com/show/42113/keyboard-buttons-or-visualization-button-of-nine-squares.svg"
+                             alt="">Commands
+                    </a>
+                </li>
+                <li class="nav-item pr-3">
+                    <a id="api-link" class="menu-link btn " href="">
+                        <img class="menu-icon"
+                             src="https://cdn1.iconfinder.com/data/icons/computer-and-internet/512/satellite_anthena_communication_broadcasting-512.png"
+                             alt="">
+                        API</a>
+                </li>
+                <li class="nav-item pr-3">
+                    <a id="bot-invite-link" class="menu-link btn"
+                       href="https://discordapp.com/oauth2/authorize?client_id=372615866652557312&scope=bot&permissions=268463300">
+                        <img src="https://orig00.deviantart.net/2133/f/2016/200/f/a/discord_token_icon_dark_by_flexo013-daaj71i.png"
+                             alt="" class="menu-icon">
+                        Invite Me</a>
+                </li>
+                <li class="nav-item">
+                    <a id="server-invite-link" class="menu-link btn" href="https://discord.gg/RM6KUrf">
+                        <img src="https://png.icons8.com/metro/1600/help.png" alt="" class="menu-icon">
+                        Support Server</a>
+                </li>
+                <li class="nav-item pr-3">
+                    <a id="bot-invite-link" class="menu-link btn"
+                       href="https://github.com/ilocereal/Hifumi">
+                        <img src="https://camo.githubusercontent.com/7710b43d0476b6f6d4b4b2865e35c108f69991f3/68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67"
+                             alt="" class="menu-icon">
+                        Github</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+
+{% block content %}
+{% endblock %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+</html>

@@ -1,9 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="" style="">
-    <div class="text-center">
-        <img class="img-fluid rounded border border-dark" style="border-radius: 10rem"
-             src="https://github.com/ilocereal/Hifumi/raw/master/assets/banners/hifumi_new.png">
+    <div class="container mx-auto">
+        <div class="row " style="">
+            <div class="col">
+                <a href="https://discordapp.com/oauth2/authorize?client_id=372615866652557312&scope=bot&permissions=268463300">
+                    <img class="img-fluid rounded border border-dark" style="border-radius: 10rem;"
+                         src="{{ url_for('static', filename='hifumi_banner.jpg') }}">
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="row mx-auto">
+            <div class="col-md-3" style="border-radius: 10rem; padding-left: 0">
+                <img class="img-fluid rounded border border-dark float-left mx-auto" style=""
+                     src="https://pm1.narvii.com/6244/c1b62572380b087758935a264e49a49ee4fcced8_hq.jpg">
+            </div>
+            <div class="col-md-9 border rounded textbox d-flex flex-column" style="padding: 0; display: flex;">
+                <h1 align="center" class="p-2 textbox-header rounded" style="padding-left: 0;">Manage your server
+                    properly</h1>
+                <br>
+                <p class="p-2" style="margin-left: 5%; margin-right: 5%">"Non provident, similique sunt in culpa qui
+                    officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
+                    et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+                    quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+                    repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+                    eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic
+                    tenetur a sapiente delectuores repellat."</p>
+            </div>
+        </div>
+        <br>
+
+        <div class="row mx-auto">
+            <div class="col-md-7">
+            </div>
+            <div class="col-md-5">
+                <img class="img-fluid rounded border border-dark float-right mx-auto"
+                     src="https://animananimedotcom.files.wordpress.com/2016/11/mpv-shot0002.jpg?w=636" alt="">
+
+            </div>
+        </div>
+        <br>
+
+        <div class="row mx-a textbox" style="margin: 0"><h2>
+            This site is still under heavy construction, the API will be the main focus until Hifumi goes public.
+        </h2></div>
     </div>
-</div>
+
 {% endblock %}
