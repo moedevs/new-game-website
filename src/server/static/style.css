@@ -1,0 +1,65 @@
+nav {
+
+    background: -webkit-linear-gradient(to right, #c33764, #1d2671); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c33764, #1d2671); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body {
+    background: url("flower_pattern.png") repeat;
+}
+
+.slide:hover #slide {
+    transition: 1s;
+    left: 0;
+}
+
+a.menu-link {
+    font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.info h1 {
+    font-family: Panton,sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase
+}
+
+.info p {
+    font-family: Noto,sans-serif;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+#command-view > div::before {
+    content: "hello"
+}
+
+.menu-icon {
+    max-height: 24px;
+    max-width: 24px;
+    width: auto;
+    height: auto;
+    bottom: 0;
+    position: relative;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-right: 8px;
+    transform: translateY(-10%);
+}
+
+p {
+    color: #fff;
+}
+
+.textbox {
+    background-color: #ad455f;
+}
+
+.textbox-header {
+    background-color: #532d3d;
+    border-radius: 10px;
+    color: #ffffff;
+}
