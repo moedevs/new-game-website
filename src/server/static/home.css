@@ -152,3 +152,10 @@ h1.textbox-header {
     color: #fff;
     font-size: 1.35rem;
 }
+
+.image {
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
