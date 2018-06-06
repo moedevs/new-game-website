@@ -1,4 +1,5 @@
 .idea
+src/server/cdn/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
