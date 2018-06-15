@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 interface CommandDescription {
     title: string;
@@ -6,12 +6,20 @@ interface CommandDescription {
     image: string;
 }
 
+export enum Orientation {
+    Left,
+    Right
+}
+
 @Component({
     selector: 'app-command-display',
     templateUrl: './command-display.component.html',
     styleUrls: ['./command-display.component.css']
 })
+
 export class CommandDisplayComponent implements OnInit {
+    @Input() public orientation: Orientation;
+
     public activeCommand: number = 0;
     public infos: CommandDescription[] = [
         {
@@ -23,6 +31,11 @@ export class CommandDisplayComponent implements OnInit {
             title: 'Lots of testing',
             description: 'Make sure you are like doing things my dude',
             image: 'https://cdn.hifumi.io/website/assets/strike.png'
+        },
+        {
+            title: 'Definitely eat your vegetables',
+            description: 'It will help you grow and become strong',
+            image: 'https://cdn.hifumi.io/website/assets/snipe.png'
         }
     ];
 
@@ -44,5 +57,12 @@ export class CommandDisplayComponent implements OnInit {
             return
         }
         return 'text-hidden'
+    }
+
+    public getOrientation(){
+        if (this.orientation === Orientation.Left) {
+            return 'right-padding';
+        }
+        return 'left-padding';
     }
 }

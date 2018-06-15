@@ -1,0 +1,12 @@
+{
+    "/stats": {
+        "target":  {
+            "host": "github.com",
+            "protocol": "https:",
+            "port": 443
+        },
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

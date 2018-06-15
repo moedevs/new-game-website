@@ -150,9 +150,3 @@ p {
     background: linear-gradient(172deg, #844f72, #1f3498);
 }
 
-.header-text-holder {
-    color: white;
-    position: absolute;
-    top: 20%;
-    left: 20%;
-}

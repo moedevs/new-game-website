@@ -1,5 +1,5 @@
-<div class="row padding-top-small">
-    <div class="col-sm-6 text-box text-center" >
+<div class="row d-flex padding-top-small">
+    <div class="marginalize text-box d-flex flex-column text-center" >
         <div (mouseenter)="onHover(i)" *ngFor="let info of infos; let i = index" [attr.data-index]="i"
         [class]="isActive(i)">
             <h2>{{info.title}}</h2>
@@ -8,7 +8,7 @@
             <br>
         </div>
     </div>
-    <div class="col-sm-6">
-        <img class="rounded" [src]="image" alt="">
+    <div class="marginalize">
+        <img class="rounded display-image mr-auto mx-auto" [src]="image" alt="">
     </div>
 </div>
