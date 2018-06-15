@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UploaderComponent } from './uploader.component';
+import { CommandDisplayComponent } from './command-display.component';
 
-describe('UploaderComponent', () => {
-  let component: UploaderComponent;
-  let fixture: ComponentFixture<UploaderComponent>;
+describe('CommandDisplayComponent', () => {
+  let component: CommandDisplayComponent;
+  let fixture: ComponentFixture<CommandDisplayComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UploaderComponent ]
+      declarations: [ CommandDisplayComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UploaderComponent);
+    fixture = TestBed.createComponent(CommandDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

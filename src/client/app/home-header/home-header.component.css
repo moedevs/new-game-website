@@ -1,0 +1,32 @@
+
+img.row-image {
+    max-width: 30%;
+    height: auto;
+}
+
+img.small-row-image {
+    max-width: 40%;
+    height: auto;
+    margin: auto;
+}
+
+@media screen and (max-width: 1525px) {
+    h1.header-title {
+        font-size: 72px;
+    }
+    h1.header-title-small {
+        font-size: 34px;
+    }
+}
+
+h1.header-title {
+    font-size: 92px;
+}
+
+h1.header-title-small {
+    font-size: 42px;
+}
+
+div.banner {
+    margin-top: 1rem;
+}

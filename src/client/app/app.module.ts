@@ -1,23 +1,31 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {NavbarComponent} from './navbar/navbar.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {HomeComponent} from './home/home.component';
 import {DropletComponent} from './droplet/droplet.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { UploaderComponent } from './services/uploader/uploader.component';
+import { HomeHeaderComponent } from './home-header/home-header.component';
+import { CommandsComponent } from './commands/commands.component';
+import {RouterModule, Routes} from "@angular/router";
+import { CommandDisplayComponent } from './command-display/command-display.component';
 
-
+const appRoutes: Routes = [
+    {path: 'commands', component: CommandsComponent}
+];
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent,
         HomeComponent,
         DropletComponent,
-        UploaderComponent
+        HomeHeaderComponent,
+        CommandsComponent,
+        CommandDisplayComponent
     ],
     imports: [
+        RouterModule.forRoot(
+            appRoutes, {enableTracing: true}
+        ),
         BrowserModule,
         HttpClientModule,
         NgbModule.forRoot()
@@ -25,5 +33,4 @@ import { UploaderComponent } from './services/uploader/uploader.component';
     providers: [],
     bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -10,6 +10,4 @@ export class DropletService {
   public fetchCpuUsage(){
     return this.http.get('https://cloud.digitalocean.com/api/v1/droplets/94755922/statistics/cpu?period=hour')
   }
-
-  public
 }
