@@ -1,21 +1,17 @@
-<div class="container-fluid home-row">
+<div class="container-fluid home-row ">
     <div class="row d-flex flex-row justify-content-center padding-top-small">
         <h1 class="large-text">Take control of your server</h1>
         <!--
         <img class="img-fluid img-responsive" src="https://cdn.hifumi.io/website/assets/law.png" alt="">
         <img class="img-fluid img-responsive" src="https://cdn.hifumi.io/website/assets/office-material.png" alt="">-->
     </div>
-    <app-command-display [orientation]="0"></app-command-display>
-
-    <div class="row padding-top-small">
-        <div class="col-sm-6 text-box text-center">
-            <h2>Create your own commands / macros</h2>
-            <hr>
-            <p>Create customized responses to commonly-asked questions.</p>
-        </div>
-        <div class="col-sm-6">
-            <img class="rounded" src="https://cdn.hifumi.io/xetera/253BXW27B.png" alt="">
-        </div>
+    <div class="d-flex mx-auto command-card-container">
+        <app-command-display [image_src]="'https://cdn.hifumi.io/website/assets/history.png'"
+        [description]="'Keep up with the history of people in your server'"></app-command-display>
+        <app-command-display [image_src]="'https://cdn.hifumi.io/xetera/4eB7nNxw2.png'"
+        [description]="'Look up your favorite animes'"></app-command-display>
     </div>
+    <app-command-display [image_src]="'https://cdn.hifumi.io/website/assets/hifumi_uniform.jpg'"
+        [description]="'Winner of best girl award 2018'"></app-command-display>
 
 </div>

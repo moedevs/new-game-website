@@ -1,16 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-interface CommandDescription {
-    title: string;
-    description: string;
-    image: string;
-}
-
-export enum Orientation {
-    Left,
-    Right
-}
-
 @Component({
     selector: 'app-command-display',
     templateUrl: './command-display.component.html',
@@ -18,51 +7,10 @@ export enum Orientation {
 })
 
 export class CommandDisplayComponent implements OnInit {
-    @Input() public orientation: Orientation;
-
-    public activeCommand: number = 0;
-    public infos: CommandDescription[] = [
-        {
-            title: 'Keep track of users',
-            description: 'Keep up with how many times your moderators have warned users.',
-            image: 'https://cdn.hifumi.io/website/assets/history.png'
-        },
-        {
-            title: 'Lots of testing',
-            description: 'Make sure you are like doing things my dude',
-            image: 'https://cdn.hifumi.io/website/assets/strike.png'
-        },
-        {
-            title: 'Definitely eat your vegetables',
-            description: 'It will help you grow and become strong',
-            image: 'https://cdn.hifumi.io/website/assets/snipe.png'
-        }
-    ];
+    @Input() public image_src: string;
+    @Input() public description: string;
 
     constructor() {}
-
     ngOnInit() { }
 
-    public get image(){
-        return this.infos[this.activeCommand].image;
-    }
-
-    public onHover(index: number){
-
-        this.activeCommand = index;
-    }
-
-    public isActive(index: number){
-        if (index === this.activeCommand){
-            return
-        }
-        return 'text-hidden'
-    }
-
-    public getOrientation(){
-        if (this.orientation === Orientation.Left) {
-            return 'right-padding';
-        }
-        return 'left-padding';
-    }
 }

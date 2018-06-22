@@ -1,14 +1,4 @@
-<div class="row d-flex padding-top-small">
-    <div class="marginalize text-box d-flex flex-column text-center" >
-        <div (mouseenter)="onHover(i)" *ngFor="let info of infos; let i = index" [attr.data-index]="i"
-        [class]="isActive(i)">
-            <h2>{{info.title}}</h2>
-            <hr>
-            <p>{{info.description}}</p>
-            <br>
-        </div>
-    </div>
-    <div class="marginalize">
-        <img class="rounded display-image mr-auto mx-auto" [src]="image" alt="">
-    </div>
-</div>
+<mat-card>
+    <img mat-card-image src="{{ image_src }}">
+    <mat-card-content>{{ description }}</mat-card-content>
+</mat-card>

@@ -10,17 +10,14 @@ img.small-row-image {
     margin: auto;
 }
 
-@media screen and (max-width: 1525px) {
-    h1.header-title {
-        font-size: 72px;
-    }
-    h1.header-title-small {
-        font-size: 34px;
+@media screen and (max-width: 992px) {
+    #titles {
+        margin-top: -4vw;
     }
 }
 
 h1.header-title {
-    font-size: 92px;
+    font-size: 4vw;
 }
 
 h1.header-title-x-small {
@@ -28,7 +25,7 @@ h1.header-title-x-small {
 }
 
 h1.header-title-small {
-    font-size: 42px;
+    font-size: 2.1vw;
 }
 
 div.banner {
@@ -38,6 +35,6 @@ div.banner {
 .header-text-holder {
     color: white;
     position: absolute;
-    top: 12%;
+    top: 8vw;
     left: 20%;
 }

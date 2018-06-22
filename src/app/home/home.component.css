@@ -46,3 +46,7 @@
 .small-text > p {
     font-size: small;
 }
+
+.command-card-container > * {
+    margin: 0 0.2vw;
+}

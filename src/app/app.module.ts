@@ -9,6 +9,7 @@ import { HomeHeaderComponent } from './home-header/home-header.component';
 import { CommandsComponent } from './commands/commands.component';
 import {RouterModule, Routes} from "@angular/router";
 import { CommandDisplayComponent } from './command-display/command-display.component';
+import {MatCardModule} from "@angular/material";
 
 const appRoutes: Routes = [
     {path: 'commands', component: CommandsComponent}
@@ -20,13 +21,14 @@ const appRoutes: Routes = [
         DropletComponent,
         HomeHeaderComponent,
         CommandsComponent,
-        CommandDisplayComponent
+        CommandDisplayComponent,
     ],
     imports: [
         RouterModule.forRoot(
             appRoutes, {enableTracing: true}
         ),
         BrowserModule,
+        MatCardModule,
         HttpClientModule,
         NgbModule.forRoot()
     ],
