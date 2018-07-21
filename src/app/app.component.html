@@ -22,7 +22,7 @@
                     class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a id="commands-link" class="menu-link btn hvr-grow" routerLink="/commands">
+                <a id="commands-link" class="menu-link btn hvr-grow" [routerLink]="['/commands']">
                     <img class="menu-icon"
                          src="assets/navbar/commands.png"
                          alt=""><b>Commands</b>
@@ -62,4 +62,4 @@
     <app-home-header></app-home-header>
 </div>
 
-<app-home></app-home>
+<router-outlet></router-outlet>
