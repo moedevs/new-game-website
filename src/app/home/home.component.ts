@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BotApiService, IHifumiAPIResponse} from "../bot-api.service";
+import {BotApiService, IHifumiAPIResponse} from '../bot-api.service';
 
 @Component({
     selector: 'app-home',
@@ -7,6 +7,7 @@ import {BotApiService, IHifumiAPIResponse} from "../bot-api.service";
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    ngOnInit(){}
+
+    ngOnInit() { }
 
 }
