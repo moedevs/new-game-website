@@ -60,7 +60,8 @@
         </ul>
 
     </nav>
-    <app-home-header *ngIf="router.url == '/home'"></app-home-header>
+    <app-home-header *ngIf="router.url === '/home'"></app-home-header>
+    <app-commands-header *ngIf="router.url === '/commands'"></app-commands-header>
 </div>
 
 <router-outlet></router-outlet>

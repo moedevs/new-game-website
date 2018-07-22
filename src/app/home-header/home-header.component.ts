@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BotApiService, IHifumiAPIResponse} from "../bot-api.service";
+import {BotApiService, IHifumiAPIResponse} from '../bot-api.service';
 
 @Component({
     selector: 'app-home-header',
@@ -18,7 +18,7 @@ export class HomeHeaderComponent implements OnInit {
         this.botApi.getStats().subscribe((data: IHifumiAPIResponse) => {
             this.guilds = data.stats.guilds ? data.stats.guilds : '?';
             this.users = data.stats.users ? data.stats.users : '?';
-        })
+        });
     }
 
 }
