@@ -12,13 +12,11 @@ import { CommandDisplayComponent } from './command-display/command-display.compo
 import {MatCardModule} from '@angular/material';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {UploaderComponent} from './uploader/uploader.component';
 
 const appRoutes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
     {path: 'commands', component: CommandsComponent},
-    {path: 'uploader', component: UploaderComponent}
 ];
 @NgModule({
     declarations: [
@@ -28,7 +26,6 @@ const appRoutes: Routes = [
         HomeHeaderComponent,
         CommandsComponent,
         CommandDisplayComponent,
-        UploaderComponent,
     ],
     imports: [
         RouterModule.forRoot(

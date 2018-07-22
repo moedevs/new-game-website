@@ -28,10 +28,11 @@
                          alt=""><b>Commands</b>
                 </a>
             </li>
-            <li class="nav-item pr-3">
+            <li class="nav-item pr-3"matTooltip="Check back later for an API!">
 
-                <a id="api-link" class="btn menu-link hvr-grow" href="" style="font-size: 20px;">
-                    <img class="menu-icon"
+                <a id="api-link" class="disabled btn menu-link " href="" style="font-size: 20px;"
+                >
+                    <img class="menu-icon disabled"
                          src="assets/navbar/satellite.png"
                          alt="">
                     <b>API</b></a>
@@ -59,7 +60,7 @@
         </ul>
 
     </nav>
-    <app-home-header></app-home-header>
+    <app-home-header *ngIf="router.url == '/home'"></app-home-header>
 </div>
 
 <router-outlet></router-outlet>
