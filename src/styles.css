@@ -155,5 +155,8 @@ img.disabled {
     filter: grayscale(100%);
 }
 *.disabled {
+    color: #585858;
+}
+*.disabled > * {
     color: gray;
 }

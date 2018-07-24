@@ -9,11 +9,12 @@ import { HomeHeaderComponent } from './home-header/home-header.component';
 import { CommandsComponent } from './commands/commands.component';
 import {RouterModule, Routes} from '@angular/router';
 import { CommandDisplayComponent } from './command-display/command-display.component';
-import {MatCardModule, MatTableModule} from '@angular/material';
+import {MatCardModule, MatCheckboxModule, MatTableModule} from '@angular/material';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CommandsHeaderComponent } from './commands-header/commands-header.component';
 import { CommandDecoratorComponent } from './command-decorator/command-decorator.component';
+import { CommandFilterComponent } from './command-filter/command-filter.component';
 
 const appRoutes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
         CommandDisplayComponent,
         CommandsHeaderComponent,
         CommandDecoratorComponent,
+        CommandFilterComponent,
     ],
     imports: [
         RouterModule.forRoot(
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
         BrowserModule,
         MatCardModule,
         HttpClientModule,
+        MatCheckboxModule,
         MatTooltipModule,
         BrowserAnimationsModule,
         NgbModule.forRoot()

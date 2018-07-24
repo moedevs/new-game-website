@@ -1,3 +1,27 @@
-<p>
-  commands works!
-</p>
+<div class="container-fluid home-row">
+    <div class="command-filter">
+        <ng-container *ngFor="let filter of filters; index as i">
+            <app-command-filter #moderation
+                                [attr.data-index]="i"
+                                class="filter-card"
+                                [ngClass]="getStyle(i)"
+                                [name]="filter.name"
+                                (click)="toggle(i)">
+            </app-command-filter>
+        </ng-container>
+    </div>
+    <div class="command-container">
+        <ng-container *ngFor="let command of filtered; index as i">
+            <div [attr.data-index]="i" ngClass="command"
+                 [class]="getCategoryColor(command.category)">
+                <span><b>${{command.names[0]}}</b></span>
+                <span *ngIf="command.userPermissions" class="command-decorator">
+                    <app-command-decorator [type]="command.userPermissions"
+                                           style="align-self: end;">
+                    </app-command-decorator>
+                </span>
+            </div>
+            <div *ngIf="filtered.length === 0">There is nothing here!</div>
+        </ng-container>
+    </div>
+</div>

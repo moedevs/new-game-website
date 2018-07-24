@@ -1,0 +1,90 @@
+.home-row {
+    margin-top: 25px;
+}
+
+.container-fluid {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0.6rem;
+    border-collapse: separate;
+}
+
+tr {
+    outline: thin solid;
+    height: 4rem;
+    border-radius: 1rem;
+}
+
+.command-filter {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.filter-card {
+    height: 100%;
+    user-select: none;
+    width: auto;
+    flex-grow: 1;
+    padding: 0.5rem;
+    cursor: pointer;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+}
+.command-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.command {
+    display: flex;
+    padding: -10px;
+    height: 3rem;
+    -webkit-border-radius: 0.1rem;
+    -moz-border-radius: 0.1rem;
+    border-radius: 0.4rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 2px 4px 1pt 1pt rgba(0, 0, 0, 0.24);
+}
+
+.command-decorator {
+    float: right;
+    align-self: flex-end;
+}
+.command>:last-child {
+}
+
+.disabled-filter {
+    filter: grayscale(1);
+    background-color: #c1c5bd;
+}
+
+.disabled-filter  h2 {
+    color: #454849;
+}
+
+.moderation-filter {
+    background-color: #ffb3ba;
+}
+
+.info-filter {
+    background-color: #9ccd7b;
+}
+
+.fun-filter {
+    background-color: #9b87be;
+}
+
+.utility-filter {
+    background-color: #ae6d9c;
+}

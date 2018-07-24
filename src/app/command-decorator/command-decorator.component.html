@@ -1,0 +1,5 @@
+<div ngClass="decorator" [class]="type" [matTooltip]="getTooltip()">
+    <span *ngIf="type !== uPermissions.Everyone" >
+        <b>{{describeCommand()}}</b>
+    </span>
+</div>
