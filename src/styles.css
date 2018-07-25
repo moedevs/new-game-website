@@ -12,37 +12,12 @@ html {
     font-family: "Open Sans", sans-serif;
 }
 
-@media screen and (max-width: 766px) {
-    h1, li {
-        font-size: 12px !important;
-    }
-
-    p {
-        font-size: 11px !important;
-    }
-
-    .menu-link, .navbar-brand {
-        font-size: 13px !important;
-    }
-
-}
-
-@media screen and (max-width: 991px) {
-    h1 {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    h1 {
-        font-size: 16px;
-    }
-}
 
 body {
     background-color: var(--body-color);
 }
 h1 {
+    font-size: 2vw;
     font-family: "Open Sans", sans-serif;
 }
 
