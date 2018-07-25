@@ -57,9 +57,14 @@ tr {
     box-shadow: 2px 4px 1pt 1pt rgba(0, 0, 0, 0.24);
 }
 
+.command-name {
+    margin: 0.7rem;
+}
+
 .command-decorator {
-    float: right;
     align-self: flex-end;
+    margin-left:auto;
+    margin-right: 1rem;
 }
 .command>:last-child {
 }
