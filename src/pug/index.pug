@@ -1,11 +1,28 @@
 mixin site-header
   .columns.is-centered
     .column.is-half.has-text-centered
-      h1.title.is-1-desktop.has-text-white /r/newgame
-      h1.title.is-1-desktop.has-text-white whamer was here
+      h1.title.is-1-desktop.has-text-dark Xetera was here
 
 head
   include head
-body.has-background-dark
+body
+  .banner-container
+    .banner-image
+      .banner-text-container.has-text-centered
+        .title.is-size-1-desktop.has-text-dark.banner-text /r/NewGame
+        .columns
+          .column.is-half
+            a.button.is-info.is-fullwidth.is-large
+              span.icon.is-large
+                i.fab.fa-discord
+              span #[b#discord-users Lotsa] Members
+          .column.is-half
+            a.button.is-info.is-fullwidth.is-large
+              span.icon.is-large
+                i.fab.fa-reddit
+              span #[b#reddit-users Many] Subs
+
+
   .section
     +site-header()
+  script(src="../js/banner.js")
