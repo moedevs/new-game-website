@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "parcel src/pug/index.pug",
     "build": "parcel build src/pug/index.pug --public-url .",
     "publish": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
