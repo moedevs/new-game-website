@@ -1,1 +1,10 @@
-h1.title /r/newgame
+mixin site-header
+  .columns.is-centered
+    .column.is-half.has-text-centered
+      h1.title.is-1-desktop.has-text-white /r/newgame
+
+head
+  include head
+body.has-background-dark
+  .section
+    +site-header()
