@@ -16,3 +16,11 @@ deploy:
   fqdn: hifumi.io
   on:
     branch: master
+after_success:
+  - wget https://raw.githubusercontent.com/Xetera/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/Xetera/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
