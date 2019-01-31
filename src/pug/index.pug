@@ -4,7 +4,9 @@ mixin site-header
       h1.title.is-1-desktop.has-text-dark Xetera was here
 
 mixin hajime-panel
-  .
+  .hajime-panel
+    h1.title.is-1-desktop-has-text-dark Hajime is alright too
+    
 
 head
   include head
@@ -24,9 +26,5 @@ body
               span.icon.is-large
                 i.fab.fa-reddit
               span #[b#reddit-users Many] Subs
-
-
-
-  .section
-    +site-header()
+  +hajime-panel()
   script(src="../js/banner.js")
