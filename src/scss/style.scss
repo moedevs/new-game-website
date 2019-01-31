@@ -13,25 +13,63 @@ body {
   background-color: $website-background;
 }
 
+.intro {
+  background-image: url('../assets/hifumitransparent.png');
+  background-size: cover;
+  background-position: 12% 88%;
+}
+
+.overlay {
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.75) 100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .banner-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(https://images3.alphacoders.com/938/thumb-1920-938367.png);
-  height: 100%;
-  background-size: cover;
-  background-position: 12% 88%;
+  //background-image: linear-gradient(to top, $website-background, #c0c1ee);
+  //background-color: $website-background;
+  height: 100vh;
+  width: 100%;
   text-justify: distribute;
   .banner-text-container {
+    display:flex;
+    flex-direction: column;
     text-align: left;
   }
 }
+
+.banner-sections {
+  height: 100%;
+}
+
 .banner-text {
-  text-shadow: 0 2px 3px rgba(0,0,0,.4);
+  text-shadow: 0 3px 19px rgba(0,0,0,.9);
   display: inline-block;
   margin: 0 0;
   font-weight: 600;
   padding-bottom: 0;
 }
 
+.girl-section {
+  align-items: center;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.girl-content {
+  width: 85%;
+}
+
+.girl {
+  display: flex;
+  align-self: center;
+  max-height: 80vh;
+}
