@@ -1,4 +1,4 @@
-mixin site-header
+mixin site-content
   .columns.is-centered
     .column.is-half.has-text-centered
       h1.title.is-1-desktop.has-text-dark Xetera was here
@@ -7,22 +7,22 @@ head
   include head
 body
   .banner-container
-    .banner-image
-      .banner-text-container.has-text-centered
-        .title.is-size-1-desktop.has-text-dark.banner-text /r/NewGame
-        .columns
-          .column.is-half
-            a.button.is-info.is-fullwidth.is-large
-              span.icon.is-large
-                i.fab.fa-discord
-              span #[b#discord-users Lotsa] Members
-          .column.is-half
-            a.button.is-info.is-fullwidth.is-large
-              span.icon.is-large
-                i.fab.fa-reddit
-              span #[b#reddit-users Many] Subs
-
-
+    .columns.is-centered
+      .column.is-fullwidth
+        .banner-image
+          .banner-text-container.has-text-centered
+            .title.is-size-1-desktop.is-size-1-tablet.has-text-white-ter.banner-text /r/NewGame
+            .columns
+              .column.is-half
+                a.button.is-info.is-fullwidth.is-large
+                  span.icon.is-large
+                    i.fab.fa-discord
+                  span.is-size-6-tablet #[b#discord-users Lotsa] Members
+              .column.is-half
+                a.button.is-info.is-fullwidth.is-large
+                  span.icon.is-large
+                    i.fab.fa-reddit
+                  span.is-size-6-tablet #[b#reddit-users Many] Subs
   .section
-    +site-header()
+    +site-content()
   script(src="../js/banner.js")
