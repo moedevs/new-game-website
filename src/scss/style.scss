@@ -20,12 +20,21 @@ body {
 }
 
 .overlay {
-  background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.75) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .75) 100%);
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
+}
+
+.text {
+  color: whitesmoke;
+}
+
+.text-r {
+  color: whitesmoke;
+  text-align: right;
 }
 
 .banner-container {
@@ -38,8 +47,9 @@ body {
   height: 100vh;
   width: 100%;
   text-justify: distribute;
+
   .banner-text-container {
-    display:flex;
+    display: flex;
     flex-direction: column;
     text-align: left;
   }
@@ -50,26 +60,43 @@ body {
 }
 
 .banner-text {
-  text-shadow: 0 3px 19px rgba(0,0,0,.9);
+  text-shadow: 0 3px 19px rgba(0, 0, 0, .9);
   display: inline-block;
   margin: 0 0;
   font-weight: 600;
   padding-bottom: 0;
 }
 
+.girl-section-wrapper {
+  width: 85%;
+  align-items: center;
+}
+
 .girl-section {
   align-items: center;
   min-height: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+@media(max-width: 767px) {
+  .custom-columns {
+    flex-direction: column-reverse;
+    display: flex;
+  }
 }
 
 .girl-content {
-  width: 85%;
+  width: 75%;
 }
 
 .girl {
   display: flex;
+  position: absolute;
+  bottom: 0;
   align-self: center;
-  max-height: 80vh;
+  max-height: 50vh;
 }
