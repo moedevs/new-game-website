@@ -1,28 +1,34 @@
-mixin site-header
+mixin with-section
+  .section
+    .columns.is-centered
+      .column.is-four-fifths
+        block
+mixin site-content
   .columns.is-centered
     .column.is-half.has-text-centered
-      h1.title.is-1-desktop.has-text-dark Xetera was here
 
 head
   include head
 body
-  .banner-container
-    .banner-image
-      .banner-text-container.has-text-centered
-        .title.is-size-1-desktop.has-text-dark.banner-text /r/NewGame
-        .columns
-          .column.is-half
-            a.button.is-info.is-fullwidth.is-large
-              span.icon.is-large
-                i.fab.fa-discord
-              span #[b#discord-users Lotsa] Members
-          .column.is-half
-            a.button.is-info.is-fullwidth.is-large
-              span.icon.is-large
-                i.fab.fa-reddit
-              span #[b#reddit-users Many] Subs
-
-
-  .section
-    +site-header()
+  .intro
+    .banner-container
+      .columns.is-centered
+        .column.banner-text-container
+          .is-size-1-desktop.is-size-1-tablet.is-size-2-mobile.has-text-white-ter.banner-text.has-text-centered New Game!
+          .columns
+            .column.is-half
+              a.button.is-primary.is-fullwidth.is-large
+                span.icon.is-large
+                  i.fab.fa-discord
+                span.is-size-5-desktop.is-size-6-tablet Discord Server
+              span.is-size-7 #[b#discord-users Lotsa] Members
+            .column.is-half
+              a.button.is-primary.is-fullwidth.is-large
+                span.icon.is-large
+                  i.fab.fa-reddit
+                span.is-size-5-desktop.is-size-6-tablet /r/NewGame
+              span.is-size-7 #[b#reddit-users Many] Subs
+  include characters/aoba
+  include characters/ko
+  include characters/yun
   script(src="../js/banner.js")
