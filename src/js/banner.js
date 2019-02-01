@@ -3,7 +3,7 @@ const discordEndpoint = "https://discordapp.com/api/v6/invite/ZWW5CJw?with_count
 const rusers = document.querySelector('#reddit-users');
 const dusers = document.querySelector('#discord-users');
 
-const get = e => fetch(e).then(r => r.json())
+const get = e => fetch(e).then(r => r.json());
 
 get(endpoint)
   .then(r =>
