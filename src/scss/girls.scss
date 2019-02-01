@@ -1,0 +1,66 @@
+@import url('../../node_modules/bulma/bulma.sass');
+
+.girl-section {
+  // phone size
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+
+  .girl-image-column {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    img {
+      position: absolute;
+      width: auto;
+      height: auto;
+      bottom: 0;
+    }
+  }
+
+  @media(max-width: 1024px) {
+    .girl-section {
+      max-height: 9999999px;
+    }
+    .columns {
+      justify-content: center;
+    }
+    .girl-image-column {
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 0 0;
+      justify-content: center !important;
+      text-align: center;
+      padding: 0 10px;
+      z-index: 5;
+      width: auto;
+      max-width: 600px;
+      height: 100%;
+      img {
+        margin: 0 auto;
+        vertical-align: middle;
+        opacity: .35;
+      }
+    }
+    .girl-content {
+      min-height: 100%;
+      z-index: 20;
+      color: #b5b5ee;
+    }
+  }
+
+  .columns {
+    margin: 0 auto;
+  }
+}
+
