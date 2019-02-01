@@ -1,4 +1,4 @@
-# NewGame!
+# New Game!
 
 ### Helping out
 Not a programmer? No problem, We would still love to get your input!
