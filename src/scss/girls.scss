@@ -1,4 +1,5 @@
 @import url('../../node_modules/bulma/bulma.sass');
+@import "variables";
 
 .girl-section {
   // phone size
@@ -35,7 +36,7 @@
     }
   }
 
-  @media(max-width: 1024px) {
+  @media(max-width: $merge-breakpoint) {
     .girl-section {
       max-height: 9999999px;
     }
@@ -66,13 +67,8 @@
     }
     .girl-content {
       min-height: 100%;
-      color: #b5b5ee;
-      z-index: 10;
       * {
-
-        color: #eaeaee;
-        z-index: 200;
-
+        z-index: 2;
       }
     }
   }

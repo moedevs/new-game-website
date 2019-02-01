@@ -1,8 +1,17 @@
-mixin girl-section(style, imageUrl)
-  div.girl-section(style=style)
+//-
+  Section for the girls
+  options: {
+    sectionStyle: object,
+    contentStyle: object,
+    image: string
+  }
+  //
+mixin girl-section(options)
+  div.girl-section(style=options.sectionStyle || {})
     .columns.narrow-width
       .column.is-one-quarter.girl-image-column(style="align-self: center")
-        img.image.girl(src=imageUrl)
+        img.image.girl(src=options.image)
       .column.is-three-quarters.girl-content
         .section
+          .content
             block

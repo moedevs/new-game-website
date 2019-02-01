@@ -1,3 +1,7 @@
-
-+girl-section({ 'background-color': '#ffb8df'}, '../assets/girls/hifumin.png')
-  h1.title.is-size-1 Hifumi
+include ../templates
++girl-section({
+  image: '../assets/girls/hifumin.png',
+  sectionStyle: {'background-color': '#ffb8df'}
+})
+  .markdown
+    include:markdown-it ../../descriptions/hifumi.md

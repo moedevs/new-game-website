@@ -1,3 +1,9 @@
 include ../templates
-+girl-section({ 'background-color': '#a1a5ff' }, "../assets/girls/aoba.png")
-  .title.is-size-1-desktop Aoba
+
++girl-section({
+  sectionStyle: {'background-color': '#a1a5ff'},
+  image: "../assets/girls/aoba.png"
+})
+  include:markdown-it ../../descriptions/aoba.md
+
+
