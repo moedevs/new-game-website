@@ -2,7 +2,6 @@
 @import "variables";
 
 .girl-section {
-  // phone size
   position: relative;
   display: flex;
   justify-content: center;
@@ -13,6 +12,7 @@
   width: 100%;
   border-bottom: solid 2px #eee;
 
+  // Automatically alternating columns
   &:nth-child(even) > .columns {
     flex-direction: row;
   }
@@ -24,7 +24,7 @@
 
   .girl-image-column {
     position: relative;
-    height: 100vh;
+    height: $girl-section-cutoff;
     display: flex;
     justify-content: flex-end;
 
@@ -32,14 +32,12 @@
       position: absolute;
       width: auto;
       height: auto;
+      // sticky on the bottom
       bottom: 0;
     }
   }
 
   @media(max-width: $merge-breakpoint) {
-    .girl-section {
-      max-height: 9999999px;
-    }
     .columns {
       justify-content: center;
     }
@@ -54,22 +52,18 @@
       justify-content: center !important;
       text-align: center;
       padding: 0 10px;
-      z-index: 5;
       width: auto;
       max-width: 600px;
       height: 100%;
 
       img {
         margin: 0 auto;
-        vertical-align: middle;
         opacity: .35;
       }
     }
     .girl-content {
-      min-height: 100vh;
-      * {
-        z-index: 2;
-      }
+      z-index: 2;
+      min-height: $girl-section-cutoff;
     }
   }
 
