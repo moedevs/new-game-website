@@ -1,21 +1,8 @@
-// we have custom columns here which switch order
-// when it's mobile sized so the girls are all on the bottom
-mixin girl-section-l(style, imageUrl)
+mixin girl-section(style, imageUrl)
   div.girl-section(style=style)
-    .columns.custom-columns.narrow-width
-      //div.girl-section-wrapper
+    .columns.narrow-width
       .column.is-one-quarter.girl-image-column(style="align-self: center")
         img.image.girl(src=imageUrl)
       .column.is-three-quarters.girl-content
         .section
             block
-
-mixin girl-section-r(style, imageUrl)
-  div.girl-section(style=style)
-    .columns.narrow-width
-      //div.girl-section-wrapper
-      .column.is-three-quarters.girl-content
-        .section
-          block
-      .column.is-one-quarter.girl-image-column
-        img.image.girl(src=imageUrl)
