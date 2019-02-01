@@ -10,12 +10,23 @@
   background-size: cover;
   overflow: hidden;
   width: 100%;
+  border-bottom: solid 2px #eee;
+
+  &:nth-child(even) > .columns {
+    flex-direction: row;
+  }
+
+  &:nth-child(odd) > .columns {
+    flex-direction: row-reverse;
+  }
+
 
   .girl-image-column {
     position: relative;
     height: 100%;
     display: flex;
     justify-content: flex-end;
+
     img {
       position: absolute;
       width: auto;
@@ -46,6 +57,7 @@
       width: auto;
       max-width: 600px;
       height: 100%;
+
       img {
         margin: 0 auto;
         vertical-align: middle;
@@ -54,8 +66,14 @@
     }
     .girl-content {
       min-height: 100%;
-      z-index: 20;
       color: #b5b5ee;
+      z-index: 10;
+      * {
+
+        color: #eaeaee;
+        z-index: 200;
+
+      }
     }
   }
 

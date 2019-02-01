@@ -28,22 +28,11 @@ body {
   width: 100%;
 }
 
-.text {
-  color: whitesmoke;
-}
-
-.text-r {
-  color: whitesmoke;
-  text-align: right;
-}
-
 .banner-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  //background-image: linear-gradient(to top, $website-background, #c0c1ee);
-  //background-color: $website-background;
   height: 100vh;
   width: 100%;
   text-justify: distribute;
