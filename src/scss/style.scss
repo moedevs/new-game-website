@@ -71,6 +71,9 @@ body {
 }
 
 .narrow-width {
+  @media(max-width: $merge-breakpoint) {
+    width: 100%;
+  }
   width: 85%;
 }
 

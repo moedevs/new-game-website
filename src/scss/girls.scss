@@ -37,6 +37,9 @@
   }
 
   @media(max-width: $merge-breakpoint) {
+    .section {
+      padding: 0;
+    }
     .columns {
       justify-content: center;
     }

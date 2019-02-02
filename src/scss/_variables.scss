@@ -4,4 +4,5 @@ $merge-breakpoint: 1024px;
 $girl-section-cutoff: 60vh;
 // stupid bulma, why do we have to override with !important...
 $footer-background-color: $website-background !important;
+$card-shadow: 0 2px 3px rgba(black, 0.2), 0 0 0 1px rgba(black, 0.3) !important;
 $size-1: 6em;
