@@ -1,2 +1,2 @@
 # Rin
-Lesbian mom
+Lesbian mom of Ko
