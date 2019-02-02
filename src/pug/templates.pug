@@ -1,37 +1,74 @@
 //-
-  Section for the characters
-  options: {
-    sectionStyle: object,
-    contentStyle: object,
-    image: string
-  }
+  Section for declaring a character.
+
+  The `block` content of this mixin is the
+  content for the card under the title which
+  is the main body.
+
+  This is the only mixin that should be used
+  for declaring new characters.
+
+  Arguments:
+    options: {
+      image: url or location of image
+      color: hex color,
+      title: {
+        image?: url or location of small image
+        name: name of the character
+        quote: character quote
+      }
+      strengths: string[]
+      weaknesses: string[]
+    }
   //
 mixin girl-section(options)
-  div.girl-section(style=options.sectionStyle || {})
+  div.girl-section(style={'background-color': options.color})
     .columns.narrow-width
       .column.is-one-quarter.girl-image-column
         img.image.girl(src=options.image)
       .column.is-three-quarters.girl-content
         .section
           .content
-            block
+            .columns
+              .column
+                +_girl-title({
+                  image: options.title.image,
+                  name: options.title.name,
+                  quote: options.title.quote
+                })
+                br
+                +_girl-content()
+                  block
+              .column
+                +_girl-list({
+                  name: "Strengths",
+                  items: options.strengths
+                })
+                br
+                +_girl-list({
+                  name: "Weaknesses",
+                  items: options.weaknesses
+                })
 
 //-
   Header section for the characters
-  options: {
-    image: image url
-    name: character name
-    quote: quote from the character
-  }
+
+  Arguments:
+    options: {
+      image: image url
+      name: character name
+      quote: quote from the character
+    }
   //
-mixin girl-title(options)
+mixin _girl-title(options)
   .card
     .card-content.card.is-size-7-mobile.is-size-5-tablet.is-size-4-desktop
       .level.is-mobile
         .level-left
-          .level-item
-            .icon.is-large
-              img.image(src=options.image)
+          if options.image
+            .level-item
+              .icon.is-large
+                img.image.is-rounded(src=options.image)
           .level-item
             p.title.is-size-4-mobile=options.name
       p.subtitle.is-size-6-mobile=options.quote
@@ -39,20 +76,22 @@ mixin girl-title(options)
 //-
   Content holder for the characters
   //
-mixin girl-content
+mixin _girl-content
   .card
-    .card-content.card.is-size-5-mobile.is-size-5-tablet.is-size-4-desktop
+    .card-content.card.is-size-5-mobile.is-size-5-tablet.is-size-4-desktop.content
       block
 
 
 //-
   Bullet-point list for characters
-  {
-    name: string
-    strengths: string[]
-  }
+
+  Arguments:
+    {
+      name: string
+      strengths: string[]
+    }
   //
-mixin girl-list(options)
+mixin _girl-list(options)
   .card.is-size-6-mobile.is-size-6-tablet.is-size-5-desktop
     .card-header.is-size-6-mobile
       .card-header-title=options.name

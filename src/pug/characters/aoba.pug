@@ -1,35 +1,21 @@
 include ../templates
 
 +girl-section({
-  sectionStyle: {'background-color': '#a1a5ff'},
-  image: "../assets/girls/aoba.png"
+  color: '#a1a5ff',
+  image: "../assets/girls/aoba.png",
+  title: {
+    image: "https://vignette.wikia.nocookie.net/new-game/images/f/f2/Th-c1.png",
+    name: "Aoba",
+    quote: '"A funny quote from me"'
+  },
+  strengths: [
+    "Is adorable",
+    "Is a legal loli",
+    "Can do the art thing",
+    "Has occasional sadism"
+  ],
+  weaknesses: [
+    "Has occasional sadism towards Hifumi",
+    "Has a hard time navigating bathrooms"
+  ]
 })
-  .columns
-    .column
-      +girl-title({
-        image: "https://vignette.wikia.nocookie.net/new-game/images/f/f2/Th-c1.png",
-        name: "Aoba",
-        quote: '"A funny quote from me"'
-      })
-      br
-      +girl-content()
-        p Placeholder card, get the discord people to contribute to this
-
-    .column
-      +girl-list({
-        name: "Strengths",
-        items: [
-          "Is adorable",
-          "Is a legal loli",
-          "Can do the art thing",
-          "Has occasional sadism"
-        ]
-      })
-      br
-      +girl-list({
-        name: "Weaknesses",
-        items: [
-          "Has occasional sadism towards Hifumi",
-          "Has a hard time navigating bathrooms"
-        ]
-      })
