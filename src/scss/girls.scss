@@ -11,7 +11,7 @@
   width: 100%;
   border-bottom: solid 2px #eee;
 
-  // Automatically alternating columns
+  //Automatically alternating columns
   &:nth-child(even) > .columns {
     flex-direction: row;
   }
@@ -23,7 +23,7 @@
 
   .girl-image-column {
     position: relative;
-    height: $girl-section-cutoff;
+    min-height: $girl-section-cutoff;
     display: flex;
     justify-content: flex-end;
 
