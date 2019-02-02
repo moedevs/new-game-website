@@ -1,9 +1,10 @@
 # Aoba
 
 **Pros**
-* is adorable
-* can do the art thing
-* has occasional sadism
+* Is adorable
+* Is a legal loli
+* Can do the art thing
+* Has occasional sadism
 
 **Cons**
-* has occasional sadism towards Hifumi
+* Has occasional sadism towards Hifumi
