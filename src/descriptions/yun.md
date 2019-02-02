@@ -1,2 +1,2 @@
 # Yun
-Hajime's bitch.
+Hajime's girlfriend.

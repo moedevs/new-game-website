@@ -1,2 +1,2 @@
 # Hajime
-Yun's bitch.
+Yun's girlfriend.
