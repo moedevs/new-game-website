@@ -1,5 +1,5 @@
 //-
-  Section for the girls
+  Section for the characters
   options: {
     sectionStyle: object,
     contentStyle: object,
@@ -15,3 +15,48 @@ mixin girl-section(options)
         .section
           .content
             block
+
+//-
+  Header section for the characters
+  options: {
+    image: image url
+    name: character name
+    quote: quote from the character
+  }
+  //
+mixin girl-title(options)
+  .card
+    .card-content.card.is-size-7-mobile.is-size-5-tablet.is-size-4-desktop
+      .level.is-mobile
+        .level-left
+          .level-item
+            .icon.is-large
+              img.image(src=options.image)
+          .level-item
+            p.title.is-size-4-mobile=options.name
+      p.subtitle.is-size-6-mobile=options.quote
+
+//-
+  Content holder for the characters
+  //
+mixin girl-content
+  .card
+    .card-content.card.is-size-5-mobile.is-size-5-tablet.is-size-4-desktop
+      block
+
+
+//-
+  Bullet-point list for characters
+  {
+    name: string
+    strengths: string[]
+  }
+  //
+mixin girl-list(options)
+  .card.is-size-6-mobile.is-size-6-tablet.is-size-5-desktop
+    .card-header.is-size-6-mobile
+      .card-header-title=options.name
+    .card-content
+      ul
+        for item in options.items
+          li=item

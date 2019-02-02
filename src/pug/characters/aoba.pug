@@ -6,38 +6,30 @@ include ../templates
 })
   .columns
     .column
-      .card
-        .card-content.card.is-size-7-mobile.is-size-5-tablet.is-size-4-desktop
-          .level.is-mobile
-            .level-left
-              .level-item
-                .icon.is-large
-                  img.image(src="https://vignette.wikia.nocookie.net/new-game/images/f/f2/Th-c1.png")
-              .level-item
-                p.title Aoba
-          p.subtitle "A funny quote from me"
+      +girl-title({
+        image: "https://vignette.wikia.nocookie.net/new-game/images/f/f2/Th-c1.png",
+        name: "Aoba",
+        quote: '"A funny quote from me"'
+      })
       br
-      .card
-        .card-content.card.is-size-5-mobile.is-size-5-tablet.is-size-4-desktop
-          p Placeholder card, get the discord people to contribute to this
+      +girl-content()
+        p Placeholder card, get the discord people to contribute to this
 
     .column
-      .card.is-size-7-mobile.is-size-6-tablet.is-size-5-desktop
-        .card-header.is-size-6-mobile
-          .card-header-title Strengths
-        .card-content
-          ul
-            li Is adorable
-            li Is a legal loli
-            li Can do the art thing
-            li Has occasional sadism
-          ul
+      +girl-list({
+        name: "Strengths",
+        items: [
+          "Is adorable",
+          "Is a legal loli",
+          "Can do the art thing",
+          "Has occasional sadism"
+        ]
+      })
       br
-      .card.is-size-7-mobile.is-size-6-tablet.is-size-5-desktop
-        .card-header.is-size-6-mobile
-          .card-header-title Weaknesses
-        .card-content
-          ul
-            li Has occasional sadism towards Hifumi
-            li Has a hard time navigating bathrooms
-          ul
+      +girl-list({
+        name: "Weaknesses",
+        items: [
+          "Has occasional sadism towards Hifumi",
+          "Has a hard time navigating bathrooms"
+        ]
+      })
