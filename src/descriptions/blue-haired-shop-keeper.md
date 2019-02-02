@@ -6,4 +6,3 @@
 
 **Cons**
 * Has an employee who does not know how to handle a Hifumi
-</span>
