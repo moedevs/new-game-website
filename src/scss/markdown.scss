@@ -1,0 +1,17 @@
+@import "variables";
+
+.markdown {
+  @media(max-width: $merge-breakpoint) {
+    p {
+      font-size: 1rem;
+    }
+
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+}

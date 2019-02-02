@@ -11,7 +11,7 @@
   },
   "rules": {
     "semi": 2,
-    "object-curly-spacing": 2,
+    "object-curly-spacing": [2, "always"],
     "spaced-comment": 1,
     "no-console": 1,
     "no-var": 2,
