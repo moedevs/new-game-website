@@ -1,4 +1,3 @@
-@import url('../../node_modules/bulma/bulma.sass');
 @import "variables";
 
 .girl-section {
@@ -48,7 +47,6 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: 0 0;
       justify-content: center !important;
       text-align: center;
       padding: 0 10px;
@@ -58,12 +56,12 @@
 
       img {
         margin: 0 auto;
-        opacity: .35;
       }
     }
     .girl-content {
-      z-index: 2;
+      position: relative;
       min-height: $girl-section-cutoff;
+      margin-bottom: 70vw;
     }
   }
 
