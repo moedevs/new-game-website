@@ -1,0 +1,2 @@
+# Hajime
+Yun's girlfriend.

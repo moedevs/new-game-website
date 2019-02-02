@@ -1,2 +1,3 @@
 # Nene
-Good after season 1
+
+This loli is LEGAL.

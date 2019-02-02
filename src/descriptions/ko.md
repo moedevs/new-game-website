@@ -1,2 +1,8 @@
 # Ko
-pretty cool girl I guess I mean idk
+
+**Pros**
+* Has nice panties
+
+**Cons**
+* Wears panties
+* Yells at hifumi
