@@ -1,6 +1,5 @@
-@import url('../../node_modules/bulma/bulma.sass');
 @import "variables";
-
+@import "~bulma/sass/utilities/initial-variables";
 .girl-section {
   position: relative;
   display: flex;
@@ -12,19 +11,40 @@
   width: 100%;
   border-bottom: solid 2px #eee;
 
-  // Automatically alternating columns
+  /*
+    Alternating the position of
+    the girls and text
+
+    These styles are only available
+    when the display is flex which
+    means everything is consistent
+    in mobile mode
+   */
   &:nth-child(even) > .columns {
     flex-direction: row;
+
+    /*
+      Alternating the position of
+      the strengths/weaknesses
+      and character info
+     */
+    .girl-content .columns {
+      flex-direction: row;
+    }
   }
 
   &:nth-child(odd) > .columns {
     flex-direction: row-reverse;
+
+    .girl-content .columns {
+      flex-direction: row-reverse;
+    }
   }
 
 
   .girl-image-column {
     position: relative;
-    height: $girl-section-cutoff;
+    min-height: $girl-section-cutoff;
     display: flex;
     justify-content: flex-end;
 
@@ -37,7 +57,16 @@
     }
   }
 
+  @media(min-width: $tablet) and (max-width: $merge-breakpoint) {
+    .girl-content {
+      margin-bottom: 200px !important;
+    }
+  }
+
   @media(max-width: $merge-breakpoint) {
+    .section {
+      padding: 0;
+    }
     .columns {
       justify-content: center;
     }
@@ -48,8 +77,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: 0 0;
-      justify-content: center !important;
+      justify-content: center;
       text-align: center;
       padding: 0 10px;
       width: auto;
@@ -58,12 +86,12 @@
 
       img {
         margin: 0 auto;
-        opacity: .35;
       }
     }
     .girl-content {
-      z-index: 2;
+      position: relative;
       min-height: $girl-section-cutoff;
+      margin-bottom: 80%;
     }
   }
 

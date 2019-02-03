@@ -1,7 +1,17 @@
 include ../templates
 +girl-section({
   image: '../assets/girls/hajime.png',
-  sectionStyle: {'background-color': '#F8BC74'}
+  color: '#F8BC74',
+  title: {
+    image: "https://vignette.wikia.nocookie.net/new-game/images/5/52/Th-c5.png/revision/latest?cb=20180121131726",
+    name: "Hajime",
+    quote: '"Hajime quote here"'
+  },
+  strengths: [
+    "Has cool toys"
+  ],
+  weaknesses: [
+    "Doesn't have tickets for the Moon Ranger show"
+  ]
 })
-  .markdown
-    include:markdown-it ../../descriptions/hajime.md
+  .subtitle Yun's girlfriend

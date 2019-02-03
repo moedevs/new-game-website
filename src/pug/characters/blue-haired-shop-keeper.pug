@@ -1,4 +1,11 @@
 include ../templates
-+girl-section({ sectionStyle: { 'background-color': '#695EA2' }, image: "https://i.imgur.com/TbG4JQx.png" })
-  .markdown
-    include:markdown-it ../../descriptions/blue-haired-shop-keeper.md
++girl-section({
+  image: "https://i.imgur.com/TbG4JQx.png",
+  color: '#695EA2',
+  title: {
+    name: "Blue Haired Shopkeeper",
+    quote: '"You need to be careful with that customer!"'
+  },
+  strengths: ["Knows how to handle Hifumi"],
+  weaknesses: ["Cannot handle Hifumi"]
+})
