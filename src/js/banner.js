@@ -1,16 +1,13 @@
 import { $$, get } from './utils';
 
-const endpoint = "https://www.reddit.com/r/newgame/about.json";
-const discordEndpoint = "https://discordapp.com/api/v6/invite/ZWW5CJw?with_counts=true";
+const endpoint = "http://whamer.comxa.com/api/hifumi.php";
 
 const rusers = $$('#reddit-users');
 const dusers = $$('#discord-users');
 
 
-get(endpoint).then(r =>
-  rusers.textContent = r.data.subscribers
-);
-
-get(discordEndpoint).then(r =>
-  dusers.textContent = r.approximate_member_count
-);
+get(endpoint, { mode: "cors" } ).then(r => {
+  //console.log(r),
+  rusers.textContent = r.subscribers,
+  dusers.textContent = r.discordUsers
+});
