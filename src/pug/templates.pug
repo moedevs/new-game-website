@@ -64,12 +64,12 @@ mixin _girl-title(options)
   .card
     .card-content.card.is-size-7-mobile.is-size-5-tablet.is-size-4-desktop
       .level.is-mobile
-        .level-left
+        .level-left.shrink
           if options.image
             .level-item
               .icon.is-large
                 img.image.is-rounded(src=options.image)
-          .level-item
+          .level-item.no-grow.shrink
             p.title.is-size-4-mobile=options.name
       p.subtitle.is-size-6-mobile=options.quote
 
