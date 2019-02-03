@@ -6,7 +6,7 @@
 @import '../../node_modules/bulma/bulma.sass';
 
 * {
-  font-family: Roboto, sans-serif;
+  font-family: Rubik, sans-serif;
 }
 
 body {
@@ -19,18 +19,21 @@ body {
 
 .intro {
   position: relative;
-  background-image: url('../assets/hifumitransparent.png');
+  background-image: url('https://stmed.net/sites/default/files/new-game%21-wallpapers-26010-6987722.jpg');
   background-size: cover;
-  background-position: 12% 88%;
+  background-position: center;
 }
 
 .github {
+  z-index: 2;
+  margin: 25px;
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
 .overlay {
+  /* This entire overlay is copy pasted from satania.moe, bless you pizzacus */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .75) 100%);
   min-width: 0;
   position: absolute;
@@ -51,11 +54,29 @@ body {
   width: 100%;
   text-justify: distribute;
 
+  a.button {
+    box-shadow: $shadow;
+  }
+
   .banner-text-container {
     display: flex;
+    padding: 25px;
     flex-direction: column;
     text-align: left;
   }
+}
+
+.arrow {
+  position: absolute;
+  bottom: 50px;
+}
+
+.discord {
+  color: #7289DA;
+}
+
+.reddit {
+  color: orangered;
 }
 
 .banner-sections {
@@ -63,10 +84,15 @@ body {
 }
 
 .banner-text {
+  text-shadow: $shadow;
   display: inline-block;
   margin: 0 0;
   font-weight: 600;
   padding-bottom: 0;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .narrow-width {
@@ -80,7 +106,6 @@ body {
   flex-shrink: 1;
 }
 
-
 .no-grow {
   flex-grow: 0;
 }
@@ -88,3 +113,10 @@ body {
 .footer {
   padding: 10px !important;
 }
+
+// Bulma fixes
+
+.content ul {
+  margin-top: 0;
+}
+
