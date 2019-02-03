@@ -59,7 +59,7 @@
 
   @media(min-width: $tablet) and (max-width: $merge-breakpoint) {
     .girl-content {
-      margin-bottom: 10vh !important;
+      margin-bottom: 200px !important;
     }
   }
 
@@ -91,7 +91,7 @@
     .girl-content {
       position: relative;
       min-height: $girl-section-cutoff;
-      margin-bottom: 20vh;
+      margin-bottom: 80%;
     }
   }
 
