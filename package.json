@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel src/pug/index.pug",
     "build": "parcel build src/pug/index.pug --public-url .",
+    "lint": "eslint src",
     "publish": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,8 +25,9 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/runtime": "^7.3.1",
     "bulma": "^0.7.2",
+    "eslint": "^5.12.1",
     "font-awesome": "^4.7.0",
-    "gh-pages": "^2.0.1",
+    "jstransformer-markdown-it": "^2.1.0",
     "node-sass": "^4.11.0",
     "parcel-bundler": "^1.11.0",
     "pug": "^2.0.3"
