@@ -1,6 +1,6 @@
 import { $$, get } from './utils';
 
-const endpoint = "http://whamer.comxa.com/api/hifumi.php";
+const endpoint = "https://whamer.comxa.com/api/hifumi.php";
 
 const rusers = $$('#reddit-users');
 const dusers = $$('#discord-users');
