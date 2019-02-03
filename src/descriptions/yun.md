@@ -1,2 +1,0 @@
-# Yun
-Hajime's girlfriend.
