@@ -8,6 +8,7 @@
   flex-direction: column;
   background-size: cover;
   overflow: hidden;
+  //min-height: 70vh;
   width: 100%;
   border-bottom: solid 2px #eee;
 
@@ -21,7 +22,7 @@
     in mobile mode
    */
   &:nth-child(even) > .columns {
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
 
     /*
       Alternating the position of
@@ -34,7 +35,7 @@
   }
 
   &:nth-child(odd) > .columns {
-    flex-direction: column-reverse;
+    flex-direction: row;
 
     //.girl-content .columns {
     //  flex-direction: column-reverse;
@@ -45,16 +46,41 @@
   .girl-image-column {
     display: flex;
     justify-content: flex-end;
-
+    flex-direction: column;
+    padding: 0;
     img {
-      max-height: 40vh;
+      //max-height: 40vh;
     }
   }
 
+  .columns {
+    //height: 100%;
+  }
   @media(min-width: $tablet) and (max-width: $merge-breakpoint) {
   }
 
   @media(max-width: $merge-breakpoint) {
+    &:nth-child(even) > .columns {
+      flex-direction: column-reverse;
+
+      /*
+        Alternating the position of
+        the strengths/weaknesses
+        and character info
+       */
+      //.girl-content .columns {
+      //  flex-direction: column;
+      //}
+    }
+
+    &:nth-child(odd) > .columns {
+      flex-direction: column-reverse;
+
+      //.girl-content .columns {
+      //  flex-direction: column-reverse;
+      //}
+    }
+
     .column {
       width: auto !important;
     }
@@ -72,6 +98,7 @@
 
       img {
         margin: 0 auto;
+        max-height: 50vh;
       }
     }
     .girl-content {
