@@ -21,77 +21,62 @@
     in mobile mode
    */
   &:nth-child(even) > .columns {
-    flex-direction: row;
+    flex-direction: column-reverse;
 
     /*
       Alternating the position of
       the strengths/weaknesses
       and character info
      */
-    .girl-content .columns {
-      flex-direction: row;
-    }
+    //.girl-content .columns {
+    //  flex-direction: column;
+    //}
   }
 
   &:nth-child(odd) > .columns {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
 
-    .girl-content .columns {
-      flex-direction: row-reverse;
-    }
+    //.girl-content .columns {
+    //  flex-direction: column-reverse;
+    //}
   }
 
 
   .girl-image-column {
-    position: relative;
-    min-height: $girl-section-cutoff;
     display: flex;
     justify-content: flex-end;
 
     img {
-      position: absolute;
-      width: auto;
-      height: auto;
-      // sticky on the bottom
-      bottom: 0;
+      max-height: 40vh;
     }
   }
 
   @media(min-width: $tablet) and (max-width: $merge-breakpoint) {
-    .girl-content {
-      margin-bottom: 200px !important;
-    }
   }
 
   @media(max-width: $merge-breakpoint) {
+    .column {
+      width: auto !important;
+    }
     .section {
       padding: 0;
     }
     .columns {
+      //flex-direction: column;
       justify-content: center;
     }
     .girl-image-column {
-      display: block;
       margin: 0 auto;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      justify-content: center;
-      text-align: center;
       padding: 0 10px;
-      width: auto;
       max-width: 600px;
-      height: 100%;
 
       img {
         margin: 0 auto;
       }
     }
     .girl-content {
-      position: relative;
-      min-height: $girl-section-cutoff;
-      margin-bottom: 80%;
+      //min-height: $girl-section-cutoff;
+      //margin-bottom: 80%;
     }
   }
 
