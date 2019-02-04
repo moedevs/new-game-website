@@ -29,17 +29,18 @@
       the strengths/weaknesses
       and character info
      */
-    //.girl-content .columns {
-    //  flex-direction: column;
-    //}
+    .girl-content .columns {
+      flex-direction: row-reverse
+    ;
+    }
   }
 
   &:nth-child(odd) > .columns {
     flex-direction: row;
 
-    //.girl-content .columns {
-    //  flex-direction: column-reverse;
-    //}
+    .girl-content .columns {
+      flex-direction: row;
+    }
   }
 
 
