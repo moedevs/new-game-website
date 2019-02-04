@@ -83,8 +83,11 @@ body {
   height: 100%;
 }
 
-.banner-text {
+.shadowed {
   text-shadow: $shadow;
+}
+
+.banner-text {
   display: inline-block;
   margin: 0 0;
   font-weight: 600;
@@ -114,9 +117,53 @@ body {
   padding: 10px !important;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 // Bulma fixes
 
 .content ul {
   margin-top: 0;
 }
 
+
+.spaced-l {
+  margin-left: 5px;
+}
+.twitter-wrapper {
+  padding: 3rem 0;
+  overflow-x: scroll;
+}
+.twitter-slides {
+  display: flex;
+  //overflow: hidden;
+  position: relative;
+}
+
+.tweet {
+  border-radius: 3px;
+  //height: 540px;
+  margin: 0 1.5rem;
+  width: 600px;
+
+  @media (max-width: $tablet) {
+    width: 250px;
+    height: auto;
+  }
+
+  .twitter-controls-container {
+    margin-top: 10px;
+  }
+  //.tweet-name {
+  //  margin-bottom: 1.2rem;
+  //}
+  .tweet-image {
+    margin: 10px 0;
+  }
+}
+
+.section-header {
+  background: #7676ae;
+  box-shadow: black inset;
+}

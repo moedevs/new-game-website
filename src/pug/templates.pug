@@ -22,7 +22,7 @@
     }
   //
 mixin girl-section(options)
-  div.girl-section(style={'background-color': options.color})
+  div.root-item.girl-section(style={ 'background-color': options.color })
     .columns.narrow-width.is-mobile
       .column.is-one-quarter.girl-image-column
         img.image.girl(src=options.image)
@@ -99,3 +99,57 @@ mixin _girl-list(options)
       ul
         for item in options.items
           li=item
+
+mixin section-header(title)
+  .root-item.section-header.has-text-centered(style="cursor: pointer;" data-label=title)
+    h1.has-text-white-ter.is-size-2-desktop.is-size-2-tablet.is-size-2-mobile.shadowed(style="position: relative")=title
+
+//-
+  Tweet from the girls
+  Arguments:
+    options {
+      avatar: twitter avatar
+      name: username
+      tag: twitter tag
+      verified?: verified tickmark?
+      content: text content of the tweet
+      image?: image included in tweet
+      hashtags?: hashtags included at the end
+      time: time of the tweet
+    }
+mixin tweet(options)
+  .tweet-container
+    .card.tweet
+      .card-content
+        .media
+          .media-left
+            figure.image.is-48x48
+              img(src=options.avatar)
+          .media-content
+            .container
+              p.title.is-4.tweet-name.is-flex=options.name
+                if options.verified
+                  span.icon.is-32x32.is-vcentered
+                    img(src="https://cdn.iconverticons.com/files/png/2ebd86c6b88dd219_256x256.png" style="margin-left: 10px;")
+              p.subtitle.has-text-grey.is-6=options.tag
+        .content=options.content
+          if options.image
+            img.tweet-image(src=options.image)
+          br
+          if options.hashtags
+            for hashtag in options.hashtags
+              - const url = `https://twitter.com/hashtag/${hashtag}`;
+              - const content = `\#${hashtag} `;
+              a(target="_blank" href=url)=content
+          br
+          time=options.time
+          .level.is-mobile.twitter-controls-container
+            .level-left
+              .level-item
+                span.tweet-controls.has-text-info(neutral)
+                  i.fas.fa-retweet
+                  span.spaced-l=options.retweets
+              .level-item
+                .tweet-controls.has-text-danger(neutral)
+                  i.far.fa-heart
+                  span.spaced-l=options.likes

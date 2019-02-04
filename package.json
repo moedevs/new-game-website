@@ -30,6 +30,7 @@
     "jstransformer-markdown-it": "^2.1.0",
     "node-sass": "^4.11.0",
     "parcel-bundler": "^1.11.0",
+    "perfect-scrollbar": "^1.4.0",
     "pug": "^2.0.3"
   }
 }
