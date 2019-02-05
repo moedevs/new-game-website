@@ -1,3 +1,5 @@
+/* tslint:disable:max-line-length */
+
 import * as React from "react";
 import Helmet from "react-helmet";
 
@@ -12,8 +14,15 @@ export const Layout = ({ children }: { children: any }) =>
       title="Hifumi.io"
       meta={[
         { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" },
+        { name: "keywords", content: "sample, something" }
       ]}
-    />
+      link={[
+        {}
+      ]}
+    >
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossOrigin="anonymous"/>
+    </Helmet>
+
     <>{children}</>
   </div>;
