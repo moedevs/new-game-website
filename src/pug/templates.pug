@@ -138,9 +138,7 @@ mixin tweet(options)
           br
           if options.hashtags
             for hashtag in options.hashtags
-              - const url = `https://twitter.com/hashtag/${hashtag}`;
-              - const content = `\#${hashtag} `;
-              a(target="_blank" href=url)=content
+              a(href="")=`\#${hashtag} `
           br
           time=options.time
           .level.is-mobile.twitter-controls-container

@@ -1,11 +1,13 @@
 import { $, $$ } from './utils';
-import Flickity  from 'flickity';
+import Flickity from 'flickity';
 
 const slides = $$('.twitter-slides');
+
 const flkty = new Flickity(slides, {
   cellAlign: 'center',
   freeScroll: true
 });
+
 
 const toggleVisibility = node => {
   const isHidden = node.style.display === 'none';
