@@ -14,7 +14,7 @@ export default () => (
         alignItems: "center",
         overflow: "hidden"
       }}>
-        <Section style={{ maxWidth: "800px"}}>
+        <Section style={{ maxWidth: "1000px"}}>
           <img src={image} alt="" style={{ maxWidth: "100%" }}/>
           <h1 className="title has-text-grey-dark">
             We totally have a page here but you can't see it!
@@ -22,7 +22,7 @@ export default () => (
           <h2 className="subtitle has-text-grey-dark">
             Or maybe it's empty... sorry
           </h2>
-          <Button isColor="primary" href="https://hifumi.io">Back to hifumi.io</Button>
+          <Button isColor="primary" href={process.env.WEBSITE_URL}>Get me out of here!</Button>
         </Section>
       </div>
     </div>

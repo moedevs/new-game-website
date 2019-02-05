@@ -21,6 +21,7 @@
     "bulma": "^0.7.2",
     "gatsby": "^2.0.114",
     "gatsby-link": "^2.0.10",
+    "gatsby-plugin-google-analytics": "^2.0.13",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-styled-components": "^3.0.5",

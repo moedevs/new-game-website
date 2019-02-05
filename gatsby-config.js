@@ -7,6 +7,15 @@ module.exports = {
     // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
     "gatsby-plugin-sass",
-    "gatsby-plugin-styled-components"
+    "gatsby-plugin-styled-components",
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-133545986-1",
+        head: false,
+        anonymize: true,
+        respectDNT: true
+      }
+    }
   ],
 };

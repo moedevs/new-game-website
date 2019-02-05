@@ -16,7 +16,7 @@ const Affiliated = ({ users, type }: AffiliatedProps) => {
       className={`button is-fullwidth is-large ${type}`}
       href="https://reddit.com/r/NewGame"
     >
-      <Icon isSize="large" className={`fab fa-${type}`} />
+      <Icon isSize="large" className={`fab fa-${type}`}/>
       <span className="is-size-5-desktop is-size-6-tablet">
         <b id="discord-users">{users}</b>
         {isDiscord ? " members" : " redditors"}
@@ -30,14 +30,15 @@ export const LandingPanel = () => {
   const [discord, setDiscord] = React.useState(0);
   const [reddit, setReddit] = React.useState(0);
 
-  useEffect(() => {
-    fetch(defaultEndpoint, { mode: "cors" })
+  const getUserData = (endpoint: string) =>
+    fetch(endpoint, { mode: "cors" })
       .then(r => r.json())
       .then(r => {
         setDiscord(r.discordUsers);
         setReddit(r.subscribers);
       });
-  }, []);
+
+  useEffect(() => void getUserData(defaultEndpoint), []);
 
   const title = [
     "is-size-1-desktop",
@@ -51,11 +52,11 @@ export const LandingPanel = () => {
 
   return (
     <div className="landing">
-      <div className="overlay" />
+      <div className="overlay"/>
       <div className="banner-container">
-        <GithubCorner href="https://github.com/xetera/hifumi.io" />
+        <GithubCorner href="https://github.com/xetera/hifumi.io"/>
         <div className="arrow has-text-white">
-          <Icon className="fa fa-arrow-down" />
+          <Icon className="fa fa-arrow-down"/>
         </div>
         <Columns>
           <Column>
@@ -69,10 +70,10 @@ export const LandingPanel = () => {
             <Section>
               <Columns>
                 <Column isSize="1/2">
-                  <Affiliated users={discord} type="discord" />
+                  <Affiliated users={discord} type="discord"/>
                 </Column>
                 <Column isSize="1/2">
-                  <Affiliated users={reddit} type="reddit" />
+                  <Affiliated users={reddit} type="reddit"/>
                 </Column>
               </Columns>
             </Section>
