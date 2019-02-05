@@ -1,4 +1,4 @@
-import { Girl } from "./characters";
+import { Girl } from "./girls";
 import aoba from "./assets/aoba-base.png";
 import thumbnail from "./assets/aoba-thumbnail.png";
 import * as React from "react";

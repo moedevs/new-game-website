@@ -3,6 +3,20 @@ import * as React from "react";
 import { WithChildren } from "../../types";
 import { Card, CardContent, Column, Columns, Content, Level, LevelLeft, Section } from "bloomer";
 
+export const girls = [
+  "hifumi"
+  , "aoba"
+  , "ko"
+  , "yun"
+  , "hajime"
+  , "nene"
+  , "nene"
+  , "rin"
+  , "umiko"
+  , "momo"
+  , "naru"
+];
+
 interface GirlTitleProps {
   name: string;
   image: string;

@@ -17,6 +17,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
+    "flickity": "^2.2.0",
     "gatsby": "^2.0.114",
     "gatsby-link": "^2.0.10",
     "gatsby-plugin-react-helmet": "^3.0.6",

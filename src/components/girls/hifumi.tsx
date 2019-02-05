@@ -1,4 +1,4 @@
-import { Girl } from "./characters";
+import { Girl } from "./girls";
 import hifumi from "./assets/hifumi-base.png";
 import thumbnail from "./assets/hifumi-thumbnail.png";
 import * as React from "react";
