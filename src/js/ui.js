@@ -1,9 +1,11 @@
 import { $, $$ } from './utils';
-import PerfectScrollbar from "perfect-scrollbar";
+import Flickity  from 'flickity';
 
 const slides = $$('.twitter-slides');
-console.log(slides);
-// const ps = new PerfectScrollbar('#twitter-slides');
+const flkty = new Flickity(slides, {
+  cellAlign: 'center',
+  freeScroll: true
+});
 
 const toggleVisibility = node => {
   const isHidden = node.style.display === 'none';
