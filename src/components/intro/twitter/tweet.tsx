@@ -4,19 +4,23 @@ import {
   CardContent,
   Container,
   Content,
-  Icon, Level, LevelItem, LevelLeft, Media, MediaContent, MediaLeft
+  Icon,
+  Level,
+  LevelItem,
+  LevelLeft,
+  Media,
+  MediaContent,
+  MediaLeft
 } from "bloomer";
 import { girls } from "../../girls/girls";
-import verified from "./verified.png";
-import * as path from "path";
-import hifumi from "./avatars/hifumi.jpg";
+import verified from "./images/verified.png";
 
 const avatars: { readonly [k: string]: string } = girls.reduce((all, girl) => {
   try {
-    return ({
+    return {
       ...all,
       [girl]: require(`./avatars/${girl}.jpg`)
-    });
+    };
   } catch (_) {
     return all;
   }
@@ -36,16 +40,17 @@ interface TweetProps {
 }
 
 export const Tweet = (props: TweetProps) => {
-  const badge =
+  const badge = (
     <span className="icon is-32x32 is-vcentered">
-      <img src={verified} alt="" style={{ marginLeft: "10px" }}/>
-    </span>;
-
-  const tweetImage = <img src={props.image} className="tweet-image" alt=""/>;
-
-  const hashTags = props.hashtags.map(
-    tag => <a href={tag} key={tag}>{`#${tag} `}</a>
+      <img src={verified} alt="" style={{ marginLeft: "10px" }} />
+    </span>
   );
+
+  const tweetImage = <img src={props.image} className="tweet-image" alt="" />;
+
+  const hashTags = props.hashtags.map(tag => (
+    <a href={tag} key={tag}>{`#${tag} `}</a>
+  ));
 
   return (
     <div className="tweet-container carousel-cell">
@@ -54,7 +59,7 @@ export const Tweet = (props: TweetProps) => {
           <Media>
             <MediaLeft>
               <figure className="image is-48x48">
-                <img src={hifumi} alt=""/>
+                <img src={avatars[props.avatar]} alt="" />
               </figure>
             </MediaLeft>
             <MediaContent>
@@ -70,21 +75,21 @@ export const Tweet = (props: TweetProps) => {
           <Content>
             {props.content}
             {props.image && tweetImage}
-            <br/>
+            <br />
             {props.hashtags && hashTags}
-            <br/>
+            <br />
             <time>{props.time}</time>
             <Level>
               <LevelLeft>
                 <LevelItem>
-                  <span className="tweet-controls.has-text-info">
-                    <Icon className="fas fa-retweet"/>
+                  <span className="tweet-controls has-text-info">
+                    <Icon className="fas fa-retweet" />
                     <span>{props.retweets}</span>
                   </span>
                 </LevelItem>
                 <LevelItem>
-                  <span className="tweet-controls.has-text-danger">
-                    <Icon className="far fa-heart"/>
+                  <span className="tweet-controls has-text-danger">
+                    <Icon className="far fa-heart" />
                     <span>{props.likes}</span>
                   </span>
                 </LevelItem>

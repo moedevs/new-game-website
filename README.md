@@ -1,13 +1,31 @@
-# gatsby-starter-typescript
-The [default Gatsby starter](https://github.com/gatsbyjs/gatsby-starter-default) converted to [TypeScript](https://www.typescriptlang.org/).
+# New Game!
+## hifumi.io
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+### Helping out
+Not a programmer? No problem, We would still love to get your input!
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-starter-typescript https://github.com/haysclark/gatsby-starter-typescript
-```
+<a href="https://discord.gg/ZWW5CJw">
+  <img width="250" src="https://i.imgur.com/GlEHVES.png"></img>
+</a>
 
-## Deploy
+Most discussion will be in the `#tech-talk` channel.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/haysclark/gatsby-starter-typescript)
+### Tech
+
+https://hifumi.io is made using parcel which compiles:
+
+* Pug templates
+* Scss
+
+Netlify builds automatically from `master` so your changes are 
+a single pull request away from going live!
+
+### Contributing
+
+1. `git clone https://github.com/Xetera/hifumi.io.git`
+2. `npm install`
+3. `npm start`
+4. Go to the address it gave you, and work away!
+
+
+##### Made with <3 by the /r/NewGame community

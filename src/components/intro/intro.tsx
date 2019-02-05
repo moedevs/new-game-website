@@ -1,9 +1,17 @@
 import * as React from "react";
 import { tweets } from "./twitter/tweets";
+import Flickity from "react-flickity-component";
 
-export const SiteIntro = () =>
+export const SiteIntro = () => (
   <div className="intro">
-    <div className="twitter-slides main-carousel">
+    <Flickity
+      className="twitter-slides main-carousel"
+      options={{
+        cellAlign: "center",
+        freeScroll: true
+      }}
+    >
       {tweets}
-    </div>
+    </Flickity>
   </div>
+);

@@ -3,7 +3,7 @@ import hifumi from "./assets/hifumi-base.png";
 import thumbnail from "./assets/hifumi-thumbnail.png";
 import * as React from "react";
 
-export const Hifumi = () =>
+export const Hifumi = () => (
   <Girl
     image={hifumi}
     title={{
@@ -11,12 +11,10 @@ export const Hifumi = () =>
       name: "Hifumi",
       image: thumbnail
     }}
-    strengths={[
-      "Literally everything",
-      "Sometimes shy",
-    ]}
-    weaknesses={[
-      "Sometimes shy"
-    ]}
+    strengths={["Literally everything", "Sometimes shy"]}
+    weaknesses={["Sometimes shy"]}
     color="#ffb8df"
-  >yet</Girl>;
+  >
+    yet
+  </Girl>
+);

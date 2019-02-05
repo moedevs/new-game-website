@@ -7,11 +7,12 @@ import { SiteFooter } from "../components/outro/footer";
 import { tweets } from "../components/intro/twitter/tweets";
 import { SiteIntro } from "../components/intro/intro";
 
-export default ({}) =>
+export default ({}) => (
   <Layout>
-    <LandingPanel/>
-    <SiteIntro/>
-    <Aoba/>
-    <Hifumi/>
-    <SiteFooter/>
-  </Layout>;
+    <LandingPanel />
+    <SiteIntro />
+    <Aoba />
+    <Hifumi />
+    <SiteFooter />
+  </Layout>
+);

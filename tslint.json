@@ -18,7 +18,7 @@
 		"no-console": [
 			false
 		],
-		"no-var-requires": false,
+    "no-var-requires": false,
 		"no-var-keyword": true,
 		"no-eval": true,
 		"no-return-await": true,

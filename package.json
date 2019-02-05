@@ -5,7 +5,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --parser typescript --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.ts*\"",
+    "dev": "npm run develop",
+    "format": "prettier --parser typescript --write \"src/**/*.ts*\"",
+    "lint": "tslint --project .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -17,7 +19,6 @@
     "babel-plugin-styled-components": "^1.10.0",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
-    "flickity": "^2.2.0",
     "gatsby": "^2.0.114",
     "gatsby-link": "^2.0.10",
     "gatsby-plugin-react-helmet": "^3.0.6",
@@ -28,6 +29,7 @@
     "react": "16.8.0-alpha.1",
     "react-bulma-components": "^2.3.0",
     "react-dom": "16.8.0-alpha.1",
+    "react-flickity-component": "^3.2.0",
     "react-github-corner": "^2.3.0",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.1.3"

@@ -1,13 +1,21 @@
+/* tslint:disable:max-line-length */
 import { Tweet } from "./tweet";
+import hifumi1 from "./images/hifumi-1.jpg";
+import hajime1 from "./images/hajime-1.jpg";
 
+/**
+ * Avatar is just the name of the file inside the avatars/ file
+ * TODO: change this to gatsby imports or whatever
+ */
 export const tweets = [
   Tweet({
     avatar: "hifumi",
     verified: true,
     name: "Hifumi",
     tag: "@HTakimoto",
-    content: "Just realized my new coworker looks so much like Sojiro when she's eating ≧◡≦",
-    image: "https://i.imgur.com/aFvLMGy.jpg",
+    content:
+      "Just realized my new coworker looks so much like Sojiro when she's eating ≧◡≦",
+    image: hifumi1,
     hashtags: ["kawaii", "hedgehog"],
     time: "9:02 AM - 1 Feb 2015",
     likes: "24k",
@@ -19,7 +27,7 @@ export const tweets = [
     name: "Hajime",
     tag: "@HShinoda",
     content: "I can't believe I got tickets to go to Moon Rangers! Thanks @Yun",
-    image: "../assets/twitter/hajime-twitter-1.jpg",
+    image: hajime1,
     hashtags: ["bestcoworker", "moonranger"],
     time: "12:54 AM - 4 May 2015",
     likes: "92k",
@@ -36,4 +44,4 @@ export const tweets = [
     likes: "21k",
     retweets: "39k"
   })
-]
+];
