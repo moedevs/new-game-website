@@ -34,7 +34,8 @@ mixin girl-section(options)
                 +_girl-title({
                   image: options.title.image,
                   name: options.title.name,
-                  quote: options.title.quote
+                  quote: options.title.quote,
+                  department: options.department
                 })
                 br
                 +_girl-content()
@@ -58,6 +59,7 @@ mixin girl-section(options)
       image: image url
       name: character name
       quote: quote from the character
+      department: department and title of character
     }
   //
 mixin _girl-title(options)
@@ -71,6 +73,8 @@ mixin _girl-title(options)
                 img.image.is-rounded(src=options.image)
           .level-item.no-grow.shrink
             p.title.is-size-4-mobile=options.name
+          .level-item
+            span.tag(class=options.department.type)=options.department.title
       p.subtitle.is-size-6-mobile=options.quote
 
 //-
