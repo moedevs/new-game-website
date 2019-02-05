@@ -6,10 +6,9 @@ const availableGirls = [
 
 const base = "../assets/twitter/avatars";
 
-export var girls = availableGirls.reduce((total, girl) => ({
+export const girls = availableGirls.reduce((total, girl) => ({
   ...total,
   [girl]: `${base}/${girl}.jpg`
 }), {});
 
 export var getGirl = (girl) => girls[girl];
-
