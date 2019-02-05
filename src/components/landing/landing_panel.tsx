@@ -10,14 +10,13 @@ interface AffiliatedProps {
 
 const Affiliated = ({ users, type }: AffiliatedProps) => {
   const isDiscord = type === "discord";
-  const name = isDiscord ? "discord" : "reddit"
 
   return (
     <a
-      className={`button is-fullwidth is-large ${name}`}
+      className={`button is-fullwidth is-large ${type}`}
       href="https://reddit.com/r/NewGame"
     >
-      <Icon isSize="large" className={`fab fa-${name}`} />
+      <Icon isSize="large" className={`fab fa-${type}`} />
       <span className="is-size-5-desktop is-size-6-tablet">
         <b id="discord-users">{users}</b>
         {isDiscord ? " members" : " redditors"}
