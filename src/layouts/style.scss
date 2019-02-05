@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+@import '../../node_modules/bulma/sass/utilities/initial-variables.sass';
+@import '_variables.scss';
+@import '../../node_modules/bulma/bulma.sass';
+
+* {
+  font-family: Rubik, sans-serif;
+}
+
+body {
+  background-color: $website-background;
+}
+
+.website-background {
+  background-color: $website-background;
+}
+
+.landing {
+  position: relative;
+  background-image: url('https://stmed.net/sites/default/files/new-game%21-wallpapers-26010-6987722.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.github {
+  z-index: 2;
+  margin: 25px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.overlay {
+  /* This entire overlay is copy pasted from satania.moe, bless you pizzacus */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .75) 100%);
+  min-width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.banner-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  text-justify: distribute;
+
+  a.button {
+    box-shadow: $shadow;
+  }
+
+  .banner-text-container {
+    display: flex;
+    padding: 25px;
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+.arrow {
+  position: absolute;
+  bottom: 50px;
+}
+
+.discord {
+  color: #7289DA;
+}
+
+.reddit {
+  color: orangered;
+}
+
+.banner-sections {
+  height: 100%;
+}
+
+.shadowed {
+  text-shadow: $shadow;
+}
+
+.banner-text {
+  display: inline-block;
+  margin: 0 0;
+  font-weight: 600;
+  padding-bottom: 0;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.narrow-width {
+  @media(max-width: $merge-breakpoint) {
+    width: 100%;
+  }
+  width: 85%;
+}
+
+.shrink {
+  flex-shrink: 1;
+}
+
+.no-grow {
+  flex-grow: 0;
+}
+
+.footer {
+  padding: 10px !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+// Bulma fixes
+
+.content ul {
+  margin-top: 0;
+}
+
+
+.spaced-l {
+  margin-left: 5px;
+}
+.twitter-wrapper {
+  padding: 3rem 0;
+  overflow-x: scroll;
+}
+
+.twitter-slides {
+  padding: 1rem 0;
+}
+.flickity-slider {
+  display: flex;
+  align-items: center;
+}
+
+.tweet {
+  //border-radius: 3px;
+  ////height: 540px;
+  margin: 1rem 1.5rem;
+  width: 600px;
+
+  @media (max-width: $tablet) {
+    width: 250px;
+    height: auto;
+  }
+
+  .twitter-controls-container {
+    margin-top: 10px;
+  }
+  //.tweet-name {
+  //  margin-bottom: 1.2rem;
+  //}
+  .tweet-image {
+    margin: 10px 0;
+  }
+}
+
+.section-header {
+  background: #7676ae;
+  box-shadow: black inset;
+}
