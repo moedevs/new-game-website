@@ -11,4 +11,4 @@ likes: "972"
 I can't believe I got tickets to go to Moon Rangers!
 Thanks @Yun
 
-![](media/hajime1.jpg)
+![](media/hajime-1.jpg)

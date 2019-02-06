@@ -97,11 +97,11 @@ const GirlImage = ({ image }: { image: string }) => (
 );
 
 const GirlContent = ({ children }: WithChildren) => (
-  <div className="card">
-    <div className="card-content card is-size-5-mobile is-size-5-tablet is-size-4-desktop content">
+  <Card className="card">
+    <CardContent className="is-size-5-mobile is-size-5-tablet is-size-4-desktop content">
       {children}
-    </div>
-  </div>
+    </CardContent>
+  </Card>
 );
 
 const GirlTitle = ({ thumbnail, name, quote }: GirlTitleProps) => (
