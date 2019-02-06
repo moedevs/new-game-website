@@ -1,12 +1,12 @@
 ---
 order: 7
 name: Rin
-quote: Testing
+quote: "I told you to do it this morning!"
 color: "#d397ff"
 strengths:
-  - nice
+  - Hey kid, wanna buy some placeholders?
 weaknesses:
-  - meme
+  - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ---
 
-Testing
+Ko's Girlfriend

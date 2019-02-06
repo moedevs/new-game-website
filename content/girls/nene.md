@@ -1,12 +1,12 @@
 ---
 order: 6
 name: Nene
-quote: Hello
+quote: I love placeholders!
 color: "#dd95c6"
 strengths:
-  - nice
+  - niceeeeeeeeeeeeeeeeeeeeeeeeee
 weaknesses:
-  - meme
+  - memeeeeeeeeeeeeeeeeeeeeeeeeee
 ---
 
 Testing

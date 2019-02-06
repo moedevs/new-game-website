@@ -6,6 +6,7 @@ color: "#ffb8df"
 strengths:
   - Literally everything
   - Sometimes shy
+  - That  s m i l e
 weaknesses:
   - Sometimes shy
 ---
