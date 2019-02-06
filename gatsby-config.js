@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby Typescript Starter`,
+    description: "New Game! fan site made by the /r/NewGame community",
+    url: "https://hifumi.io",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
     "gatsby-plugin-sass",
     "gatsby-plugin-styled-components",
@@ -16,6 +17,33 @@ module.exports = {
         anonymize: true,
         respectDNT: true
       }
-    }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/girls`,
+        name: "girls"
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/tweets`,
+        name: "tweets"
+      }
+    },
+    {
+      resolve:"gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              quality: 100
+            }
+          }
+        ]
+      }
+    },
   ],
 };

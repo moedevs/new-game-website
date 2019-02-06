@@ -1,11 +1,12 @@
 import * as React from "react";
-import { tweets } from "./twitter/tweets";
 import Flickity from "react-flickity-component";
+import "flickity-imagesloaded";
+import { ReactNode } from "react";
 
 /**
  * Flickity react typings seem a little buggy so we're ignoring
  */
-export const SiteIntro = () => (
+export const SiteIntro = ({ children }: { children: ReactNode }) => (
   <div className="intro">
     {/*
     // @ts-ignore */}
@@ -13,10 +14,14 @@ export const SiteIntro = () => (
       className="twitter-slides main-carousel"
       options={{
         cellAlign: "center",
-        freeScroll: true
+        freeScroll: true,
+        setGallerySize: true,
+        imagesLoaded: true,
+        pageDots: false,
+        contain: true
       }}
     >
-      {tweets}
+      {children}
     </Flickity>
   </div>
 );

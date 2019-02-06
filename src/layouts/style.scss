@@ -138,11 +138,17 @@ body {
 
 .twitter-slides {
   position: relative;
+  min-height: 600px;
   padding: 1rem 0;
 }
+
 .flickity-slider {
   display: flex;
   align-items: center;
+}
+
+.flickity-viewport {
+  transition: height 0.2s;
 }
 
 .tweet {

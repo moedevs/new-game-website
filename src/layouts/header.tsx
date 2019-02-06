@@ -8,9 +8,6 @@ export const Header = () =>
     title="New Game!"
     meta={[
       {
-        name: "description", content: "New Game! fan site made by the /r/NewGame community"
-      },
-      {
         property: "og:type", content: "website"
       },
       {

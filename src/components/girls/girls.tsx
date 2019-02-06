@@ -3,11 +3,11 @@ import * as React from "react";
 import { WithChildren } from "../../types";
 import {
   Card,
-  CardContent,
+  CardContent, CardHeader, CardHeaderTitle,
   Column,
   Columns,
   Content,
-  Level,
+  Level, LevelItem,
   LevelLeft,
   Section
 } from "bloomer";
@@ -23,19 +23,22 @@ export const girls = [
   "rin",
   "umiko",
   "momo",
-  "naru"
+  "naru",
+  "blue-haired-shop-keeper"
 ];
 
 interface GirlTitleProps {
   name: string;
-  image: string;
+  thumbnail?: string;
   quote: string;
 }
 
 interface GirlProps {
   color: string;
+  thumbnail: string;
   image: string;
-  title: GirlTitleProps;
+  name: string;
+  quote: string;
   weaknesses: string[];
   strengths: string[];
 }
@@ -45,23 +48,52 @@ interface GirlList {
   items: string[];
 }
 
+interface GirlAssets {
+  readonly [k: string]: {
+    base: string;
+    thumbnail: string;
+  };
+}
+
+const girlAssets: GirlAssets = girls.reduce((all, girl) => {
+  const name = girl.toLowerCase();
+  let thumbnail;
+  try {
+    thumbnail = require(`./assets/${name}-thumbnail.png`);
+  } catch (e) {/* optional */
+  }
+  try {
+    return ({
+      ...all,
+      [name]: {
+        base: require(`./assets/${name}.png`),
+        thumbnail
+      }
+    });
+  } catch (e) {
+    return all;
+  }
+}, {});
+
 const GirlList = ({ name, items }: GirlList) => (
   <div className="card is-size-6-mobile is-size-6-tablet is-size-5-desktop">
-    <div className="card-header is-size-6-mobile">
-      <div className="card-header-title">{name}</div>
-    </div>
-    <div className="card-content">
-      <ul>{items.map(item => <li key={item}>{item}</li>)}</ul>
-    </div>
+    <CardHeader className="is-size-6-mobile">
+      <CardHeaderTitle>{name}</CardHeaderTitle>
+    </CardHeader>
+    <CardContent>
+      <ul>
+        {items.map(item => <li key={item}>{item}</li>)}
+      </ul>
+    </CardContent>
   </div>
 );
 
 const GirlImage = ({ image }: { image: string }) => (
-  <div className="level-item">
+  <LevelItem>
     <div className="icon is-large">
-      <img src={image} alt="" className="image is-rounded" />
+      <img src={image} alt="" className="image is-rounded"/>
     </div>
-  </div>
+  </LevelItem>
 );
 
 const GirlContent = ({ children }: WithChildren) => (
@@ -72,12 +104,12 @@ const GirlContent = ({ children }: WithChildren) => (
   </div>
 );
 
-const GirlTitle = ({ image, name, quote }: GirlTitleProps) => (
+const GirlTitle = ({ thumbnail, name, quote }: GirlTitleProps) => (
   <Card>
     <CardContent className="card is-size-7-mobile is-size-5-tablet is-size-4-desktop">
       <Level isMobile>
         <LevelLeft className="shrink">
-          {image && <GirlImage image={image} />}
+          {thumbnail && <GirlImage image={thumbnail}/>}
           <div className="level-item no-grow shrink">
             <p className="title is-size-4-mobile">{name}</p>
           </div>
@@ -90,9 +122,9 @@ const GirlTitle = ({ image, name, quote }: GirlTitleProps) => (
 
 export const Girl = (options: GirlProps & WithChildren) => (
   <div className="girl-section" style={{ backgroundColor: options.color }}>
-    <Columns isMobile>
+    <Columns isMobile className="narrow-width">
       <Column isSize="1/4" className="girl-image-column">
-        <img src={options.image} alt="" className="image girl" />
+        <img src={options.image} alt="" className="image girl"/>
       </Column>
       <Column className="girl-content">
         <Section>
@@ -100,17 +132,17 @@ export const Girl = (options: GirlProps & WithChildren) => (
             <Columns>
               <Column>
                 <GirlTitle
-                  image={options.title.image}
-                  name={options.title.name}
-                  quote={options.title.quote}
+                  thumbnail={options.thumbnail}
+                  name={options.name}
+                  quote={options.quote}
                 />
-                <br />
+                <br/>
                 <GirlContent>{options.children}</GirlContent>
               </Column>
               <Column>
-                <GirlList name="Strengths" items={options.strengths} />
-                <br />
-                <GirlList name="Weaknesses" items={options.weaknesses} />
+                <GirlList name="Strengths" items={options.strengths}/>
+                <br/>
+                <GirlList name="Weaknesses" items={options.weaknesses}/>
               </Column>
             </Columns>
           </Content>
@@ -119,3 +151,22 @@ export const Girl = (options: GirlProps & WithChildren) => (
     </Columns>
   </div>
 );
+
+export const MarkdownGirl = (props: GirlProps & { html: string }) => {
+  const { name, quote } = props;
+  const parsed = name.toLowerCase().replace(/\s+/g, "-");
+  const asset = girlAssets[parsed];
+
+  return (
+    <Girl color={props.color}
+          image={asset.base}
+          quote={quote}
+          name={name}
+          thumbnail={asset.thumbnail}
+          weaknesses={props.weaknesses}
+          strengths={props.strengths}
+    >
+      <div dangerouslySetInnerHTML={{ __html: props.html }}/>
+    </Girl>
+  );
+};

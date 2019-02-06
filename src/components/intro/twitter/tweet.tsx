@@ -12,19 +12,36 @@ import {
   MediaContent,
   MediaLeft
 } from "bloomer";
-import { girls } from "../../girls/girls";
-import verified from "./images/verified.png";
+import verified from "./verified.png";
 
-const avatars: { readonly [k: string]: string } = girls.reduce((all, girl) => {
-  try {
-    return {
-      ...all,
-      [girl]: require(`./avatars/${girl}.jpg`)
-    };
-  } catch (_) {
-    return all;
+interface TweetMetadata {
+  readonly [girl: string]: {
+    tag: string;
+    verified: boolean;
+    avatar: string;
+  };
+}
+
+const tweetMetadata: TweetMetadata = Object.entries({
+  hifumi: {
+    tag: "@HTakimoto",
+    verified: true,
+  },
+  hajime: {
+    tag: "@HShinoda",
+    verified: true
+  },
+  aoba: {
+    tag: "@ASuzukaze",
+    verified: true
   }
-}, {});
+}).reduce((all, [k, v]) => ({
+  ...all,
+  [k]: {
+    ...v,
+    avatar: require(`./avatars/${k}.jpg`)
+  }
+}), {});
 
 interface TweetProps {
   avatar: string;
@@ -32,25 +49,33 @@ interface TweetProps {
   tag: string;
   verified: boolean;
   content: string;
-  image?: string;
   hashtags: string[];
   time: string;
   retweets: string;
   likes: string;
 }
 
+export interface MarkdownTweetProps {
+  name: string;
+  hashtags: string[];
+  date: string;
+  retweets: string;
+  likes: string;
+  html: string;
+}
+
 export const Tweet = (props: TweetProps) => {
   const badge = (
     <span className="icon is-32x32 is-vcentered">
-      <img src={verified} alt="" style={{ marginLeft: "10px" }} />
+      <img src={verified} alt="" style={{ marginLeft: "10px" }}/>
     </span>
   );
-
-  const tweetImage = <img src={props.image} className="tweet-image" alt="" />;
 
   const hashTags = props.hashtags.map(tag => (
     <a href={tag} key={tag}>{`#${tag} `}</a>
   ));
+
+  const avatar = tweetMetadata[props.name.toLowerCase()].avatar;
 
   return (
     <div className="tweet-container carousel-cell">
@@ -59,7 +84,7 @@ export const Tweet = (props: TweetProps) => {
           <Media>
             <MediaLeft>
               <figure className="image is-48x48">
-                <img src={avatars[props.avatar]} alt="" />
+                <img src={avatar} alt=""/>
               </figure>
             </MediaLeft>
             <MediaContent>
@@ -73,23 +98,22 @@ export const Tweet = (props: TweetProps) => {
             </MediaContent>
           </Media>
           <Content>
-            {props.content}
-            {props.image && tweetImage}
-            <br />
+            <div dangerouslySetInnerHTML={{ __html: props.content}}/>
+            <br/>
             {props.hashtags && hashTags}
-            <br />
+            <br/>
             <time>{props.time}</time>
             <Level>
               <LevelLeft>
                 <LevelItem>
                   <span className="tweet-controls has-text-info">
-                    <Icon className="fas fa-retweet" />
+                    <Icon className="fas fa-retweet"/>
                     <span>{props.retweets}</span>
                   </span>
                 </LevelItem>
                 <LevelItem>
                   <span className="tweet-controls has-text-danger">
-                    <Icon className="far fa-heart" />
+                    <Icon className="far fa-heart"/>
                     <span>{props.likes}</span>
                   </span>
                 </LevelItem>
@@ -99,5 +123,23 @@ export const Tweet = (props: TweetProps) => {
         </CardContent>
       </Card>
     </div>
+  );
+};
+
+export const MarkdownTweet = (props: MarkdownTweetProps) => {
+  const name = props.name.toLowerCase();
+  const { verified: isVerified, tag, avatar } = tweetMetadata[name];
+
+  return (
+    <Tweet
+      avatar={avatar}
+      name={props.name}
+      tag={tag}
+      verified={isVerified}
+      content={props.html}
+      hashtags={props.hashtags}
+      time={props.date}
+      retweets={props.retweets}
+      likes={props.likes}/>
   );
 };
