@@ -32,7 +32,8 @@
     "react": "16.8.0-alpha.1",
     "react-dom": "16.8.0-alpha.1",
     "react-github-corner": "^2.3.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "tslint": "^5.12.1"
   },
   "devDependencies": {
     "prettier": "^1.8.2"

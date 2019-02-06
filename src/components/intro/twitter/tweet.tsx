@@ -109,7 +109,7 @@ export const Tweet = (props: TweetProps) => {
             {props.hashtags && hashTags}
             <br/>
             <time>{readableDate}</time>
-            <Level>
+            <Level isMobile>
               <LevelLeft>
                 <LevelItem>
                   <span className="tweet-controls has-text-info">
