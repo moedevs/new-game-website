@@ -177,3 +177,12 @@ body {
   background: #7676ae;
   box-shadow: black inset;
 }
+
+.carousel {
+  * {
+    text-align: left;
+  }
+  .slide {
+    background: $website-background !important;
+  }
+}

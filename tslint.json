@@ -23,7 +23,6 @@
 		"no-eval": true,
 		"no-return-await": true,
 		"no-for-in-array": true,
-		"no-null-keyword": true,
 		"no-use-before-declare": true,
 		"no-parameter-reassignment": true,
 		"arrow-parens": false,

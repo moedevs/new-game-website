@@ -9,14 +9,12 @@ import { MarkdownTweet } from "../components/intro/twitter/tweet";
 import { GirlsQuery, TweetsQuery } from "../types";
 
 export default ({ data: { girls, tweets } }: { data: { girls: GirlsQuery, tweets: TweetsQuery } }) => {
-  const { edges } = girls;
-  console.log(tweets.edges);
   const allTweets = tweets.edges.map(tweet => ({
     ...tweet.node.frontmatter,
     html: tweet.node.html
   }));
 
-  const allGirls = edges.map(item => ({
+  const allGirls = girls.edges.map(item => ({
     ...item.node.frontmatter,
     html: item.node.html
   }));
@@ -41,7 +39,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          id
           html
           frontmatter {
             color
@@ -59,7 +56,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          id
           html
           frontmatter {
             name
