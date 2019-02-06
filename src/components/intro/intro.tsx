@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Card, CardContent, Column, Columns, Content, Section } from "bloomer";
+import { Description } from "./description";
 
 export class SiteIntro extends React.Component {
   state = {
@@ -30,15 +31,7 @@ export class SiteIntro extends React.Component {
       <div className="intro">
         <Section className="intro-section">
           <Content>
-            <Columns isCentered>
-              <Column isSize="1/2">
-                <Card>
-                  <CardContent>
-                    <h1></h1>
-                  </CardContent>
-                </Card>
-              </Column>
-            </Columns>
+            <Description/>
           </Content>
         </Section>
         <div className="twitter-slides main-carousel"

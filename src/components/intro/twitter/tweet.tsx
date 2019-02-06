@@ -13,7 +13,8 @@ import {
   MediaContent,
   MediaLeft
 } from "bloomer";
-import verified from "./verified.png";
+import { StaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 interface TweetMetadata {
   readonly [girl: string]: {
@@ -66,10 +67,23 @@ export interface MarkdownTweetProps {
 }
 
 export const Tweet = (props: TweetProps) => {
+  const query = graphql`{
+    file(relativePath: { regex: "/verified.png/" }) {
+      childImageSharp {
+        image: fixed(width: 24 height: 24 quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }`;
+
   const badge = (
-    <span className="icon is-32x32 is-vcentered">
-      <img src={verified} alt="" style={{ marginLeft: "10px" }}/>
-    </span>
+    <StaticQuery query={query} render={verified =>
+      <Img
+        fixed={verified.file.childImageSharp.image}
+        style={{ marginLeft: "5px" }}
+      />
+    }/>
   );
 
   const hashTags = props.hashtags.map(tag => (
@@ -83,7 +97,6 @@ export const Tweet = (props: TweetProps) => {
 
   // @ts-ignore [spreading an array into arguments is buggy]
   const readableDate = datefns.format(new Date(...captures), "MMMM do YYYY");
-
   return (
     <div className="tweet-container carousel-cell">
       <Card className="tweet">

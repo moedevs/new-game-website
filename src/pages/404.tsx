@@ -1,21 +1,31 @@
 import * as React from "react";
-import image from "./404.jpeg";
 import { Layout } from "../layouts/layout";
-import { Button, Container, Section } from "bloomer";
+import { Button, Container, Content, Section } from "bloomer";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
 
-export default () => (
+interface Error404Props {
+  data: {
+    file: {
+      childImageSharp: {
+        image: any;
+      }
+    }
+  };
+}
+
+export default ({ data }: Error404Props) => (
   <Layout>
-    <div style={{ overflow: "hidden", backgroundColor: "#f7f7f7" }}>
+    <div style={{ backgroundColor: "#f7f7f7" }}>
       <div style={{
         height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
-        overflow: "hidden"
+        alignItems: "center"
       }}>
-        <Section style={{ maxWidth: "1000px"}}>
-          <img src={image} alt="" style={{ maxWidth: "100%" }}/>
+        <Section style={{ maxWidth: "1000px" }}>
+          <Img fluid={data.file.childImageSharp.image}/>
           <h1 className="title has-text-grey-dark">
             We totally have a page here but you can't see it!
           </h1>
@@ -28,3 +38,15 @@ export default () => (
     </div>
   </Layout>
 );
+
+export const pageQuery = graphql`
+  {
+    file(relativePath: { regex: "/404.jpeg/" }) {
+      childImageSharp {
+        image: fluid(maxWidth: 1000 quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`;
