@@ -1,12 +1,13 @@
 ---
 order: 2
 name: Hifumi
-quote: Hello
+quote: "\"Do you like it when I smile, Sojiro?\""
 color: "#ffb8df"
 strengths:
-  - nice
+  - Literally everything
+  - Sometimes shy
 weaknesses:
-  - meme
+  - Sometimes shy
 ---
 
-Testing
+Impossibly cute

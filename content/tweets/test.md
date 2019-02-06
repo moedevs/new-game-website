@@ -1,13 +1,14 @@
 ---
-name: Hifumi
+name: Hajime
 hashtags:
   - bestcoworker
   - yes
-date: "Dec 12 2015"
+date: "2017-04-01"
 retweets: "12k"
-likes: "52"
+likes: "972"
 ---
 
-Something testing here yes boys
+I can't believe I got tickets to go to Moon Rangers!
+Thanks @Yun
 
-![hello](media/yun1.jpg)
+![](media/hajime1.jpg)

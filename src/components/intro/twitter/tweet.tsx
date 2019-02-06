@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as datefns from "date-fns";
 import {
   Card,
   CardContent,
@@ -25,7 +26,7 @@ interface TweetMetadata {
 const tweetMetadata: TweetMetadata = Object.entries({
   hifumi: {
     tag: "@HTakimoto",
-    verified: true,
+    verified: true
   },
   hajime: {
     tag: "@HShinoda",
@@ -77,6 +78,12 @@ export const Tweet = (props: TweetProps) => {
 
   const avatar = tweetMetadata[props.name.toLowerCase()].avatar;
 
+  // first index of match is the original string which we don't want
+  const [, ...captures] = props.time.match(/(\d+)-(\d+)-(\d+)/);
+
+  // @ts-ignore [spreading an array into arguments is buggy]
+  const readableDate = datefns.format(new Date(...captures), "MMMM do YYYY");
+
   return (
     <div className="tweet-container carousel-cell">
       <Card className="tweet">
@@ -98,11 +105,10 @@ export const Tweet = (props: TweetProps) => {
             </MediaContent>
           </Media>
           <Content>
-            <div dangerouslySetInnerHTML={{ __html: props.content}}/>
-            <br/>
+            <div dangerouslySetInnerHTML={{ __html: props.content }}/>
             {props.hashtags && hashTags}
             <br/>
-            <time>{props.time}</time>
+            <time>{readableDate}</time>
             <Level>
               <LevelLeft>
                 <LevelItem>
