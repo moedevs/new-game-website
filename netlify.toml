@@ -5,6 +5,9 @@
 [context.production]
   publish = "public/"
 
+[context.deploy-preview]
+  publish = "public/"
+
 [[headers]]
   [headers.values]
     X-Frame-Options = "DENY"
