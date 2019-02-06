@@ -177,10 +177,12 @@ body {
   .twitter-controls-container {
     margin-top: 10px;
   }
-
-  //.tweet-name {
-  //  margin-bottom: 1.2rem;
-  //}
+  .twitter-tag {
+    margin-top: 0 !important;
+  }
+  .tweet-name {
+    margin-bottom: 0 !important;
+  }
   .tweet-image {
     margin: 10px 0;
   }

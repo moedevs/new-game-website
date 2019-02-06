@@ -113,7 +113,7 @@ export const Tweet = (props: TweetProps) => {
                   {props.name}
                   {props.verified && badge}
                 </p>
-                <p className="subtitle has-text-grey is-6">{props.tag}</p>
+                <p className="subtitle has-text-grey is-6 twitter-tag">{props.tag}</p>
               </Container>
             </MediaContent>
           </Media>
