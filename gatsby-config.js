@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     "gatsby-plugin-sass",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -29,6 +30,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/tweets`,
         name: "tweets"
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/images`,
+        name: "images"
       }
     },
     {

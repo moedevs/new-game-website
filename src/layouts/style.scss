@@ -19,7 +19,13 @@ body {
 
 .landing {
   position: relative;
-  background-image: url('https://stmed.net/sites/default/files/new-game%21-wallpapers-26010-6987722.jpg');
+  //background-image: url('');
+  height: 100vh;
+  overflow: hidden;
+}
+
+.landing-image {
+  padding: 0;
   background-size: cover;
   background-position: center;
 }
@@ -46,7 +52,8 @@ body {
 }
 
 .banner-container {
-  position: relative;
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,6 +120,11 @@ body {
   flex-grow: 0;
 }
 
+.intro-section {
+  background-color: $website-secondary-background;
+  min-height: 70vh;
+}
+
 .footer {
   padding: 10px !important;
 }
@@ -131,6 +143,7 @@ body {
 .spaced-l {
   margin-left: 5px;
 }
+
 .twitter-wrapper {
   padding: 3rem 0;
   overflow-x: scroll;
@@ -164,6 +177,7 @@ body {
   .twitter-controls-container {
     margin-top: 10px;
   }
+
   //.tweet-name {
   //  margin-bottom: 1.2rem;
   //}
@@ -181,6 +195,7 @@ body {
   * {
     text-align: left;
   }
+
   .slide {
     background: $website-background !important;
   }
