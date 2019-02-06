@@ -25,7 +25,7 @@ export default ({ data: { girls, tweets } }: { data: { girls: GirlsQuery, tweets
       <SiteIntro>
         {allTweets.map(tweet => <MarkdownTweet {...tweet}/>)}
       </SiteIntro>
-      {allGirls.map(girl => <MarkdownGirl {...girl}/>)};
+      {allGirls.map(girl => <MarkdownGirl {...girl}/>)}
       <SiteFooter/>
     </Layout>
   );

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Button, Column, Columns, Icon, Section } from "bloomer";
 import { useEffect } from "react";
+import GithubCorner from "react-github-corner";
 
 interface AffiliatedProps {
   users: number;
@@ -53,7 +54,7 @@ export const LandingPanel = () => {
     <div className="landing">
       <div className="overlay"/>
       <div className="banner-container">
-        {/*<GithubCorner href="https://github.com/xetera/hifumi.io"/>*/}
+        <GithubCorner href="https://github.com/xetera/hifumi.io"/>
         <div className="arrow has-text-white">
           <Icon className="fa fa-arrow-down"/>
         </div>
