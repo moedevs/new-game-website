@@ -19,15 +19,15 @@ body {
 
 .landing {
   position: relative;
-  //background-image: url('');
-  height: 100vh;
   overflow: hidden;
 }
 
+/* Overriding gatsby's default behavior */
 .landing-image {
   padding: 0;
-  background-size: cover;
-  background-position: center;
+  display: block !important;
+  height: 100vh !important;
+  width: auto !important;
 }
 
 .github {

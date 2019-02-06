@@ -69,7 +69,7 @@ export const LandingPanel = () => {
     <StaticQuery query={query}
     render={data =>
       <div className="landing">
-        <Img fadeIn={true} fixed={data.file.childImageSharp.fixed}/>
+        <Img className="landing-image" fadeIn={true} fixed={data.file.childImageSharp.fixed}/>
         <div className="overlay"/>
         <div className="banner-container">
           <GithubCorner href="https://github.com/xetera/hifumi.io"/>
