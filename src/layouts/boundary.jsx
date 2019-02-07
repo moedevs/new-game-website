@@ -3,9 +3,9 @@ import * as React from "react";
 import * as Sentry from "@sentry/browser";
 
 export class ErrorBoundary extends React.Component {
-  state = { error: null } as { error: Error };
+  state = { error: null };
 
-  componentDidCatch(error: any, errorInfo: any) {
+  componentDidCatch(error, errorInfo) {
     this.setState({ error });
     Sentry.withScope(scope => {
       Object.keys(errorInfo).forEach(key => {
@@ -18,9 +18,9 @@ export class ErrorBoundary extends React.Component {
   render() {
     if (this.state.error) {
       return (
-        <a onClick={() => Sentry.showReportDialog()}>
+        <div onClick={() => Sentry.showReportDialog()}>
           Report Feedback
-        </a>
+        </div>
       );
     }
     return this.props.children;

@@ -16,9 +16,8 @@ import {
 } from "bloomer";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import { MarkdownTweetProps, TweetProps } from "../../../types";
 
-export const Tweet = (props: TweetProps) => {
+export const Tweet = (props) => {
   const verifiedQuery = graphql`{
     file(relativePath: { regex: "/verified.png/" }) {
       childImageSharp {
@@ -97,7 +96,7 @@ export const Tweet = (props: TweetProps) => {
   );
 };
 
-export const MarkdownTweet = (props: MarkdownTweetProps) => {
+export const MarkdownTweet = (props) => {
   return (
     <Tweet
       avatar={props.avatar}
