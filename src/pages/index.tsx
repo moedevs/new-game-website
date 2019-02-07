@@ -14,10 +14,17 @@ export default ({ data: { girls, tweets, users } }: IndexProps) => {
     html: tweet.node.html
   }));
 
-  const allGirls = girls.edges.map(item => ({
-    ...item.node.frontmatter,
-    html: item.node.html
-  }));
+  const allGirls = girls.edges.map(({ node }) => {
+    const { frontmatter } = node;
+    const { thumbnail, image } = frontmatter;
+
+    return ({
+      ...frontmatter,
+      html: node.html,
+      thumbnail: thumbnail && thumbnail.childImageSharp.fixed,
+      image: image.childImageSharp.fluid
+    });
+  });
 
   const allUsers: TweetMetadata = users.edges.reduce((all, { node: { frontmatter } }) => ({
     ...all,
@@ -51,6 +58,20 @@ export const pageQuery = graphql`
         node {
           html
           frontmatter {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600 quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            thumbnail {
+              childImageSharp {
+                fixed(width: 48 height: 48 quality: 100) {
+                  ...GatsbyImageSharpFixed_withWebp
+                }
+              }
+            }
             color
             name
             quote
@@ -87,8 +108,8 @@ export const pageQuery = graphql`
             tag
             avatar {
               childImageSharp {
-                fixed (width: 64 height:64 quality: 100) {
-                  ...GatsbyImageSharpFixed_tracedSVG
+                fixed (width: 64 height:64 quality: 80) {
+                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
                 }
               }
             }

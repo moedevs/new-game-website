@@ -5,16 +5,14 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "serve": "gatsby serve",
     "dev": "npm run develop",
     "format": "prettier --parser typescript --write \"src/**/*.ts*\"",
     "lint": "tslint --project .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@types/node": "^10.12.21",
-    "@types/react": "^16.8.1",
-    "@types/react-dom": "^16.0.11",
-    "@types/react-helmet": "^5.0.8",
+    "@sentry/browser": "^4.5.3",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
     "date-fns": "^1.30.1",
@@ -22,7 +20,10 @@
     "flickity-imagesloaded": "^2.0.0",
     "gatsby": "^2.0.116",
     "gatsby-image": "^2.0.29",
+    "gatsby-plugin-favicon": "^3.1.5",
     "gatsby-plugin-google-analytics": "^2.0.13",
+    "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-purgecss": "^3.1.0",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.20",
@@ -40,6 +41,10 @@
     "typescript": "^3.3.1"
   },
   "devDependencies": {
+    "@types/node": "^10.12.21",
+    "@types/react": "^16.8.1",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-helmet": "^5.0.8",
     "prettier": "^1.8.2"
   }
 }

@@ -1,7 +1,8 @@
 ---
 order: 8
 name: Blue Haired Shop Keeper
-quote: You need to be careful with that customer!
+quote: You can't be so pushy with that customer!
+image: "./media/blue-haired-shop-keeper.png"
 color: "#695ea2"
 strengths:
   - Knows how to handle a Hifumi

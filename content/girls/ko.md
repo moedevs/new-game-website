@@ -2,6 +2,8 @@
 order: 3
 name: Ko
 quote: Ko@IWannaLeaveOnTime
+image: "./media/ko.png"
+thumbnail: "./media/ko-thumbnail.png"
 color: "#a5b7ff"
 strengths:
   - Really good at Character Design

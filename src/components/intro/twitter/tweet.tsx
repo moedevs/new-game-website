@@ -62,10 +62,10 @@ export const Tweet = (props: TweetProps) => {
             </MediaLeft>
             <MediaContent>
               <Container>
-                <p className="title is-4 tweet-name is-flex">
+                <span className="title is-4 tweet-name is-flex">
                   {props.name}
                   {props.verified && badge}
-                </p>
+                </span>
                 <p className="subtitle has-text-grey is-6 twitter-tag">{props.tag}</p>
               </Container>
             </MediaContent>
@@ -73,7 +73,7 @@ export const Tweet = (props: TweetProps) => {
           <Content>
             <div className="tweet-content" dangerouslySetInnerHTML={{ __html: content }}/>
             {props.hashtags && <div>{hashTags}<br/></div>}
-            <time className="has-text-grey">{readableDate}</time>
+            <time className="has-text-grey is-size-7">{readableDate}</time>
             <Level isMobile>
               <LevelLeft>
                 <LevelItem>

@@ -8,7 +8,6 @@
   flex-direction: column;
   background-size: cover;
   overflow: hidden;
-  //min-height: 70vh;
   width: 100%;
   border-bottom: solid 2px #eee;
 
@@ -30,8 +29,7 @@
       and character info
      */
     .girl-content .columns {
-      flex-direction: row-reverse
-    ;
+      flex-direction: row-reverse;
     }
   }
 
@@ -49,37 +47,15 @@
     justify-content: flex-end;
     flex-direction: column;
     padding: 0;
-    img {
-      //max-height: 40vh;
-    }
-  }
-
-  .columns {
-    //height: 100%;
-  }
-  @media(min-width: $tablet) and (max-width: $merge-breakpoint) {
   }
 
   @media(max-width: $merge-breakpoint) {
     &:nth-child(even) > .columns {
       flex-direction: column-reverse;
-
-      /*
-        Alternating the position of
-        the strengths/weaknesses
-        and character info
-       */
-      //.girl-content .columns {
-      //  flex-direction: column;
-      //}
     }
 
     &:nth-child(odd) > .columns {
       flex-direction: column-reverse;
-
-      //.girl-content .columns {
-      //  flex-direction: column-reverse;
-      //}
     }
 
     .column {
@@ -89,7 +65,6 @@
       padding: 0;
     }
     .columns {
-      //flex-direction: column;
       justify-content: center;
     }
     .girl-image-column {
@@ -97,14 +72,15 @@
       padding: 0 10px;
       max-width: 600px;
 
-      img {
+      .girl {
         margin: 0 auto;
         max-height: 50vh;
       }
-    }
-    .girl-content {
-      //min-height: $girl-section-cutoff;
-      //margin-bottom: 80%;
+      .gatsby-image-wrapper > img {
+        height: 300px !important;
+        position: relative !important;
+        width: auto !important;
+      }
     }
   }
 
