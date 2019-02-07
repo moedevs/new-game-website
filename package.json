@@ -1,35 +1,50 @@
 {
   "name": "hifumi.io",
+  "description": "New Game website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel src/pug/index.pug",
-    "build": "parcel build src/pug/index.pug --public-url .",
-    "lint": "eslint src",
-    "publish": "gh-pages -d dist",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "dev": "npm run develop",
+    "format": "prettier --parser typescript --write \"src/**/*.ts*\"",
+    "lint": "tslint --project .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Xetera/Hifumi.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Xetera/Hifumi.io/issues"
-  },
-  "homepage": "https://github.com/Xetera/Hifumi.io#readme",
   "dependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/runtime": "^7.3.1",
+    "@sentry/browser": "^4.5.3",
+    "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
-    "eslint": "^5.12.1",
-    "font-awesome": "^4.7.0",
-    "jstransformer-markdown-it": "^2.1.0",
+    "date-fns": "^1.30.1",
+    "flickity": "^2.2.0",
+    "flickity-imagesloaded": "^2.0.0",
+    "gatsby": "^2.0.116",
+    "gatsby-image": "^2.0.29",
+    "gatsby-plugin-favicon": "^3.1.5",
+    "gatsby-plugin-google-analytics": "^2.0.13",
+    "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-purgecss": "^3.1.0",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-sass": "^2.0.10",
+    "gatsby-plugin-sharp": "^2.0.20",
+    "gatsby-plugin-typescript": "^2.0.7",
+    "gatsby-remark-images": "^3.0.3",
+    "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-transformer-remark": "^2.2.4",
+    "gatsby-transformer-sharp": "^2.1.13",
     "node-sass": "^4.11.0",
-    "parcel-bundler": "^1.11.0",
-    "pug": "^2.0.3"
+    "react": "16.8.0-alpha.1",
+    "react-dom": "16.8.0-alpha.1",
+    "react-github-corner": "^2.3.0",
+    "react-helmet": "^5.2.0",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.21",
+    "@types/react": "^16.8.1",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-helmet": "^5.0.8",
+    "prettier": "^1.8.2"
   }
 }
