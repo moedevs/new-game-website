@@ -6,6 +6,7 @@ export class SiteIntro extends React.Component {
   state = {
     flickity: {}, options: {
       lazyLoad: 1,
+      alignCell: "center",
       imagesLoaded: true,
       contain: true
     }
@@ -29,11 +30,11 @@ export class SiteIntro extends React.Component {
   render() {
     return (
       <div className="intro">
-        <Section className="intro-section">
-          <Content>
-            <Description/>
-          </Content>
-        </Section>
+        {/*<Section className="intro-section">*/}
+          {/*<Content>*/}
+            {/*<Description/>*/}
+          {/*</Content>*/}
+        {/*</Section>*/}
         <div className="twitter-slides main-carousel"
              id="carousel">
           {this.props.children}

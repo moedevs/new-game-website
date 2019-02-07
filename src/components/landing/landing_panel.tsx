@@ -10,7 +10,6 @@ interface AffiliatedProps {
   type: "discord" | "reddit";
 }
 
-
 const Affiliated = ({ users, type }: AffiliatedProps) => {
   const isDiscord = type === "discord";
 

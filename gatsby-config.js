@@ -39,6 +39,13 @@ module.exports = {
         name: "images"
       }
     },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     path: `${__dirname}/content/tweets/users`,
+    //     name: "users"
+    //   }
+    // },
     {
       resolve:"gatsby-transformer-remark",
       options: {

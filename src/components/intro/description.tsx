@@ -17,4 +17,4 @@ export const Description = () =>
         </CardContent>
       </Card>
     </Column>
-  </Columns>
+  </Columns>;
