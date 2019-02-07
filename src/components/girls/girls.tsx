@@ -24,6 +24,7 @@ export const girls = [
   "umiko",
   "momo",
   "naru",
+  "shizuku",
   "blue-haired-shop-keeper"
 ];
 
