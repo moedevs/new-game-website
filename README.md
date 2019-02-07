@@ -27,5 +27,19 @@ a single pull request away from going live!
 3. `npm start`
 4. Go to the address it gave you, and work away!
 
+#### Adding new tweets
+
+Tweets are declared under `/content/tweets`. 
+
+To add a new user, create a new `.md` file similar to the
+existing ones.
+
+Twitter users are declared under `/content/tweets/users`
+
+To add a new tweet, add a new `.md` file in the same file.
+The tweets are sorted by date in the format`YYYY-MM-DD`.
+
+To reference a user, give the `name` property in the markdown
+frontmatter the same name as the user inside the `/users` folder.
 
 ##### Made with <3 by the /r/NewGame community

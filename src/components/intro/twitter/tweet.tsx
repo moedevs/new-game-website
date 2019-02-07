@@ -1,5 +1,6 @@
 import * as React from "react";
-import * as datefns from "date-fns";
+import * as parse from "date-fns/parse";
+import * as format from "date-fns/format";
 import {
   Card,
   CardContent,
@@ -13,77 +14,42 @@ import {
   MediaContent,
   MediaLeft
 } from "bloomer";
-import verified from "./verified.png";
-
-interface TweetMetadata {
-  readonly [girl: string]: {
-    tag: string;
-    verified: boolean;
-    avatar: string;
-  };
-}
-
-const tweetMetadata: TweetMetadata = Object.entries({
-  hifumi: {
-    tag: "@HTakimoto",
-    verified: true
-  },
-  hajime: {
-    tag: "@HShinoda",
-    verified: true
-  },
-  aoba: {
-    tag: "@ASuzukaze",
-    verified: true
-  }
-}).reduce((all, [k, v]) => ({
-  ...all,
-  [k]: {
-    ...v,
-    avatar: require(`./avatars/${k}.jpg`)
-  }
-}), {});
-
-interface TweetProps {
-  avatar: string;
-  name: string;
-  tag: string;
-  verified: boolean;
-  content: string;
-  hashtags: string[];
-  time: string;
-  retweets: string;
-  likes: string;
-}
-
-export interface MarkdownTweetProps {
-  name: string;
-  hashtags: string[];
-  date: string;
-  retweets: string;
-  likes: string;
-  html: string;
-}
+import { StaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { MarkdownTweetProps, TweetProps } from "../../../types";
 
 export const Tweet = (props: TweetProps) => {
+  const verifiedQuery = graphql`{
+    file(relativePath: { regex: "/verified.png/" }) {
+      childImageSharp {
+        image: fixed(width: 24 height: 24 quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }`;
+
   const badge = (
-    <span className="icon is-32x32 is-vcentered">
-      <img src={verified} alt="" style={{ marginLeft: "10px" }}/>
-    </span>
+    <StaticQuery query={verifiedQuery} render={({ file }) =>
+      <Img
+        fixed={file.childImageSharp.image}
+        style={{ marginLeft: "5px" }}
+      />
+    }/>
   );
 
-  const hashTags = props.hashtags.map(tag => (
-    <a href={tag} key={tag}>{`#${tag} `}</a>
+  const hashTags = props.hashtags && props.hashtags.map(tag => (
+    <a href={`https://twitter.com/hashtag/${tag}`} key={tag}>{`#${tag} `}</a>
   ));
 
-  const avatar = tweetMetadata[props.name.toLowerCase()].avatar;
+  // get fake mentions a link color
+  const content = props.content
+    .replace(/(@[^\b]*)/g, "<span class='has-text-link'>$1</span>");
 
-  // first index of match is the original string which we don't want
-  const [, ...captures] = props.time.match(/(\d+)-(\d+)-(\d+)/);
+  const parsed = parse(props.time).toISOString();
 
   // @ts-ignore [spreading an array into arguments is buggy]
-  const readableDate = datefns.format(new Date(...captures), "MMMM do YYYY");
-
+  const readableDate = format(parsed, "MMMM Do YYYY");
   return (
     <div className="tweet-container carousel-cell">
       <Card className="tweet">
@@ -91,7 +57,7 @@ export const Tweet = (props: TweetProps) => {
           <Media>
             <MediaLeft>
               <figure className="image is-48x48">
-                <img src={avatar} alt=""/>
+                <Img style={{ position: "static" }} fixed={props.avatar} alt=""/>
               </figure>
             </MediaLeft>
             <MediaContent>
@@ -100,15 +66,14 @@ export const Tweet = (props: TweetProps) => {
                   {props.name}
                   {props.verified && badge}
                 </p>
-                <p className="subtitle has-text-grey is-6">{props.tag}</p>
+                <p className="subtitle has-text-grey is-6 twitter-tag">{props.tag}</p>
               </Container>
             </MediaContent>
           </Media>
           <Content>
-            <div dangerouslySetInnerHTML={{ __html: props.content }}/>
-            {props.hashtags && hashTags}
-            <br/>
-            <time>{readableDate}</time>
+            <div className="tweet-content" dangerouslySetInnerHTML={{ __html: content }}/>
+            {props.hashtags && <div>{hashTags}<br/></div>}
+            <time className="has-text-grey">{readableDate}</time>
             <Level isMobile>
               <LevelLeft>
                 <LevelItem>
@@ -133,15 +98,12 @@ export const Tweet = (props: TweetProps) => {
 };
 
 export const MarkdownTweet = (props: MarkdownTweetProps) => {
-  const name = props.name.toLowerCase();
-  const { verified: isVerified, tag, avatar } = tweetMetadata[name];
-
   return (
     <Tweet
-      avatar={avatar}
+      avatar={props.avatar}
       name={props.name}
-      tag={tag}
-      verified={isVerified}
+      tag={props.tag}
+      verified={props.verified}
       content={props.html}
       hashtags={props.hashtags}
       time={props.date}
