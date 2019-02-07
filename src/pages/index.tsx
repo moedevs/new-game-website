@@ -26,8 +26,6 @@ export default ({ data: { girls, tweets, users } }: IndexProps) => {
     });
   });
 
-  console.log(allGirls)
-
   const allUsers: TweetMetadata = users.edges.reduce((all, { node: { frontmatter } }) => ({
     ...all,
     [frontmatter.name]: {
