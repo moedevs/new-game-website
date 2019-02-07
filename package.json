@@ -12,6 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@sentry/browser": "^4.5.3",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
     "date-fns": "^1.30.1",
