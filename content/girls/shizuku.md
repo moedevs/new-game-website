@@ -1,5 +1,5 @@
 ---
-order: 13
+order: 7
 name: Shizuku
 quote: "You're cute."
 color: "#ffba0f"
