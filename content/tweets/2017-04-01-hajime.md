@@ -1,0 +1,14 @@
+---
+name: Hajime
+hashtags:
+  - bestcoworker
+  - yes
+date: "2017-04-01"
+retweets: "12k"
+likes: "972"
+---
+
+I can't believe I got tickets to go to Moon Rangers!
+Thanks @Yun
+
+![](media/hajime-1.jpg)
