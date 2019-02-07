@@ -54,12 +54,13 @@ module.exports = {
         ]
       }
     },
-    // {
-    //   resolve: "gatsby-plugin-purgecss",
-    //   options: {
-    //     printRejected: true
-    //   }
-    // },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true,
+        purgeOnly: ['/bulma.scss']
+      }
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
