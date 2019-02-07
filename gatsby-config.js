@@ -39,13 +39,6 @@ module.exports = {
         name: "images"
       }
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     path: `${__dirname}/content/tweets/users`,
-    //     name: "users"
-    //   }
-    // },
     {
       resolve:"gatsby-transformer-remark",
       options: {
@@ -53,11 +46,33 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
+              withWebp: true,
+              maxWidth: 500,
               quality: 100
             }
           }
         ]
       }
     },
+    // {
+    //   resolve: "gatsby-plugin-purgecss",
+    //   options: {
+    //     printRejected: true
+    //   }
+    // },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "New Game!",
+        short_name: "New Game!",
+        start_url: "/",
+        lang: "en-US",
+        background_color: "#90adff",
+        theme_color: "#90adff",
+        display: "standalone",
+        icon: "content/images/favicon.jpg",
+        include_favicon: true
+      }
+    }
   ],
 };

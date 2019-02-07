@@ -39,6 +39,16 @@ export interface GirlsQuery {
         color: string;
         strengths: string[];
         weaknesses: string[];
+        thumbnail: {
+          childImageSharp: {
+            fixed: any;
+          }
+        }
+        image: {
+          childImageSharp: {
+            fluid: any;
+          }
+        }
       }
     }
   }>;

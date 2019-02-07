@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { WithChildren } from "../../types";
+import Img from "gatsby-image";
 import {
   Card,
   CardContent, CardHeader, CardHeaderTitle,
@@ -35,8 +36,8 @@ interface GirlTitleProps {
 
 interface GirlProps {
   color: string;
-  thumbnail: string;
-  image: string;
+  thumbnail: any;
+  image: any;
   name: string;
   quote: string;
   weaknesses: string[];
@@ -55,26 +56,6 @@ interface GirlAssets {
   };
 }
 
-const girlAssets: GirlAssets = girls.reduce((all, girl) => {
-  const name = girl.toLowerCase();
-  let thumbnail;
-  try {
-    thumbnail = require(`./assets/${name}-thumbnail.png`);
-  } catch (e) {/* optional */
-  }
-  try {
-    return ({
-      ...all,
-      [name]: {
-        base: require(`./assets/${name}.png`),
-        thumbnail
-      }
-    });
-  } catch (e) {
-    return all;
-  }
-}, {});
-
 const GirlList = ({ name, items }: GirlList) => (
   <div className="card is-size-6-mobile is-size-6-tablet is-size-5-desktop">
     <CardHeader className="is-size-6-mobile">
@@ -88,10 +69,10 @@ const GirlList = ({ name, items }: GirlList) => (
   </div>
 );
 
-const GirlImage = ({ image }: { image: string }) => (
+const GirlImage = ({ image }: { image: any }) => (
   <LevelItem>
     <div className="icon is-large">
-      <img src={image} alt="" className="image is-rounded"/>
+      <Img fixed={image} className="image is-rounded"/>
     </div>
   </LevelItem>
 );
@@ -124,7 +105,7 @@ export const Girl = (options: GirlProps & WithChildren) => (
   <div className="girl-section" style={{ backgroundColor: options.color }}>
     <Columns isMobile className="narrow-width">
       <Column isSize="1/4" className="girl-image-column">
-        <img src={options.image} alt="" className="image girl"/>
+        <img src={options.image.srcWebp} alt="" className="image girl"/>
       </Column>
       <Column className="girl-content">
         <Section>
@@ -153,16 +134,12 @@ export const Girl = (options: GirlProps & WithChildren) => (
 );
 
 export const MarkdownGirl = (props: GirlProps & { html: string }) => {
-  const { name, quote } = props;
-  const parsed = name.toLowerCase().replace(/\s+/g, "-");
-  const asset = girlAssets[parsed];
-
   return (
     <Girl color={props.color}
-          image={asset.base}
-          quote={quote}
-          name={name}
-          thumbnail={asset.thumbnail}
+          image={props.image}
+          quote={props.quote}
+          name={props.name}
+          thumbnail={props.thumbnail}
           weaknesses={props.weaknesses}
           strengths={props.strengths}
     >

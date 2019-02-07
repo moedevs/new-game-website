@@ -20,7 +20,7 @@ const Affiliated = ({ users, type }: AffiliatedProps) => {
     >
       <Icon isSize="large" className={`fab fa-${type}`}/>
       <span className="is-size-5-desktop is-size-6-tablet">
-        <b id="discord-users">{users}</b>
+        <b>{users}</b>
         {isDiscord ? " members" : " redditors"}
       </span>
     </a>
@@ -57,7 +57,7 @@ export const LandingPanel = () => {
       file(relativePath: { regex: "/landing.jpg/" }) {
         childImageSharp {
           fixed(width: 1920 height: 1080 quality: 100) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
@@ -65,8 +65,7 @@ export const LandingPanel = () => {
   `;
 
   return (
-    <StaticQuery query={query}
-    render={data =>
+    <StaticQuery query={query} render={data =>
       <div className="landing">
         <Img className="landing-image" fadeIn={true} fixed={data.file.childImageSharp.fixed}/>
         <div className="overlay"/>
