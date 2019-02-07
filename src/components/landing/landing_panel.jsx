@@ -1,16 +1,11 @@
 import * as React from "react";
-import { Button, Column, Columns, Icon, Section } from "bloomer";
+import { Column, Columns, Icon, Section } from "bloomer";
 import { useEffect } from "react";
 import GithubCorner from "react-github-corner";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-interface AffiliatedProps {
-  users: number;
-  type: "discord" | "reddit";
-}
-
-const Affiliated = ({ users, type }: AffiliatedProps) => {
+const Affiliated = ({ users, type }) => {
   const isDiscord = type === "discord";
 
   return (
@@ -28,11 +23,12 @@ const Affiliated = ({ users, type }: AffiliatedProps) => {
 };
 
 export const LandingPanel = () => {
+  const DEFAULT_USERS = 0;
   const defaultEndpoint = "https://whamer.000webhostapp.com/api/hifumi.php";
-  const [discord, setDiscord] = React.useState(0);
-  const [reddit, setReddit] = React.useState(0);
+  const [discord, setDiscord] = React.useState(DEFAULT_USERS);
+  const [reddit, setReddit] = React.useState(DEFAULT_USERS);
 
-  const getUserData = (endpoint: string) =>
+  const getUserData = (endpoint) =>
     fetch(endpoint, { mode: "cors" })
       .then(r => r.json())
       .then(r => {
@@ -52,17 +48,15 @@ export const LandingPanel = () => {
     "shadowed"
   ];
 
-  const query = graphql`
-    {
-      file(relativePath: { regex: "/landing.jpg/" }) {
-        childImageSharp {
-          fixed(width: 1920 height: 1080 quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
+  const query = graphql`{
+    file(relativePath: { regex: "/landing.jpg/" }) {
+      childImageSharp {
+        fixed(width: 1920 height: 1080 quality: 100) {
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
-  `;
+  }`;
 
   return (
     <StaticQuery query={query} render={data =>
