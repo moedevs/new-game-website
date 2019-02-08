@@ -1,7 +1,7 @@
 ---
 order: 3
 name: Ko
-quote: KoIWannaLeaveOnTime
+quote: Ko@IWannaLeaveOnTime
 image: "./media/ko.png"
 thumbnail: "./media/ko-thumbnail.png"
 color: "#a5b7ff"
