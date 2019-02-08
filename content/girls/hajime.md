@@ -1,7 +1,9 @@
 ---
 order: 5
 name: Hajime
-quote: "You're such a coward, Yun!"
+quote: Testing
+image: "./media/hajime.png"
+thumbnail: "./media/hajime-thumbnail.png"
 color: "#F8BC74"
 strengths:
   - Has cool toys
