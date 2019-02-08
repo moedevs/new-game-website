@@ -7,8 +7,8 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "dev": "npm run develop",
-    "format": "prettier --parser typescript --write \"src/**/*.ts*\"",
-    "lint": "tslint --project .",
+    "format": "prettier --write \"src/**/*.jsx*\"",
+    "lint": "eslint \"src/**/*.jsx\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
     "date-fns": "^1.30.1",
+    "eslint-plugin-react": "^7.12.4",
     "flickity": "^2.2.0",
     "flickity-imagesloaded": "^2.0.0",
     "gatsby": "^2.0.116",
@@ -27,7 +28,6 @@
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.20",
-    "gatsby-plugin-typescript": "^2.0.7",
     "gatsby-remark-images": "^3.0.3",
     "gatsby-source-filesystem": "^2.0.20",
     "gatsby-transformer-remark": "^2.2.4",
@@ -36,15 +36,11 @@
     "react": "16.8.0-alpha.1",
     "react-dom": "16.8.0-alpha.1",
     "react-github-corner": "^2.3.0",
-    "react-helmet": "^5.2.0",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.1"
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "@types/node": "^10.12.21",
-    "@types/react": "^16.8.1",
-    "@types/react-dom": "^16.0.11",
-    "@types/react-helmet": "^5.0.8",
+    "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
     "prettier": "^1.8.2"
   }
 }

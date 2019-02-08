@@ -1,6 +1,4 @@
 import * as React from "react";
-
-import { WithChildren } from "../../types";
 import Img from "gatsby-image";
 import {
   Card,
@@ -13,51 +11,7 @@ import {
   Section
 } from "bloomer";
 
-export const girls = [
-  "hifumi",
-  "aoba",
-  "ko",
-  "yun",
-  "hajime",
-  "nene",
-  "nene",
-  "rin",
-  "umiko",
-  "momo",
-  "naru",
-  "shizuku",
-  "blue-haired-shop-keeper"
-];
-
-interface GirlTitleProps {
-  name: string;
-  thumbnail?: string;
-  quote: string;
-}
-
-interface GirlProps {
-  color: string;
-  thumbnail: any;
-  image: any;
-  name: string;
-  quote: string;
-  weaknesses: string[];
-  strengths: string[];
-}
-
-interface GirlList {
-  name: string;
-  items: string[];
-}
-
-interface GirlAssets {
-  readonly [k: string]: {
-    base: string;
-    thumbnail: string;
-  };
-}
-
-const GirlList = ({ name, items }: GirlList) => (
+const GirlList = ({ name, items }) => (
   <div className="card is-size-6-mobile is-size-6-tablet is-size-5-desktop">
     <CardHeader className="is-size-6-mobile">
       <CardHeaderTitle>{name}</CardHeaderTitle>
@@ -70,7 +24,7 @@ const GirlList = ({ name, items }: GirlList) => (
   </div>
 );
 
-const GirlImage = ({ image }: { image: any }) => (
+const GirlImage = ({ image }) => (
   <LevelItem>
     <div className="icon is-large">
       <Img fixed={image} className="image is-rounded"/>
@@ -78,7 +32,7 @@ const GirlImage = ({ image }: { image: any }) => (
   </LevelItem>
 );
 
-const GirlContent = ({ children }: WithChildren) => (
+const GirlContent = ({ children }) => (
   <Card className="card">
     <CardContent className="is-size-5-mobile is-size-5-tablet is-size-4-desktop content">
       {children}
@@ -86,7 +40,7 @@ const GirlContent = ({ children }: WithChildren) => (
   </Card>
 );
 
-const GirlTitle = ({ thumbnail, name, quote }: GirlTitleProps) => (
+const GirlTitle = ({ thumbnail, name, quote }) => (
   <Card>
     <CardContent className="card is-size-7-mobile is-size-5-tablet is-size-4-desktop">
       <Level isMobile>
@@ -102,7 +56,7 @@ const GirlTitle = ({ thumbnail, name, quote }: GirlTitleProps) => (
   </Card>
 );
 
-export const Girl = (options: GirlProps & WithChildren) => (
+export const Girl = (options) => (
   <div className="girl-section" style={{ backgroundColor: options.color }}>
     <Columns isMobile className="narrow-width">
       <Column isSize="1/4" className="girl-image-column">
@@ -134,7 +88,7 @@ export const Girl = (options: GirlProps & WithChildren) => (
   </div>
 );
 
-export const MarkdownGirl = (props: GirlProps & { html: string }) => {
+export const MarkdownGirl = (props) => {
   return (
     <Girl color={props.color}
           image={props.image}

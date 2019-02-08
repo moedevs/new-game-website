@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Card, CardContent, Column, Columns, Content, Section } from "bloomer";
-import { Description } from "./description";
 
 export class SiteIntro extends React.Component {
   state = {
@@ -30,11 +28,6 @@ export class SiteIntro extends React.Component {
   render() {
     return (
       <div className="intro">
-        {/*<Section className="intro-section">*/}
-          {/*<Content>*/}
-            {/*<Description/>*/}
-          {/*</Content>*/}
-        {/*</Section>*/}
         <div className="twitter-slides main-carousel"
              id="carousel">
           {this.props.children}

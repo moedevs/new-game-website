@@ -1,20 +1,10 @@
 import * as React from "react";
 import { Layout } from "../layouts/layout";
-import { Button, Container, Content, Section } from "bloomer";
+import { Button, Section } from "bloomer";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 
-interface Error404Props {
-  data: {
-    file: {
-      childImageSharp: {
-        image: any;
-      }
-    }
-  };
-}
-
-export default ({ data }: Error404Props) => (
+export default ({ data }) => (
   <Layout>
     <div style={{ backgroundColor: "#f7f7f7" }}>
       <div style={{
@@ -39,14 +29,12 @@ export default ({ data }: Error404Props) => (
   </Layout>
 );
 
-export const pageQuery = graphql`
-  {
-    file(relativePath: { regex: "/404.jpeg/" }) {
-      childImageSharp {
-        image: fluid(maxWidth: 1000 quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+export const pageQuery = graphql`{
+  file(relativePath: { regex: "/404.jpeg/" }) {
+    childImageSharp {
+      image: fluid(maxWidth: 1000 quality: 100) {
+        ...GatsbyImageSharpFluid_tracedSVG
       }
     }
   }
-`;
+}`;
