@@ -12,10 +12,10 @@ Most discussion will be in the `#tech-talk` channel.
 
 ### Tech
 
-https://hifumi.io is made using parcel which compiles:
+<img width="64" align="left" src="https://seeklogo.com/images/G/gatsby-logo-1A245AD37F-seeklogo.com.png">
 
-* Pug templates
-* Scss
+The website is made using [gatsby](https://www.gatsbyjs.org/) which lets us to separate our dynamic 
+data from our components, allowing us to optimize and add new content much more easily.
 
 Netlify builds automatically from `master` so your changes are 
 a single pull request away from going live!
@@ -24,7 +24,7 @@ a single pull request away from going live!
 
 1. `git clone https://github.com/Xetera/hifumi.io.git`
 2. `npm install`
-3. `npm start`
+3. `npm run dev`
 4. Go to the address it gave you, and work away!
 
 #### Adding new tweets
