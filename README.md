@@ -1,3 +1,5 @@
+<img align="center" src="https://travis-ci.org/Xetera/hifumi.io.svg?branch=master"/>
+
 # New Game!
 ## hifumi.io
 
@@ -43,3 +45,4 @@ To reference a user, give the `name` property in the markdown
 frontmatter the same name as the user inside the `/users` folder.
 
 ##### Made with <3 by the /r/NewGame community
+

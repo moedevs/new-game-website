@@ -5,6 +5,11 @@ import GithubCorner from "react-github-corner";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
+const randomNumber = (count) =>
+  [...Array(count)]
+    .map(() => Math.floor(Math.random() * 9))
+    .join("");
+
 const Affiliated = ({ users, type }) => {
   const isDiscord = type === "discord";
 
@@ -36,7 +41,11 @@ export const LandingPanel = () => {
         setReddit(r.subscribers);
       });
 
-  useEffect(() => void getUserData(defaultEndpoint), []);
+  // const rollNumbers = () =>
+
+  useEffect(() => {
+    void getUserData(defaultEndpoint);
+  }, []);
 
   const title = [
     "is-size-1-desktop",
@@ -59,38 +68,38 @@ export const LandingPanel = () => {
   }`;
 
   return (
-    <StaticQuery query={query} render={data =>
-      <div className="landing">
+    <div className="landing">
+      <StaticQuery query={query} render={data =>
         <Img className="landing-image" fadeIn={true} fixed={data.file.childImageSharp.fixed}/>
-        <div className="overlay"/>
-        <div className="banner-container">
-          <GithubCorner href="https://github.com/xetera/hifumi.io"/>
-          <div className="arrow has-text-white">
-            <Icon className="fa fa-arrow-down"/>
-          </div>
-          <Columns>
-            <Column>
-              <div className="is-flex banner-text-container">
-                <h1 className={title.join(" ")}>New Game!</h1>
-                <p className="has-text-white-ter banner-text has-text-centered shadowed">
-                  {" "}
-                  ニューゲーム
-                </p>
-              </div>
-              <Section>
-                <Columns>
-                  <Column isSize="1/2">
-                    <Affiliated users={discord} type="discord"/>
-                  </Column>
-                  <Column isSize="1/2">
-                    <Affiliated users={reddit} type="reddit"/>
-                  </Column>
-                </Columns>
-              </Section>
-            </Column>
-          </Columns>
+      }/>
+      <div className="overlay"/>
+      <div className="banner-container">
+        <GithubCorner href="https://github.com/xetera/hifumi.io"/>
+        <div className="arrow has-text-white">
+          <Icon className="fa fa-arrow-down"/>
         </div>
+        <Columns>
+          <Column>
+            <div className="is-flex banner-text-container">
+              <h1 className={title.join(" ")}>New Game!</h1>
+              <p className="has-text-white-ter banner-text has-text-centered shadowed">
+                {" "}
+                ニューゲーム
+              </p>
+            </div>
+            <Section>
+              <Columns>
+                <Column isSize="1/2">
+                  <Affiliated users={discord} type="discord"/>
+                </Column>
+                <Column isSize="1/2">
+                  <Affiliated users={reddit} type="reddit"/>
+                </Column>
+              </Columns>
+            </Section>
+          </Column>
+        </Columns>
       </div>
-    }/>
+    </div>
   );
 };

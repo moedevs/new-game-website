@@ -14,12 +14,12 @@ export default ({ data: { girls, tweets, users } }) => {
   }));
 
   const allGirls = girls.edges.map(({ node }) => {
-    const { frontmatter } = node;
+    const { frontmatter, html } = node;
     const { thumbnail, image } = frontmatter;
 
     return ({
       ...frontmatter,
-      html: node.html,
+      html,
       thumbnail: thumbnail && thumbnail.childImageSharp.fixed,
       image: image.childImageSharp.fluid
     });

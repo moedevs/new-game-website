@@ -9,6 +9,7 @@ strengths:
   - nice
 weaknesses:
   - meme
+role: "Animation"
 ---
 
 Testing

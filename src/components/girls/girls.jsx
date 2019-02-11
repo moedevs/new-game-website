@@ -7,8 +7,8 @@ import {
   Columns,
   Content,
   Level, LevelItem,
-  LevelLeft,
-  Section
+  LevelLeft, LevelRight,
+  Section, Tag
 } from "bloomer";
 
 const GirlList = ({ name, items }) => (
@@ -40,7 +40,7 @@ const GirlContent = ({ children }) => (
   </Card>
 );
 
-const GirlTitle = ({ thumbnail, name, quote }) => (
+const GirlTitle = ({ thumbnail, name, quote, tag, role }) => (
   <Card>
     <CardContent className="card is-size-7-mobile is-size-5-tablet is-size-4-desktop">
       <Level isMobile>
@@ -50,6 +50,9 @@ const GirlTitle = ({ thumbnail, name, quote }) => (
             <p className="title is-size-4-mobile">{name}</p>
           </div>
         </LevelLeft>
+        <LevelRight>
+          <Tag  isColor="info" className="shrink no-grow">{role}</Tag>
+        </LevelRight>
       </Level>
       <p className="subtitle is-size-6-mobile">{quote}</p>
     </CardContent>
@@ -71,6 +74,7 @@ export const Girl = (options) => (
                   thumbnail={options.thumbnail}
                   name={options.name}
                   quote={options.quote}
+                  role={options.role}
                 />
                 <br/>
                 <GirlContent>{options.children}</GirlContent>
@@ -89,16 +93,10 @@ export const Girl = (options) => (
 );
 
 export const MarkdownGirl = (props) => {
+  const { html, ...content } = props;
   return (
-    <Girl color={props.color}
-          image={props.image}
-          quote={props.quote}
-          name={props.name}
-          thumbnail={props.thumbnail}
-          weaknesses={props.weaknesses}
-          strengths={props.strengths}
-    >
-      <div dangerouslySetInnerHTML={{ __html: props.html }}/>
+    <Girl {...content}>
+      <div dangerouslySetInnerHTML={{ __html: html }}/>
     </Girl>
   );
 };
