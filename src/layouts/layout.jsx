@@ -8,11 +8,17 @@ import "./style.scss";
 import "./github.scss";
 import { ErrorBoundary } from "./boundary";
 
-export const Layout = ({ children }) =>
-  <div>
-    <Header/>
-    {Sentry.init({ dsn: "https://7d23ee1165d84ce2bd7d4b0800f6f3aa@sentry.io/1260791" })}
-    <ErrorBoundary>
-      {children}
-    </ErrorBoundary>
-  </div>;
+export const Layout = ({ children }) => {
+  if (process.env.NODE_ENV === "production") {
+    Sentry.init({ dsn: "https://7d23ee1165d84ce2bd7d4b0800f6f3aa@sentry.io/1260791" });
+  }
+
+  return (
+    <div>
+      <Header/>
+      <ErrorBoundary>
+        {children}
+      </ErrorBoundary>
+    </div>
+  );
+};
