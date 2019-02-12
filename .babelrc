@@ -1,4 +1,13 @@
 {
-  "presets": ["react", "env"],
-  "plugins": ["emotion"]
+  "plugins": ["emotion"],
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
+  ]
 }
