@@ -38,8 +38,8 @@ export class SiteIntro extends React.Component {
     return (
       <div className="intro">
         <FanArt />
-        <div>
-          <div className="is-flex">
+        <div style={{ backgroundColor: "#7e78d6"}}>
+          <div className="is-flex" style={{ paddingTop: 20 }}>
             <h1
               className="title has-text-white-ter is-2"
               style={{ margin: "0 auto"}}

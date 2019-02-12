@@ -9,6 +9,7 @@ strengths:
   - nice
 weaknesses:
   - meme
+role: "Char. Designer"
 ---
 
 Testing

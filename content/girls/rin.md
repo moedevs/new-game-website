@@ -9,6 +9,7 @@ strengths:
   - nice
 weaknesses:
   - meme
+role: "Art Director"
 ---
 
 Testing

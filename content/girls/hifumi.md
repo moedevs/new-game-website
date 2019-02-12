@@ -10,6 +10,7 @@ strengths:
   - Sometimes shy
 weaknesses:
   - Sometimes shy
+role: "Char. Design"
 ---
 
 Impossibly cute
