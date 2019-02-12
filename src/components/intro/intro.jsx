@@ -1,14 +1,20 @@
 import * as React from "react";
 import { FanArt } from "./fan_art";
 import { CtxFanarts } from "../../utils";
+import { Section } from "bloomer";
 
 export class SiteIntro extends React.Component {
   state = {
-    flickity: {}, options: {
+    flickity: {},
+    index: 1,
+    options: {
       lazyLoad: 1,
       alignCell: "center",
       imagesLoaded: true,
-      contain: true
+      contain: true,
+      on: {
+        change: (index) => this.setState({ index: index + 1 })
+      }
     }
   };
 
@@ -31,10 +37,20 @@ export class SiteIntro extends React.Component {
   render() {
     return (
       <div className="intro">
-          <FanArt/>
-        <div className="twitter-slides main-carousel"
-             id="carousel">
-          {this.props.children}
+        <FanArt />
+        <div>
+          <div className="is-flex">
+            <h1
+              className="title has-text-white-ter is-2"
+              style={{ margin: "0 auto"}}
+            >
+              {this.state.index}/{this.props.children.length} Tweets
+            </h1>
+          </div>
+          <div className="twitter-slides main-carousel no-padding-top"
+               id="carousel">
+            {this.props.children}
+          </div>
         </div>
       </div>
     );

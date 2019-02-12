@@ -112,6 +112,7 @@ body {
   @media(max-width: $merge-breakpoint) {
     width: 100%;
   }
+  margin: 0 auto;
   width: 85%;
 }
 
@@ -141,7 +142,6 @@ body {
 .content ul {
   margin-top: 0;
 }
-
 
 .spaced-l {
   margin-left: 5px;
@@ -207,4 +207,20 @@ body {
   .slide {
     background: $website-background !important;
   }
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.fanart-tag {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
 }

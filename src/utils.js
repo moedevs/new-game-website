@@ -10,6 +10,8 @@ export function* infinite(arr) {
   }
 }
 
+export const anchorize = href => ({ href, target: "_blank" });
+
 export const next = (iter) => iter.next().value;
 
 export const seconds = (sec) => sec * 1000;
