@@ -1,3 +1,13 @@
+const imageSources = ["girls", "tweets", "images"];
+
+const imageSourceFolders = imageSources.map(name => ({
+  resolve: "gatsby-source-filesystem",
+  options: {
+    path: `${__dirname}/content/${name}`,
+    name
+  }
+}));
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Typescript Starter`,
@@ -17,27 +27,7 @@ module.exports = {
         respectDNT: true
       }
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/content/girls`,
-        name: "girls"
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/content/tweets`,
-        name: "tweets"
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/content/images`,
-        name: "images"
-      }
-    },
+    ...imageSourceFolders,
     {
       resolve:"gatsby-transformer-remark",
       options: {
@@ -58,6 +48,12 @@ module.exports = {
       options: {
         printRejected: true,
         purgeOnly: ['/bulma.scss']
+      }
+    },
+    {
+      resolve: "gatsby-transformer-yaml",
+      options: {
+        path: "./content/images"
       }
     },
     {

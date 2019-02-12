@@ -1,4 +1,6 @@
 import * as React from "react";
+import { FanArt } from "./fan_art";
+import { CtxFanarts } from "../../utils";
 
 export class SiteIntro extends React.Component {
   state = {
@@ -25,9 +27,11 @@ export class SiteIntro extends React.Component {
     });
   }
 
+
   render() {
     return (
       <div className="intro">
+          <FanArt/>
         <div className="twitter-slides main-carousel"
              id="carousel">
           {this.props.children}
