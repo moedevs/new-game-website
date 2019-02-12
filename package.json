@@ -37,7 +37,8 @@
     "react": "16.8.0-alpha.1",
     "react-dom": "16.8.0-alpha.1",
     "react-github-corner": "^2.3.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-spinners": "^0.5.1"
   },
   "devDependencies": {
     "eslint": "^5.13.0",

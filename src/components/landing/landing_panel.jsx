@@ -4,14 +4,23 @@ import { useEffect } from "react";
 import GithubCorner from "react-github-corner";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import Loader from "react-spinners/PulseLoader";
 
-const randomNumber = (count) =>
-  [...Array(count)]
-    .map(() => Math.floor(Math.random() * 9))
-    .join("");
+import "../../layouts/animation.scss";
 
 const Affiliated = ({ users, type }) => {
   const isDiscord = type === "discord";
+
+  const placeholder =
+    <Loader size={10} css={{ display: "inline-block" }} color={"#ffaaaf"}/>;
+
+  const content =
+    <span className="is-size-5-desktop is-size-6-tablet">
+      <b>
+        {users}
+      </b>
+      {isDiscord ? " members" : " redditors"}
+    </span>;
 
   return (
     <a
@@ -19,10 +28,7 @@ const Affiliated = ({ users, type }) => {
       href="https://reddit.com/r/NewGame"
     >
       <Icon isSize="large" className={`fab fa-${type}`}/>
-      <span className="is-size-5-desktop is-size-6-tablet">
-        <b>{users}</b>
-        {isDiscord ? " members" : " redditors"}
-      </span>
+      {users ? content : placeholder}
     </a>
   );
 };
@@ -90,7 +96,13 @@ export const LandingPanel = () => {
             <Section>
               <Columns>
                 <Column isSize="1/2">
+                  {/*{discord*/}
                   <Affiliated users={discord} type="discord"/>
+                  {/*<div className="sk-circle">*/}
+                  {/*<div className="sk-circle1 sk-child"/>*/}
+                  {/*</div>*/}
+                  {/*}*/}
+
                 </Column>
                 <Column isSize="1/2">
                   <Affiliated users={reddit} type="reddit"/>
