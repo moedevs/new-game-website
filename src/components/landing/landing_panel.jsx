@@ -10,9 +10,10 @@ import "../../layouts/animation.scss";
 
 const Affiliated = ({ users, type }) => {
   const isDiscord = type === "discord";
+  const color = isDiscord ? "#7289da" : "#ff4500";
 
   const placeholder =
-    <Loader size={10} css={{ display: "inline-block" }} color={"#ffaaaf"}/>;
+    <Loader size={10} css={{ display: "inline-block" }} color={color}/>;
 
   const content =
     <span className="is-size-5-desktop is-size-6-tablet">
