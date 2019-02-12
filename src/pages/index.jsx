@@ -81,6 +81,7 @@ export const pageQuery = graphql`{
           color
           name
           quote
+          role
           strengths
           weaknesses
         }

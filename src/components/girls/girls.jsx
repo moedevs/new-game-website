@@ -40,7 +40,7 @@ const GirlContent = ({ children }) => (
   </Card>
 );
 
-const GirlTitle = ({ thumbnail, name, quote, tag, role }) => (
+const GirlTitle = ({ thumbnail, name, quote, role }) => (
   <Card>
     <CardContent className="card is-size-7-mobile is-size-5-tablet is-size-4-desktop">
       <Level isMobile>
@@ -50,9 +50,9 @@ const GirlTitle = ({ thumbnail, name, quote, tag, role }) => (
             <p className="title is-size-4-mobile">{name}</p>
           </div>
         </LevelLeft>
-        <LevelRight>
+        {role && <LevelRight>
           <Tag  isColor="info" className="shrink no-grow">{role}</Tag>
-        </LevelRight>
+        </LevelRight>}
       </Level>
       <p className="subtitle is-size-6-mobile">{quote}</p>
     </CardContent>
