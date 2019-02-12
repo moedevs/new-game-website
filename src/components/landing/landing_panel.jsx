@@ -95,12 +95,12 @@ export const LandingPanel = () => {
             <Section>
               <Columns>
                 <Column isSize="1/2">
-                  {/*{discord*/}
+                  {/* {discord*/}
                   <Affiliated users={discord} type="discord"/>
-                  {/*<div className="sk-circle">*/}
-                  {/*<div className="sk-circle1 sk-child"/>*/}
-                  {/*</div>*/}
-                  {/*}*/}
+                  {/* <div className="sk-circle">*/}
+                  {/* <div className="sk-circle1 sk-child"/>*/}
+                  {/* </div>*/}
+                  {/* }*/}
 
                 </Column>
                 <Column isSize="1/2">

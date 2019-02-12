@@ -38,11 +38,11 @@ export class SiteIntro extends React.Component {
     return (
       <div className="intro">
         <FanArt />
-        <div style={{ backgroundColor: "#7e78d6"}}>
+        <div style={{ backgroundColor: "#7e78d6" }}>
           <div className="is-flex" style={{ paddingTop: 20 }}>
             <h1
               className="title has-text-white-ter is-2"
-              style={{ margin: "0 auto"}}
+              style={{ margin: "0 auto" }}
             >
               {this.state.currentTweet}/{this.props.children.length} Tweets
             </h1>

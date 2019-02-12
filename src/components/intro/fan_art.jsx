@@ -11,7 +11,7 @@ import { anchorize, CtxFanarts, infinite, next, seconds } from "../../utils";
 
 export const FanArt = () => {
   const IMAGE_WIDTH = 250;
-  const SWITCH_INTERVAL = seconds(2.7);
+  const SWITCH_INTERVAL =2700;
 
   const fanart = React.useContext(CtxFanarts);
   const [initialArt] = fanart;
