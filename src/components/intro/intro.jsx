@@ -6,14 +6,14 @@ import { Section } from "bloomer";
 export class SiteIntro extends React.Component {
   state = {
     flickity: {},
-    index: 1,
+    currentTweet: 1,
     options: {
       lazyLoad: 1,
       alignCell: "center",
       imagesLoaded: true,
       contain: true,
       on: {
-        change: (index) => this.setState({ index: index + 1 })
+        change: (index) => this.setState({ currentTweet: index + 1 })
       }
     }
   };
@@ -44,7 +44,7 @@ export class SiteIntro extends React.Component {
               className="title has-text-white-ter is-2"
               style={{ margin: "0 auto"}}
             >
-              {this.state.index}/{this.props.children.length} Tweets
+              {this.state.currentTweet}/{this.props.children.length} Tweets
             </h1>
           </div>
           <div className="twitter-slides main-carousel no-padding-top"
