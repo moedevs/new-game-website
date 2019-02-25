@@ -1,15 +1,16 @@
 ---
 order: 4
 name: Yun
-quote: Testing
+quote: Wanna relax with some snacks?
 image: "./media/yun.png"
 thumbnail: "./media/yun-thumbnail.png"
 color: "#9c606b"
-strengths:
-  - nice
-weaknesses:
-  - meme
 role: "Char. Designer"
+strengths:
+  - Good at handling children
+  - Generous
+weaknesses:
+  - Stalker
 ---
 
-Testing
+Hajime's girlfriend

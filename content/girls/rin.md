@@ -1,15 +1,15 @@
 ---
 order: 7
 name: Rin
-quote: Testing
+quote: I told you to do it this morning!
 image: "./media/rin.png"
 thumbnail: "./media/rin-thumbnail.png"
 color: "#d397ff"
+role: "Art Director"
 strengths:
-  - nice
+  - Hey kid, wanna buy some placeholders?
 weaknesses:
   - meme
-role: "Art Director"
 ---
 
-Testing
+Ko's Girlfriend
