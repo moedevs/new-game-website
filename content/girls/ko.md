@@ -1,14 +1,15 @@
 ---
 order: 3
 name: Ko
-quote: Hello
+quote: Ko@IWannaLeaveOnTime
 image: "./media/ko.png"
 thumbnail: "./media/ko-thumbnail.png"
 color: "#a5b7ff"
 strengths:
-  - nice
+  - Really good at Character Design
+  - Sleeps in panties
 weaknesses:
-  - meme
+  - Very Dense
 ---
 
-Testing
+Heavy Sleeper, Rin's Girlfriend

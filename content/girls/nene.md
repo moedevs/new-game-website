@@ -1,14 +1,14 @@
 ---
 order: 6
-name: Nene
-quote: Hello
+Name: Nene
+quote: I love placeholders!
 image: "./media/nene.png"
 thumbnail: "./media/nene-thumbnail.png"
 color: "#dd95c6"
 strengths:
-  - nice
+  - niceeeeeeeeeeeeeeeeeeeeeeeeee
 weaknesses:
-  - meme
+  - memeeeeeeeeeeeeeeeeeeeeeeeeee
 ---
 
 Testing

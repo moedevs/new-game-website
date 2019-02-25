@@ -1,13 +1,16 @@
 ---
 order: 8
 name: Blue Haired Shop Keeper
+quote: You can't be so pushy with that customer!
 image: "./media/blue-haired-shop-keeper.png"
-quote: Testing
 color: "#695ea2"
 strengths:
-  - nice
+  - Knows how to handle a Hifumi
+  - Strong managerial skills
+  - Has a Bachelor's degree in Business Management
 weaknesses:
-  - meme
+  - Has an employee that cannot handle a Hifumi
+  - Weak to poison
 ---
 
-Testing
+Best Background Girl
