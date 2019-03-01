@@ -6,9 +6,9 @@ image: "./media/rin.png"
 thumbnail: "./media/rin-thumbnail.png"
 color: "#d397ff"
 strengths:
-  - Hey kid, wanna buy some placeholders?
+  - Gay for Ko
 weaknesses:
-  - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  - 2 OP pls nerf
 ---
 
 Ko's Girlfriend
