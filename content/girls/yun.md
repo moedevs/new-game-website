@@ -6,12 +6,9 @@ image: "./media/yun.png"
 thumbnail: "./media/yun-thumbnail.png"
 color: "#9c606b"
 strengths:
-  - placeholderrrrrrrrrrrrrrrrrrrrs!!
+  - Gothic Lolita clothing is kawaii!!
 weaknesses:
-  - aaaaaaaaaaaaaaaaaaaaaaaaaaa
-  - you guys like placeholders, right?
-  - EVERYONE loves placeholders!
-  - yaaaaaaaaay! horray for placeholders!
+  - Self conscious about her "fat"
 ---
 
 Hajime's girlfriend
