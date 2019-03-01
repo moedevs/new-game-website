@@ -4,7 +4,7 @@ image: "./media/aoba.png"
 thumbnail: "./media/aoba-thumbnail.png"
 name: Aoba
 quote: "Kyou mo ichinichi GABARUZOI!"
-color: "#a1a5ff"
+color: "#c6b6fb"
 strengths:
   - Is adorable
   - Is a legal loli

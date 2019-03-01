@@ -1,14 +1,14 @@
 ---
-order: 6
-Name: Nene
+order: 11
+Name: Momo
 quote: I love placeholders!
-image: "./media/nene.png"
-thumbnail: "./media/nene-thumbnail.png"
-color: "#77c1ff"
+image: "./media/momo.png"
+thumbnail: "./media/momo-thumbnail.png"
+color: "#ff9c63"
 strengths:
   - niceeeeeeeeeeeeeeeeeeeeeeeeee
 weaknesses:
   - memeeeeeeeeeeeeeeeeeeeeeeeeee
 ---
 
-Testing
+Naru's Roommate

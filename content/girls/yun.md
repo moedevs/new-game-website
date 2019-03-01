@@ -4,7 +4,7 @@ name: Yun
 quote: Wanna relax with some snacks?
 image: "./media/yun.png"
 thumbnail: "./media/yun-thumbnail.png"
-color: "#9c606b"
+color: "#eca27f"
 strengths:
   - placeholderrrrrrrrrrrrrrrrrrrrs!!
 weaknesses:
