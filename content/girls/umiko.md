@@ -1,7 +1,7 @@
 ---
 order: 10
 name: Umiko
-quote: Placeholder
+quote: Please train the new hires properly.
 image: "./media/umiko.png"
 thumbnail: "./media/umiko-thumbnail.png"
 color: "#992121"
