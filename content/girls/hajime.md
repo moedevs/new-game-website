@@ -1,7 +1,7 @@
 ---
 order: 5
 name: Hajime
-quote: Testing
+quote: Dandy.
 image: "./media/hajime.png"
 thumbnail: "./media/hajime-thumbnail.png"
 color: "#F8BC74"
