@@ -6,9 +6,10 @@ image: "./media/umiko.png"
 thumbnail: "./media/umiko-thumbnail.png"
 color: "#992121"
 strengths:
-  - P
+  - Heavily Armed Chocolate Queen
+  - Programming Skills!
 weaknesses:
-  - P
+  - Getting called by her last name
 ---
 
 Airsoft Player
