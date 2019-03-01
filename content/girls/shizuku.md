@@ -6,9 +6,9 @@ image: "./media/shizuku.png"
 thumbnail: "./media/shizuku-thumbnail.png"
 color: "#c0bea5"
 strengths:
-  - P
+  - CAT POWAHHHH
 weaknesses:
-  - P
+  - Gets distracted too easily and ends up getting clapped by Umiko
 ---
 
 Everything is cute
