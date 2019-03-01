@@ -1,14 +1,16 @@
 ---
 order: 6
 Name: Nene
-quote: I love placeholders!
+quote: Aocchi! 
 image: "./media/nene.png"
 thumbnail: "./media/nene-thumbnail.png"
 color: "#dd95c6"
 strengths:
-  - niceeeeeeeeeeeeeeeeeeeeeeeeee
+  - Gay for Aoba (probably)
+  - Pro Debugger
+  - #1 Champion for secret panty shot bugs
 weaknesses:
-  - memeeeeeeeeeeeeeeeeeeeeeeeeee
+  - Kind of a noob at programming
 ---
 
-Testing
+Aoba's Girlfriend?
