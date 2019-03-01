@@ -4,7 +4,7 @@ name: Ko
 quote: Ko@IWannaLeaveOnTime
 image: "./media/ko.png"
 thumbnail: "./media/ko-thumbnail.png"
-color: "#fed201"
+color: "#f6edac"
 strengths:
   - Really good at Character Design
   - Sleeps in panties
