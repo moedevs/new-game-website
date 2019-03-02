@@ -10,7 +10,6 @@ export const Header = () =>
     <meta property="og:title" content="New Game!"/>
     <meta property="og:description" content="Game development can't be this cute!"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:type" content="website"/>
     <link rel="stylesheet"
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>

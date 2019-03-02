@@ -11,6 +11,7 @@ strengths:
   - That  s m i l e
 weaknesses:
   - Sometimes shy
+role: "Char. Design"
 ---
 
 Impossibly cute

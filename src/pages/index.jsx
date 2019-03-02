@@ -6,20 +6,21 @@ import { SiteIntro } from "../components/intro/intro";
 import { MarkdownGirl } from "../components/girls/girls";
 import { graphql } from "gatsby";
 import { MarkdownTweet } from "../components/intro/twitter/tweet";
+import { CtxFanarts } from "../utils";
 
-export default ({ data: { girls, tweets, users } }) => {
+export default ({ data: { girls, tweets, users, fanarts } }) => {
   const allTweets = tweets.edges.map(tweet => ({
     ...tweet.node.frontmatter,
     html: tweet.node.html
   }));
 
   const allGirls = girls.edges.map(({ node }) => {
-    const { frontmatter } = node;
+    const { frontmatter, html } = node;
     const { thumbnail, image } = frontmatter;
 
     return ({
       ...frontmatter,
-      html: node.html,
+      html,
       thumbnail: thumbnail && thumbnail.childImageSharp.fixed,
       image: image.childImageSharp.fluid
     });
@@ -33,14 +34,23 @@ export default ({ data: { girls, tweets, users } }) => {
     }
   }), {});
 
+  console.log(allUsers)
+
   const tweetInfo = allTweets.map(tweet => ({ ...tweet, ...allUsers[tweet.name] }));
+
+  const allFanart = fanarts.images.map(({ image: { image }, src }) => ({
+    image: image.fixed,
+    src
+  }));
 
   return (
     <Layout>
       <LandingPanel/>
-      <SiteIntro>
-        {tweetInfo.map(tweet => <MarkdownTweet {...tweet}/>)}
-      </SiteIntro>
+      <CtxFanarts.Provider value={allFanart}>
+        <SiteIntro fanart={allFanart}>
+          {tweetInfo.map(tweet => <MarkdownTweet {...tweet}/>)}
+        </SiteIntro>
+      </CtxFanarts.Provider>
       {allGirls.map(girl => <MarkdownGirl {...girl}/>)}
       <SiteFooter/>
     </Layout>
@@ -73,6 +83,7 @@ export const pageQuery = graphql`{
           color
           name
           quote
+          role
           strengths
           weaknesses
         }
@@ -115,6 +126,18 @@ export const pageQuery = graphql`{
           }
         }
       }
+    }
+  }
+  fanarts: imagesYaml {
+    images {
+      image {
+        image: childImageSharp {
+          fixed(width: 250 height: 350 quality: 90) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
+      src
     }
   }
 }`;

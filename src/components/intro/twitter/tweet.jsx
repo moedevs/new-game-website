@@ -47,7 +47,6 @@ export const Tweet = (props) => {
 
   const parsed = parse(props.time).toISOString();
 
-  // @ts-ignore [spreading an array into arguments is buggy]
   const readableDate = format(parsed, "MMMM Do YYYY");
   return (
     <div className="tweet-container carousel-cell">

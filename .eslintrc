@@ -36,7 +36,8 @@
     "no-unneeded-ternary": 2,
     "no-magic-numbers": [2, {
       "ignoreArrayIndexes": true,
-      "enforceConst": true
+      "enforceConst": true,
+      "ignore": [0, 1]
     }],
     "no-return-await": 2,
     "no-useless-concat": 2,

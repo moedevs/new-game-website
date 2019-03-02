@@ -1,20 +1,21 @@
 import * as React from "react";
-import { Columns, Column, Card, CardContent, CardHeader, CardHeaderTitle } from "bloomer";
+import { Column, Columns, Section, Subtitle, Title } from "bloomer";
+import { Checklist } from "./checklist";
 
 export const Description = () =>
-  <Columns isCentered>
-    <Column isSize="1/2">
-      <Card>
-        <CardHeader>
-          <CardHeaderTitle hasTextAlign="centered">
-            <h1 className="title">Why should you watch new game?</h1>
-          </CardHeaderTitle>
-        </CardHeader>
-        <CardContent >
-          <ul>
-            <li>S</li>
-          </ul>
-        </CardContent>
-      </Card>
-    </Column>
-  </Columns>;
+  <Section className="narrow-width">
+    <Columns isCentered>
+      <Column>
+        <Title className="title">What is this?</Title>
+        <Subtitle>And who are you?</Subtitle>
+        <p>
+          New Game! is an anime about some of the most determined
+          girls out there making games they love!
+
+        </p>
+      </Column>
+      <Column>
+        <Checklist/>
+      </Column>
+    </Columns>
+  </Section>;

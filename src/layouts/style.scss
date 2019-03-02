@@ -1,9 +1,14 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css?family=Rubik');
 @import '../../node_modules/bulma/sass/utilities/initial-variables.sass';
 @import '_variables.scss';
 @import '../../node_modules/bulma/bulma.sass';
+
+@font-face {
+  font-family: 'Rubik';
+  font-display: auto;
+  src: local('Rubik'), url(https://fonts.gstatic.com/s/rubik/v8/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');
+}
 
 * {
   font-family: Rubik, sans-serif;
@@ -30,6 +35,10 @@ body {
   display: block !important;
   height: 100vh !important;
   width: auto !important;
+}
+
+.has-bottom-border {
+  border-bottom: solid 2px #eee;
 }
 
 .github {
@@ -112,6 +121,7 @@ body {
   @media(max-width: $merge-breakpoint) {
     width: 100%;
   }
+  margin: 0 auto;
   width: 85%;
 }
 
@@ -141,7 +151,6 @@ body {
 .content ul {
   margin-top: 0;
 }
-
 
 .spaced-l {
   margin-left: 5px;
@@ -180,15 +189,19 @@ body {
   .twitter-controls-container {
     margin-top: 10px;
   }
+
   .twitter-tag {
     margin-top: 0 !important;
   }
+
   .tweet-name {
     margin-bottom: 0 !important;
   }
+
   .tweet-image {
     margin: 10px 0;
   }
+
   .gatsby-resp-image-link {
     margin-bottom: 5px;
   }
@@ -207,4 +220,24 @@ body {
   .slide {
     background: $website-background !important;
   }
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.fanart-tag {
+  z-index: 2;
+  position: absolute;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  top: 0;
+  right: 0;
+  margin: 10px;
 }

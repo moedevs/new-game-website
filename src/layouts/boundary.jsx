@@ -16,13 +16,13 @@ export class ErrorBoundary extends React.Component {
   }
 
   render() {
-    if (this.state.error) {
-      return (
-        <div onClick={() => Sentry.showReportDialog()}>
-          Report Feedback
-        </div>
-      );
-    }
+    // if (this.state.error) {
+    //   return (
+    //     <div onClick={() => Sentry.showReportDialog()}>
+    //       Report Feedback
+    //     </div>
+    //   );
+    // }
     return this.props.children;
   }
 }
