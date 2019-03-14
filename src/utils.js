@@ -10,7 +10,7 @@ export function* infinite(arr) {
   }
 }
 
-export const anchorize = href => ({ href, target: "_blank" });
+export const anchorize = href => ({ href, target: "_blank", rel: "noopener" });
 
 export const next = (iter) => iter.next().value;
 

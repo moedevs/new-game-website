@@ -50,8 +50,8 @@ const GirlTitle = ({ thumbnail, name, quote, role }) => (
             <p className="title is-size-4-mobile">{name}</p>
           </div>
         </LevelLeft>
-        {role && <LevelRight class="has-text-centered">
-          <Tag  isColor="info" className="shrink no-grow">{role}</Tag>
+        {role && <LevelRight className="has-text-centered">
+          <Tag isColor="info" className="shrink no-grow">{role}</Tag>
         </LevelRight>}
       </Level>
       <p className="subtitle is-size-6-mobile">{quote}</p>
@@ -59,11 +59,17 @@ const GirlTitle = ({ thumbnail, name, quote, role }) => (
   </Card>
 );
 
-export const Girl = (options) => (
+export const Girl = (options) =>
   <div className="girl-section" style={{ backgroundColor: options.color }}>
     <Columns isMobile className="narrow-width">
       <Column isSize="1/4" className="girl-image-column">
-        <img srcSet={options.image.srcSetWebp} alt="" className="image girl"/>
+        {/*
+         * We have to use <img> here instead of <Img> because for SOME reason
+         * the girls images don't seem to work with gatsby-image. They're
+         * disappearing when we switch to <1024px width. Feel free to try it
+         * out with gatsby-image but I couldn't make it work lol @Xetera
+         */}
+        <img srcSet={options.image.srcSet} alt="Best girl" className="image girl"/>
       </Column>
       <Column className="girl-content">
         <Section>
@@ -89,8 +95,7 @@ export const Girl = (options) => (
         </Section>
       </Column>
     </Columns>
-  </div>
-);
+  </div>;
 
 export const MarkdownGirl = (props) => {
   const { html, ...content } = props;

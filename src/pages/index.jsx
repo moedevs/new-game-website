@@ -34,7 +34,7 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
     }
   }), {});
 
-  console.log(allUsers)
+  console.log(allGirls)
 
   const tweetInfo = allTweets.map(tweet => ({ ...tweet, ...allUsers[tweet.name] }));
 
@@ -48,10 +48,10 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
       <LandingPanel/>
       <CtxFanarts.Provider value={allFanart}>
         <SiteIntro fanart={allFanart}>
-          {tweetInfo.map(tweet => <MarkdownTweet {...tweet}/>)}
+          {tweetInfo.map((tweet, i)=> <MarkdownTweet {...tweet} key={i}/>)}
         </SiteIntro>
       </CtxFanarts.Provider>
-      {allGirls.map(girl => <MarkdownGirl {...girl}/>)}
+      {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}
       <SiteFooter/>
     </Layout>
   );
@@ -68,8 +68,8 @@ export const pageQuery = graphql`{
         frontmatter {
           image {
             childImageSharp {
-              fluid(maxWidth: 600 quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
