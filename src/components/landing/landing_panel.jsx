@@ -65,7 +65,7 @@ export const LandingPanel = () => {
   const query = graphql`{
     file(relativePath: { regex: "/landing.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 1920 quality: 100 srcSetBreakpoints: [ 700, 1280, 1920 ]) {
+        fluid(maxWidth: 1920 quality: 50 srcSetBreakpoints: [ 700, 1280, 1920 ]) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
@@ -95,13 +95,7 @@ export const LandingPanel = () => {
             <Section>
               <Columns>
                 <Column isSize="1/2">
-                  {/* {discord*/}
                   <Affiliated users={discord} type="discord"/>
-                  {/* <div className="sk-circle">*/}
-                  {/* <div className="sk-circle1 sk-child"/>*/}
-                  {/* </div>*/}
-                  {/* }*/}
-
                 </Column>
                 <Column isSize="1/2">
                   <Affiliated users={reddit} type="reddit"/>

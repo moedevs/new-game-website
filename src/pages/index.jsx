@@ -7,6 +7,7 @@ import { MarkdownGirl } from "../components/girls/girls";
 import { graphql } from "gatsby";
 import { MarkdownTweet } from "../components/intro/twitter/tweet";
 import { CtxFanarts } from "../utils";
+import { OutroPanel } from "../components/outro/outro_panel";
 
 export default ({ data: { girls, tweets, users, fanarts } }) => {
   const allTweets = tweets.edges.map(tweet => ({
@@ -52,7 +53,7 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
         </SiteIntro>
       </CtxFanarts.Provider>
       {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}
-      <SiteFooter/>
+      <OutroPanel/>
     </Layout>
   );
 };
