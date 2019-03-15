@@ -11,7 +11,7 @@ const Affiliated = ({ users, type }) => {
   const color = isDiscord ? "#7289da" : "#ff4500";
 
   const placeholder =
-    <Loader size={10} css={{ display: "inline-block" }} color={color}/>;
+    <Loader size={10} color={color}/>;
 
   const content =
     <span className="is-size-5-desktop is-size-6-tablet">
@@ -65,8 +65,8 @@ export const LandingPanel = () => {
   const query = graphql`{
     file(relativePath: { regex: "/landing.jpg/" }) {
       childImageSharp {
-        fixed(width: 1920 height: 1080 quality: 100) {
-          ...GatsbyImageSharpFixed_noBase64
+        fluid(maxWidth: 1920 quality: 50 srcSetBreakpoints: [ 700, 1280, 1920 ]) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
@@ -75,13 +75,13 @@ export const LandingPanel = () => {
   return (
     <div className="landing">
       <StaticQuery query={query} render={data =>
-        <Img className="landing-image" fixed={data.file.childImageSharp.fixed}/>
+        <Img className="landing-image" fluid={data.file.childImageSharp.fluid}/>
       }/>
       <div className="overlay"/>
       <div className="banner-container">
         <GithubCorner href="https://github.com/xetera/hifumi.io"/>
         <div className="arrow has-text-white">
-          <Icon className="fa fa-arrow-down is-size-2"/>
+          <Icon className="fa fa-arrow-down is-size-4"/>
         </div>
         <Columns>
           <Column>
@@ -95,13 +95,7 @@ export const LandingPanel = () => {
             <Section>
               <Columns>
                 <Column isSize="1/2">
-                  {/* {discord*/}
                   <Affiliated users={discord} type="discord"/>
-                  {/* <div className="sk-circle">*/}
-                  {/* <div className="sk-circle1 sk-child"/>*/}
-                  {/* </div>*/}
-                  {/* }*/}
-
                 </Column>
                 <Column isSize="1/2">
                   <Affiliated users={reddit} type="reddit"/>

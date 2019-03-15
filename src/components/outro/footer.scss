@@ -1,0 +1,38 @@
+.footer-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.outro-bottom {
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+}
+
+.crunchyroll {
+  color: #F47521;
+  opacity: 0.75;
+  &:hover {
+    color: #F47521;
+    opacity: 1;
+    transition: .12s ease-in-out;
+  }
+}
+
+.outro-container {
+  flex-direction: column;
+}
+
+.anilist {
+  background-color: #1f2631;
+  color: white;
+  border: 0;
+  opacity: 0.75;
+  &:hover {
+    color: white;
+    opacity: 1;
+    transition: .12s ease-in-out;
+  }
+}

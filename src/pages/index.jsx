@@ -7,6 +7,7 @@ import { MarkdownGirl } from "../components/girls/girls";
 import { graphql } from "gatsby";
 import { MarkdownTweet } from "../components/intro/twitter/tweet";
 import { CtxFanarts } from "../utils";
+import { OutroPanel } from "../components/outro/outro_panel";
 
 export default ({ data: { girls, tweets, users, fanarts } }) => {
   const allTweets = tweets.edges.map(tweet => ({
@@ -34,7 +35,7 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
     }
   }), {});
 
-  console.log(allUsers)
+  console.log(allGirls)
 
   const tweetInfo = allTweets.map(tweet => ({ ...tweet, ...allUsers[tweet.name] }));
 
@@ -48,11 +49,11 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
       <LandingPanel/>
       <CtxFanarts.Provider value={allFanart}>
         <SiteIntro fanart={allFanart}>
-          {tweetInfo.map(tweet => <MarkdownTweet {...tweet}/>)}
+          {tweetInfo.map((tweet, i)=> <MarkdownTweet {...tweet} key={i}/>)}
         </SiteIntro>
       </CtxFanarts.Provider>
-      {allGirls.map(girl => <MarkdownGirl {...girl}/>)}
-      <SiteFooter/>
+      {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}
+      <OutroPanel/>
     </Layout>
   );
 };
@@ -68,8 +69,8 @@ export const pageQuery = graphql`{
         frontmatter {
           image {
             childImageSharp {
-              fluid(maxWidth: 600 quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }

@@ -22,7 +22,7 @@ export const Tweet = (props) => {
     file(relativePath: { regex: "/verified.png/" }) {
       childImageSharp {
         image: fixed(width: 24 height: 24 quality: 100) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

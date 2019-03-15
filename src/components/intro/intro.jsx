@@ -1,6 +1,5 @@
 import * as React from "react";
 import { MediaSection } from "./fan_art";
-import { Description } from "./description";
 
 export class SiteIntro extends React.Component {
   state = {
