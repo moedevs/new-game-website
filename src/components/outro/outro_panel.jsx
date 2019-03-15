@@ -39,40 +39,45 @@ export const OutroPanel = () => {
         <Img className="landing-image" fluid={outro.childImageSharp.fluid}/>
         <div className="overlay"/>
         <div className="banner-container">
-          <Section className="outro-container">
-            <Columns>
-              <Column>
-                <h1
-                  className="is-size-2-desktop is-size-2-tablet is-size-3-mobile has-text-white-ter banner-text has-text-centered shadowed">
-                  Why are you still here?! Go watch New Game!
-                </h1>
-              </Column>
-            </Columns>
-            <Columns>
-              <Column className="is-fullwidth" isSize="1/2">
-                <div className="watch-links">
-                  <a className="button is-fullwidth is-large crunchyroll"
-                     {...anchorize("https://www.crunchyroll.com/new-game")} >
-                    <Img fixed={crunchyroll.childImageSharp.fixed}
-                         alt="Crunchyroll link"
-                         style={{ marginRight: "10px" }}/>
-                    <b>Watch on Crunchyroll</b>
-                  </a>
-                </div>
-              </Column>
-              <Column className="is-fullwidth" isSize="1/2">
-                <div className="watch-links">
-                  <a className="button is-fullwidth is-large anilist"
-                     {...anchorize("https://anilist.co/anime/21455/New-Game")} >
-                    <Img fixed={anilist.childImageSharp.fixed}
-                         alt="Anilist link"
-                         style={{ marginRight: "10px" }}/>
-                    <b>Look up on Anilist</b>
-                  </a>
-                </div>
-              </Column>
-            </Columns>
+          <Section className="outro-container outro-container">
+            <div className="outro-buttons">
+              <Columns>
+                <Column>
+                  <h1
+                    className="is-size-2-desktop is-size-2-tablet is-size-3-mobile has-text-white-ter banner-text has-text-centered shadowed">
+                    Why are you still here?! Go watch New Game!
+                  </h1>
+                </Column>
+              </Columns>
+              <Columns>
+                <Column className="is-fullwidth" isSize="1/2">
+                  <div className="watch-links">
+                    <a className="button is-fullwidth is-large crunchyroll"
+                       {...anchorize("https://www.crunchyroll.com/new-game")} >
+                      <Img fixed={crunchyroll.childImageSharp.fixed}
+                           alt="Crunchyroll link"
+                           style={{ marginRight: "10px" }}/>
+                      <b>Watch on Crunchyroll</b>
+                    </a>
+                  </div>
+                </Column>
+                <Column className="is-fullwidth" isSize="1/2">
+                  <div className="watch-links">
+                    <a className="button is-fullwidth is-large anilist"
+                       {...anchorize("https://anilist.co/anime/21455/New-Game")} >
+                      <Img fixed={anilist.childImageSharp.fixed}
+                           alt="Anilist link"
+                           style={{ marginRight: "10px" }}/>
+                      <b>Look up on Anilist</b>
+                    </a>
+                  </div>
+                </Column>
+              </Columns>
+            </div>
           </Section>
+          <div className="outro-bottom has-text-white-ter">
+            <h3>Made with {love} by the /r/NewGame community</h3>
+          </div>
         </div>
       </div>
     }/>
