@@ -73,9 +73,6 @@ body {
   width: 100%;
   text-justify: distribute;
 
-  a.button {
-    box-shadow: $shadow;
-  }
 
   .banner-text-container {
     display: flex;
@@ -85,6 +82,10 @@ body {
   }
 }
 
+a.button {
+  box-shadow: $shadow;
+}
+
 .arrow {
   position: absolute;
   bottom: 50px;
@@ -92,10 +93,18 @@ body {
 
 .discord {
   color: #7289DA;
+  &:hover {
+    color: #7289DA;
+    box-shadow: #7289DA 1px 1px 20px;
+  }
 }
 
 .reddit {
   color: orangered;
+  &:hover {
+    color: orangered;
+    box-shadow: orangered 1px 1px 20px;
+  }
 }
 
 .banner-sections {
