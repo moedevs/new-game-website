@@ -6,6 +6,8 @@ import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Loader from "react-spinners/PulseLoader";
 
+import "./landing_panel.scss"
+
 const Affiliated = ({ users, type }) => {
   const isDiscord = type === "discord";
   const color = isDiscord ? "#7289da" : "#ff4500";
@@ -70,7 +72,7 @@ export const LandingPanel = () => {
     file(relativePath: { regex: "/landing.jpg/" }) {
       childImageSharp {
         fluid(maxWidth: 1920 quality: 50 srcSetBreakpoints: [ 700, 1280, 1920 ]) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }

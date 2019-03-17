@@ -62,40 +62,6 @@ body {
   width: 100%;
 }
 
-.banner-container {
-  position: absolute;
-  top: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  text-justify: distribute;
-
-
-  .banner-text-container {
-    display: flex;
-    padding: 25px;
-    flex-direction: column;
-    text-align: left;
-  }
-}
-
-a.button {
-  box-shadow: $shadow;
-}
-
-.arrow {
-  position: absolute;
-  bottom: 50px;
-  &:hover {
-    transform: scale(2);
-    transition: .2s ease-in-out;
-    cursor: pointer;
-  }
-}
-
 .discord {
   color: #7289DA;
   &:hover {

@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import { Column, Columns, Footer, Icon, Section } from "bloomer";
 import { anchorize } from "../../utils";
 
-import "./footer.scss";
+import "./outro_panel.scss";
 
 export const OutroPanel = () => {
   const love = (
