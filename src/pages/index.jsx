@@ -46,7 +46,7 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
       <LandingPanel/>
       <CtxFanarts.Provider value={allFanart}>
         <SiteIntro fanart={allFanart}>
-          {tweetInfo.map((tweet, i)=> <MarkdownTweet {...tweet} key={i}/>)}
+          {tweetInfo.map((tweet, i) => <MarkdownTweet {...tweet} key={i}/>)}
         </SiteIntro>
       </CtxFanarts.Provider>
       {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}

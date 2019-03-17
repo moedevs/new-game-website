@@ -36,7 +36,7 @@ export class SiteIntro extends React.Component {
   render() {
     return (
       <div className="intro">
-        {/*<Description/>*/}
+        {/* <Description/>*/}
         <MediaSection/>
         <div style={{ position: "relative" }}>
           <div className="twitter-slides main-carousel no-padding-top"

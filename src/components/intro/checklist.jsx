@@ -18,7 +18,7 @@ const Item = ({ checked, text }) =>
 
 export const Checklist = () =>
     <Content style={{ display: "inline-flex", margin: '0 auto', flexDirection: "column" }}>
-      {/*<Subtitle className="has-text-grey-dark">Why New Game! <i>could be</i> the best anime</Subtitle>*/}
+      {/* <Subtitle className="has-text-grey-dark">Why New Game! <i>could be</i> the best anime</Subtitle>*/}
       <Item checked text="Has the best girls"/>
       <Item checked text="Is very inspirational"/>
       <Item checked text="Only girls allowed"/>
@@ -30,4 +30,4 @@ export const Checklist = () =>
         </p>
       }/>
       <Item checked={false} text="Momo exists"/>
-    </Content>
+    </Content>;

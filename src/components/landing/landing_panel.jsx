@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Loader from "react-spinners/PulseLoader";
 
-import "./landing_panel.scss"
+import "./landing_panel.scss";
 
 const Affiliated = ({ users, type }) => {
   const isDiscord = type === "discord";
