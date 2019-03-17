@@ -89,6 +89,11 @@ a.button {
 .arrow {
   position: absolute;
   bottom: 50px;
+  &:hover {
+    transform: scale(2);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+  }
 }
 
 .discord {

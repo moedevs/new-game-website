@@ -52,6 +52,12 @@ export const LandingPanel = () => {
     void getUserData(defaultEndpoint);
   }, []);
 
+  const intro = document.querySelector(".intro");
+
+  const scrollTo = () => intro.scrollIntoView({
+    behavior: "smooth", inline: "nearest", block: "start"
+  });
+
   const title = [
     "is-size-1-desktop",
     "is-size-1-tablet",
@@ -80,7 +86,7 @@ export const LandingPanel = () => {
       <div className="overlay"/>
       <div className="banner-container">
         <GithubCorner href="https://github.com/xetera/hifumi.io"/>
-        <div className="arrow has-text-white">
+        <div className="arrow has-text-white" onClick={scrollTo}>
           <Icon className="fa fa-arrow-down is-size-4"/>
         </div>
         <Columns>

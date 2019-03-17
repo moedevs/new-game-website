@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Layout } from "../layouts/layout";
 import { LandingPanel } from "../components/landing/landing_panel";
-import { SiteFooter } from "../components/outro/footer";
 import { SiteIntro } from "../components/intro/intro";
 import { MarkdownGirl } from "../components/girls/girls";
 import { graphql } from "gatsby";
@@ -34,8 +33,6 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
       avatar: frontmatter.avatar.childImageSharp.fixed
     }
   }), {});
-
-  console.log(allGirls)
 
   const tweetInfo = allTweets.map(tweet => ({ ...tweet, ...allUsers[tweet.name] }));
 
