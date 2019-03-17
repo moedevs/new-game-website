@@ -23,48 +23,11 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: npm install tslint
       - run: npm run lint
-  build_image:
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run: docker build -t moedevs/hifumi:latest .
-      - run: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-      - run: docker push moedevs/hifumi:latest
 
-  deploy:
-    docker:
-      - image: circleci/python:3.6.2
-        environment:
-          ANSIBLE_HOST_KEY_CHECKING: False
-    steps:
-      - checkout
-      - add_ssh_keys
-      - run:
-          name: Install dependencies
-          command: |
-            sudo pip install ansible
-            sudo apt update
-      - run: ansible-playbook -b .deploy/start.yaml -i "$HOST_IP,"
 workflows:
   version: 2
   pipeline:
     jobs:
       - build
       - lint
-      - build_image:
-          filters:
-            branches:
-              only: master
-          requires:
-            - build
-            - lint
-      - deploy:
-          filters:
-            branches:
-              only: master
-          requires:
-            - build_image
