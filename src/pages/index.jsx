@@ -7,6 +7,7 @@ import { graphql } from "gatsby";
 import { MarkdownTweet } from "../components/intro/twitter/tweet";
 import { CtxFanarts } from "../utils";
 import { OutroPanel } from "../components/outro/outro_panel";
+import { GirlsHeader } from "../components/intro/girls_header";
 
 export default ({ data: { girls, tweets, users, fanarts } }) => {
   const allTweets = tweets.edges.map(tweet => ({
@@ -49,7 +50,10 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
           {tweetInfo.map((tweet, i) => <MarkdownTweet {...tweet} key={i}/>)}
         </SiteIntro>
       </CtxFanarts.Provider>
-      {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}
+      <GirlsHeader/>
+      <div className="girls">
+        {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}
+      </div>
       <OutroPanel/>
     </Layout>
   );
@@ -67,7 +71,7 @@ export const pageQuery = graphql`{
           image {
             childImageSharp {
               fluid {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
@@ -128,6 +132,7 @@ export const pageQuery = graphql`{
   }
   fanarts: imagesYaml {
     images {
+      src
       image {
         image: childImageSharp {
           fixed(width: 250 height: 350 quality: 90) {
@@ -135,7 +140,6 @@ export const pageQuery = graphql`{
           }
         }
       }
-      src
     }
   }
 }`;
