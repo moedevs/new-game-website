@@ -70,7 +70,7 @@ export const pageQuery = graphql`{
         frontmatter {
           image {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 600) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
