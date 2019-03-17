@@ -23,6 +23,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - run: npm install eslint
       - run: npm run lint
 
 workflows:
