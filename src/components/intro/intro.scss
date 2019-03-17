@@ -1,0 +1,11 @@
+.media-column {
+  align-items: center;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.media-image-container {
+  position: relative;
+  margin: 10px auto;
+}

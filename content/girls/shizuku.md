@@ -4,7 +4,7 @@ name: Shizuku
 quote: You're cute.
 image: "./media/shizuku.png"
 thumbnail: "./media/shizuku-thumbnail.png"
-color: "#c0bea5"
+color: "#b5b292"
 strengths:
   - CAT POWAHHHH
 weaknesses:

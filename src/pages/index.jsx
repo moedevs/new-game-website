@@ -1,25 +1,26 @@
 import * as React from "react";
 import { Layout } from "../layouts/layout";
 import { LandingPanel } from "../components/landing/landing_panel";
-import { SiteFooter } from "../components/outro/footer";
 import { SiteIntro } from "../components/intro/intro";
 import { MarkdownGirl } from "../components/girls/girls";
 import { graphql } from "gatsby";
 import { MarkdownTweet } from "../components/intro/twitter/tweet";
+import { CtxFanarts } from "../utils";
+import { OutroPanel } from "../components/outro/outro_panel";
 
-export default ({ data: { girls, tweets, users } }) => {
+export default ({ data: { girls, tweets, users, fanarts } }) => {
   const allTweets = tweets.edges.map(tweet => ({
     ...tweet.node.frontmatter,
     html: tweet.node.html
   }));
 
   const allGirls = girls.edges.map(({ node }) => {
-    const { frontmatter } = node;
+    const { frontmatter, html } = node;
     const { thumbnail, image } = frontmatter;
 
     return ({
       ...frontmatter,
-      html: node.html,
+      html,
       thumbnail: thumbnail && thumbnail.childImageSharp.fixed,
       image: image.childImageSharp.fluid
     });
@@ -35,14 +36,21 @@ export default ({ data: { girls, tweets, users } }) => {
 
   const tweetInfo = allTweets.map(tweet => ({ ...tweet, ...allUsers[tweet.name] }));
 
+  const allFanart = fanarts.images.map(({ image: { image }, src }) => ({
+    image: image.fixed,
+    src
+  }));
+
   return (
     <Layout>
       <LandingPanel/>
-      <SiteIntro>
-        {tweetInfo.map(tweet => <MarkdownTweet {...tweet}/>)}
-      </SiteIntro>
-      {allGirls.map(girl => <MarkdownGirl {...girl}/>)}
-      <SiteFooter/>
+      <CtxFanarts.Provider value={allFanart}>
+        <SiteIntro fanart={allFanart}>
+          {tweetInfo.map((tweet, i) => <MarkdownTweet {...tweet} key={i}/>)}
+        </SiteIntro>
+      </CtxFanarts.Provider>
+      {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}
+      <OutroPanel/>
     </Layout>
   );
 };
@@ -58,8 +66,8 @@ export const pageQuery = graphql`{
         frontmatter {
           image {
             childImageSharp {
-              fluid(maxWidth: 600 quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -73,6 +81,7 @@ export const pageQuery = graphql`{
           color
           name
           quote
+          role
           strengths
           weaknesses
         }
@@ -115,6 +124,18 @@ export const pageQuery = graphql`{
           }
         }
       }
+    }
+  }
+  fanarts: imagesYaml {
+    images {
+      image {
+        image: childImageSharp {
+          fixed(width: 250 height: 350 quality: 90) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
+      src
     }
   }
 }`;

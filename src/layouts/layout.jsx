@@ -1,12 +1,11 @@
 import * as React from "react";
 import { Header } from "./header";
 import * as Sentry from "@sentry/browser";
-
+import { ErrorBoundary } from "./boundary";
 import "./bulma.scss";
 import "./girls.scss";
 import "./style.scss";
 import "./github.scss";
-import { ErrorBoundary } from "./boundary";
 
 export const Layout = ({ children }) => {
   if (process.env.NODE_ENV === "production") {
@@ -14,11 +13,11 @@ export const Layout = ({ children }) => {
   }
 
   return (
-    <div>
+    <>
       <Header/>
       <ErrorBoundary>
         {children}
       </ErrorBoundary>
-    </div>
+    </>
   );
 };

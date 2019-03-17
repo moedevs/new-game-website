@@ -4,7 +4,8 @@ name: Rin
 quote: I told you to do it this morning!
 image: "./media/rin.png"
 thumbnail: "./media/rin-thumbnail.png"
-color: "#d397ff"
+color: "#ffbcec"
+role: "Art Director"
 strengths:
   - Gay for Ko
 weaknesses:
