@@ -52,9 +52,7 @@ export const LandingPanel = () => {
     void getUserData(defaultEndpoint);
   }, []);
 
-  const intro = document.querySelector(".intro");
-
-  const scrollTo = () => intro.scrollIntoView({
+  const scrollTo = () => document.querySelector(".intro").scrollIntoView({
     behavior: "smooth", inline: "nearest", block: "start"
   });
 
