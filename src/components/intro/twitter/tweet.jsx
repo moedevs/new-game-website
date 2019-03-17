@@ -22,7 +22,7 @@ export const Tweet = (props) => {
     file(relativePath: { regex: "/verified.png/" }) {
       childImageSharp {
         image: fixed(width: 24 height: 24 quality: 100) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
@@ -47,7 +47,6 @@ export const Tweet = (props) => {
 
   const parsed = parse(props.time).toISOString();
 
-  // @ts-ignore [spreading an array into arguments is buggy]
   const readableDate = format(parsed, "MMMM Do YYYY");
   return (
     <div className="tweet-container carousel-cell">

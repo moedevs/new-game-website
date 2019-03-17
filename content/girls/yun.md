@@ -4,14 +4,13 @@ name: Yun
 quote: Wanna relax with some snacks?
 image: "./media/yun.png"
 thumbnail: "./media/yun-thumbnail.png"
-color: "#9c606b"
+color: "#eca27f"
+role: "Char. Designer"
 strengths:
-  - placeholderrrrrrrrrrrrrrrrrrrrs!!
+  - Good at handling children
+  - Generous
 weaknesses:
-  - aaaaaaaaaaaaaaaaaaaaaaaaaaa
-  - you guys like placeholders, right?
-  - EVERYONE loves placeholders!
-  - yaaaaaaaaay! horray for placeholders!
+  - Stalker
 ---
 
 Hajime's girlfriend

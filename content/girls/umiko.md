@@ -4,7 +4,7 @@ name: Umiko
 quote: Placeholder
 image: "./media/umiko.png"
 thumbnail: "./media/umiko-thumbnail.png"
-color: "#992121"
+color: "#b1c890"
 strengths:
   - P
 weaknesses:

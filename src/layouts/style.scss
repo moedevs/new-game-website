@@ -1,9 +1,14 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css?family=Rubik');
 @import '../../node_modules/bulma/sass/utilities/initial-variables.sass';
 @import '_variables.scss';
 @import '../../node_modules/bulma/bulma.sass';
+
+@font-face {
+  font-family: 'Rubik';
+  font-display: auto;
+  src: local('Rubik'), url(https://fonts.gstatic.com/s/rubik/v8/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');
+}
 
 * {
   font-family: Rubik, sans-serif;
@@ -32,6 +37,10 @@ body {
   width: auto !important;
 }
 
+.has-bottom-border {
+  border-bottom: solid 2px #eee;
+}
+
 .github {
   z-index: 2;
   margin: 25px;
@@ -53,40 +62,20 @@ body {
   width: 100%;
 }
 
-.banner-container {
-  position: absolute;
-  top: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  text-justify: distribute;
-
-  a.button {
-    box-shadow: $shadow;
-  }
-
-  .banner-text-container {
-    display: flex;
-    padding: 25px;
-    flex-direction: column;
-    text-align: left;
-  }
-}
-
-.arrow {
-  position: absolute;
-  bottom: 50px;
-}
-
 .discord {
   color: #7289DA;
+  &:hover {
+    color: #7289DA;
+    box-shadow: #7289DA 1px 1px 20px;
+  }
 }
 
 .reddit {
   color: orangered;
+  &:hover {
+    color: orangered;
+    box-shadow: orangered 1px 1px 20px;
+  }
 }
 
 .banner-sections {
@@ -112,6 +101,7 @@ body {
   @media(max-width: $merge-breakpoint) {
     width: 100%;
   }
+  margin: 0 auto;
   width: 85%;
 }
 
@@ -142,7 +132,6 @@ body {
   margin-top: 0;
 }
 
-
 .spaced-l {
   margin-left: 5px;
 }
@@ -153,6 +142,7 @@ body {
 }
 
 .twitter-slides {
+  background: #f7f7f7;
   position: relative;
   padding: 1rem 0;
 }
@@ -167,8 +157,7 @@ body {
 }
 
 .tweet {
-  //border-radius: 3px;
-  ////height: 540px;
+  box-shadow: 5px 12px 15px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1) !important;
   margin: 1rem 1.5rem;
   width: 550px;
 
@@ -180,15 +169,19 @@ body {
   .twitter-controls-container {
     margin-top: 10px;
   }
+
   .twitter-tag {
     margin-top: 0 !important;
   }
+
   .tweet-name {
     margin-bottom: 0 !important;
   }
+
   .tweet-image {
     margin: 10px 0;
   }
+
   .gatsby-resp-image-link {
     margin-bottom: 5px;
   }
@@ -207,4 +200,24 @@ body {
   .slide {
     background: $website-background !important;
   }
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.fanart-tag {
+  z-index: 2;
+  position: absolute;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  top: 0;
+  right: 0;
+  margin: 10px;
 }

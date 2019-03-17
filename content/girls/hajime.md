@@ -4,7 +4,7 @@ name: Hajime
 quote: Testing
 image: "./media/hajime.png"
 thumbnail: "./media/hajime-thumbnail.png"
-color: "#F8BC74"
+color: "#83cccb"
 strengths:
   - Has cool toys
 weaknesses:

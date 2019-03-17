@@ -4,9 +4,24 @@ import { useEffect } from "react";
 import GithubCorner from "react-github-corner";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import Loader from "react-spinners/PulseLoader";
+
+import "./landing_panel.scss";
 
 const Affiliated = ({ users, type }) => {
   const isDiscord = type === "discord";
+  const color = isDiscord ? "#7289da" : "#ff4500";
+
+  const placeholder =
+    <Loader size={10} color={color}/>;
+
+  const content =
+    <span className="is-size-5-desktop is-size-6-tablet">
+      <b>
+        {users}
+      </b>
+      {isDiscord ? " members" : " redditors"}
+    </span>;
 
   return (
     <a
@@ -14,10 +29,7 @@ const Affiliated = ({ users, type }) => {
       href="https://reddit.com/r/NewGame"
     >
       <Icon isSize="large" className={`fab fa-${type}`}/>
-      <span className="is-size-5-desktop is-size-6-tablet">
-        <b>{users}</b>
-        {isDiscord ? " members" : " redditors"}
-      </span>
+      {users ? content : placeholder}
     </a>
   );
 };
@@ -36,7 +48,15 @@ export const LandingPanel = () => {
         setReddit(r.subscribers);
       });
 
-  useEffect(() => void getUserData(defaultEndpoint), []);
+  // const rollNumbers = () =>
+
+  useEffect(() => {
+    void getUserData(defaultEndpoint);
+  }, []);
+
+  const scrollTo = () => document.querySelector(".intro").scrollIntoView({
+    behavior: "smooth", inline: "nearest", block: "start"
+  });
 
   const title = [
     "is-size-1-desktop",
@@ -51,46 +71,46 @@ export const LandingPanel = () => {
   const query = graphql`{
     file(relativePath: { regex: "/landing.jpg/" }) {
       childImageSharp {
-        fixed(width: 1920 height: 1080 quality: 100) {
-          ...GatsbyImageSharpFixed_withWebp
+        fluid(maxWidth: 1920 quality: 50 srcSetBreakpoints: [ 700, 1280, 1920 ]) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
   }`;
 
   return (
-    <StaticQuery query={query} render={data =>
-      <div className="landing">
-        <Img className="landing-image" fadeIn={true} fixed={data.file.childImageSharp.fixed}/>
-        <div className="overlay"/>
-        <div className="banner-container">
-          <GithubCorner href="https://github.com/xetera/hifumi.io"/>
-          <div className="arrow has-text-white">
-            <Icon className="fa fa-arrow-down"/>
-          </div>
-          <Columns>
-            <Column>
-              <div className="is-flex banner-text-container">
-                <h1 className={title.join(" ")}>New Game!</h1>
-                <p className="has-text-white-ter banner-text has-text-centered shadowed">
-                  {" "}
-                  ニューゲーム
-                </p>
-              </div>
-              <Section>
-                <Columns>
-                  <Column isSize="1/2">
-                    <Affiliated users={discord} type="discord"/>
-                  </Column>
-                  <Column isSize="1/2">
-                    <Affiliated users={reddit} type="reddit"/>
-                  </Column>
-                </Columns>
-              </Section>
-            </Column>
-          </Columns>
+    <div className="landing">
+      <StaticQuery query={query} render={data =>
+        <Img className="landing-image" fluid={data.file.childImageSharp.fluid}/>
+      }/>
+      <div className="overlay"/>
+      <div className="banner-container">
+        <GithubCorner href="https://github.com/xetera/hifumi.io"/>
+        <div className="arrow has-text-white" onClick={scrollTo}>
+          <Icon className="fa fa-arrow-down is-size-4"/>
         </div>
+        <Columns>
+          <Column>
+            <div className="is-flex banner-text-container">
+              <h1 className={title.join(" ")}>New Game!</h1>
+              <p className="has-text-white-ter banner-text has-text-centered shadowed">
+                {" "}
+                ニューゲーム
+              </p>
+            </div>
+            <Section>
+              <Columns>
+                <Column isSize="1/2">
+                  <Affiliated users={discord} type="discord"/>
+                </Column>
+                <Column isSize="1/2">
+                  <Affiliated users={reddit} type="reddit"/>
+                </Column>
+              </Columns>
+            </Section>
+          </Column>
+        </Columns>
       </div>
-    }/>
+    </div>
   );
 };
