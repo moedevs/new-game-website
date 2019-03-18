@@ -69,7 +69,7 @@ export const Girl = (options) =>
          * disappearing when we switch to <1024px width. Feel free to try it
          * out with gatsby-image but I couldn't make it work lol @Xetera
          */}
-        <img srcSet={options.image.srcSet} alt="Best girl" className="image girl"/>
+        <img srcSet={options.image.srcSetWebp} alt="Best girl" className="image girl"/>
       </Column>
       <Column className="girl-content">
         <Section>

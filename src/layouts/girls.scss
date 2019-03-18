@@ -1,5 +1,6 @@
 @import "variables";
 @import "~bulma/sass/utilities/initial-variables";
+
 .girl-section {
   position: relative;
   display: flex;
@@ -9,6 +10,11 @@
   background-size: cover;
   overflow: hidden;
   width: 100%;
+
+  &:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
 
   /*
     Alternating the position of
@@ -75,6 +81,7 @@
         margin: 0 auto;
         max-height: 50vh;
       }
+
       .gatsby-image-wrapper > img {
         height: 300px !important;
         position: relative !important;
