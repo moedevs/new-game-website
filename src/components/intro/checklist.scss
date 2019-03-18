@@ -1,3 +1,10 @@
+.checklist {
+  display: inline-flex;
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: left;
+}
+
 .checklist-text {
   flex-shrink: 99999;
 }

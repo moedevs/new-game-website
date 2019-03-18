@@ -31,7 +31,6 @@ export const MediaSection = () => {
     <Section className="narrow-width">
       <Columns isCentered className="media-columns">
         <Column isSize="3/4" className="media-column">
-          <Title className="has-text-grey-dark">Why New Game! is absolutely the best anime</Title>
           <Checklist/>
         </Column>
       </Columns>

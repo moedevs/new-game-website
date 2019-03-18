@@ -1,33 +1,44 @@
 import * as React from "react";
-import { Box, Content, Icon, Level, LevelItem, LevelLeft, Subtitle } from "bloomer";
+import { Box, Content, Icon, Level, LevelItem, LevelLeft, Subtitle, Title } from "bloomer";
 
 import "./checklist.scss";
 
 const textClass = "is-size-4-desktop is-size-6-tablet checklist-text";
 
-const Item = ({ checked, text }) =>
-      <span style={{ display: "flex", alignItems: "center" }}>
+const Item = ({ checked, children }) =>
+  <span style={{ display: "flex", alignItems: "center" }}>
         {checked
           ? <Icon className="fas fa-check has-text-primary" style={{ marginRight: "10px" }}/>
           : <Icon className="fas fa-times has-text-danger" style={{ marginRight: "10px" }}/>}
-        {typeof text === "string"
-          ? <p className={textClass}>{text}</p>
-          : text
-        }
+    {children}
       </span>;
 
+const Text = ({ children }) => <p className={textClass}>{children}</p>;
+
 export const Checklist = () =>
-    <Content style={{ display: "inline-flex", margin: '0 auto', flexDirection: "column" }}>
-      {/* <Subtitle className="has-text-grey-dark">Why New Game! <i>could be</i> the best anime</Subtitle>*/}
-      <Item checked text="Has the best girls"/>
-      <Item checked text="Is very inspirational"/>
-      <Item checked text="Only girls allowed"/>
-      <Item checked text="Includes programming"/>
-      <Item tag="span" checked text={
-        <p className={textClass}>
-          Won the best anime award 3 times
+  <div>
+    <Title className="has-text-grey-dark">Why New Game! is absolutely the best anime</Title>
+    <Content className="checklist">
+      <Item checked>
+        <Text>Has the best girls</Text>
+      </Item>
+      <Item checked>
+        <Text>Is very inspirational</Text>
+      </Item>
+      <Item checked>
+        <Text>Only girls allowed</Text>
+      </Item>
+      <Item checked>
+        <Text>
+          Won the bt anime award 3 times
           <span className="is-size-7-desktop is-size-7-mobile"> probably... we didn't check</span>
-        </p>
-      }/>
-      <Item checked={false} text="Momo exists"/>
-    </Content>;
+        </Text>
+      </Item>
+      <Item checked>
+        <Text>Is very inspirational</Text>
+      </Item>
+      <Item>
+        <Text>Momo exists</Text>
+      </Item>
+    </Content>
+  </div>;
