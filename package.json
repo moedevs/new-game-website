@@ -9,6 +9,7 @@
     "dev": "npm run develop",
     "format": "prettier --write \"src/**/*.jsx*\"",
     "lint": "eslint \"src/**/*.jsx\"",
+    "fix": "npm run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
