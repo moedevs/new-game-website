@@ -43,9 +43,9 @@ export const LandingPanel = () => {
   const getUserData = (endpoint) =>
     fetch(endpoint, { mode: "cors" })
       .then(r => r.json())
-      .then(r => {
-        setDiscord(r.discordUsers);
-        setReddit(r.subscribers);
+      .then(({ discord, reddit }) => {
+        setDiscord(discord);
+        setReddit(reddit);
       });
 
   // const rollNumbers = () =>
