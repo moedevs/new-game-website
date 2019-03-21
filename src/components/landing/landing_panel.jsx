@@ -36,7 +36,7 @@ const Affiliated = ({ users, type }) => {
 
 export const LandingPanel = () => {
   const DEFAULT_USERS = 0;
-  const defaultEndpoint = "https://whamer.000webhostapp.com/api/hifumi.php";
+  const defaultEndpoint = "https://api.hifumi.io/social/stats";
   const [discord, setDiscord] = React.useState(DEFAULT_USERS);
   const [reddit, setReddit] = React.useState(DEFAULT_USERS);
 
