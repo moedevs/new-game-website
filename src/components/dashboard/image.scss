@@ -1,0 +1,72 @@
+.guild-image {
+  max-height: 200px;
+  max-width: 380px;
+}
+
+.guild-image-wrapper {
+  justify-content: center;
+  display: flex;
+}
+
+.guild-image-card {
+  justify-content: center;
+  padding: 10px;
+  flex-grow: 0;
+  display: block;
+  max-height: 400px;
+}
+
+.sidebar {
+
+}
+
+.main-content {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+}
+
+.tags-label {
+  margin: 15px 0 5px;
+}
+
+.guild-images {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 15px;
+}
+
+.tags {
+  flex-wrap: wrap;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.file-name {
+  text-overflow: ellipsis;
+}
+
+.images-page {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-title {
+  margin: 5rem 0 !important;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+header {
+  position: relative;
+  height: 500px;
+  background: #0b345d linear-gradient(155deg, #002f62 0%, #18496a 50%, #138b89 100%);
+}
