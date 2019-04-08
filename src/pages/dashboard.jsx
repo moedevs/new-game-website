@@ -1,9 +1,10 @@
 import * as React from "react";
 import { ImageBrowser } from "../components/dashboard/image_browser";
 import gql from "graphql-tag";
-import "isomorphic-fetch";
 import { client } from "../graphql";
 import { ApolloProvider, useSubscription } from "react-apollo-hooks";
+import aobaLoader from "../loaders/aobaload.gif";
+import { Loader } from "../loaders";
 
 const imageQuery = gql`
   subscription {
@@ -24,13 +25,14 @@ const imageQuery = gql`
 export const DashboardWrapper = () => {
   const { data, error, loading } = useSubscription(imageQuery);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (error) {
     return <div>Oops...{error}</div>;
   }
+
+  if (loading) {
+    return <Loader media={aobaLoader}/>;
+  }
+
 
   return <ImageBrowser images={data.images}/>;
 };
