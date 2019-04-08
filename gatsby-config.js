@@ -43,13 +43,13 @@ module.exports = {
         ]
       }
     },
-    {
-      resolve: "gatsby-plugin-purgecss",
-      options: {
-        printRejected: true,
-        purgeOnly: ['/bulma.scss']
-      }
-    },
+    // {
+    //   resolve: "gatsby-plugin-purgecss",
+    //   options: {
+    //     printRejected: true,
+    //     purgeOnly: ['/bulma.scss']
+    //   }
+    // },
     {
       resolve: "gatsby-transformer-yaml",
       options: {

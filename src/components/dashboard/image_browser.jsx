@@ -3,7 +3,7 @@ import * as B from "bloomer";
 
 import "./image.scss";
 import "./dashboard.scss";
-import "../../layouts/bulma.scss"
+import "../../layouts/bulma.scss";
 import "../../../static/fonts/whitney.woff";
 
 import StackGrid from "react-stack-grid";
