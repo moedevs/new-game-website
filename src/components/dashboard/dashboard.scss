@@ -1,4 +1,10 @@
 @import "_vars.scss";
+@font-face {
+  font-family: 'Whitney';
+  src: url("../../../static/fonts/whitney.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body, html {
   // Discord color
@@ -6,5 +12,6 @@ body, html {
 }
 
 h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Whitney';
   color: $dashboard-text;
 }

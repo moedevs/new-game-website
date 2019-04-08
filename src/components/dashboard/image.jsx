@@ -4,7 +4,7 @@ import * as B from "bloomer";
 export const GuildImage = ({ image, setFocus }) => {
   const tagContent =
     <div className="tags">
-      {image.tags.map(t => <B.Tag isColor="success">{t.name}</B.Tag>)}
+      {image.tags.map(t => <B.Tag isColor="">{t.name}</B.Tag>)}
     </div>;
   return (
     <B.Card className="guild-image-card">
