@@ -4,7 +4,7 @@ import * as B from "bloomer";
 export const GuildImage = ({ image, setFocus }) => {
   const tagContent =
     <div className="tags">
-      {image.tags.map(t => <B.Tag isColor="warning">{t.name}</B.Tag>)}
+      {image.tags.map(t => <B.Tag isColor="success">{t.name}</B.Tag>)}
     </div>;
   return (
     <B.Card className="guild-image-card">
@@ -15,12 +15,14 @@ export const GuildImage = ({ image, setFocus }) => {
         <B.Level className="image-poster">
           <B.LevelLeft>
             <B.LevelItem>
-              <figure className="is-rounded">
-                <B.Image isSize="24x24" src={image.user.avatar}/>
+              <figure className="image is-24x24">
+                <img className="is-rounded is-24x24"src={image.user.avatar}/>
               </figure>
             </B.LevelItem>
             <B.LevelItem>
-              @{image.user.name}
+              <p className="image-poster-name has-text-white">
+                @{image.user.name}
+              </p>
             </B.LevelItem>
           </B.LevelLeft>
         </B.Level>

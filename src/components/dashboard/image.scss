@@ -16,6 +16,7 @@
   justify-content: center;
   display: block;
   max-height: 400px;
+  background-color: #212121
 }
 
 .sidebar {
@@ -34,12 +35,8 @@
 }
 
 .image-content {
+  background-color: #303030;
   padding: 5px !important;
-}
-
-.tags {
-  display: flex;
-  align-items: center;
 }
 
 .guild-images {
@@ -52,7 +49,7 @@
 .tags {
   flex-wrap: wrap;
   max-width: 100%;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   display: flex;
   flex-direction: row;
 }
@@ -84,6 +81,9 @@
 .image-poster {
   padding: 15px;
   margin-bottom: 0px !important;
+  .image-poster-name {
+    font-size: 14px;
+  }
 }
 
 .modal-image {

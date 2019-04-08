@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as B from "bloomer";
+import { anchorize } from "../../utils";
 
 
 export const ModalImage = ({ image, close }) => {
@@ -10,14 +11,14 @@ export const ModalImage = ({ image, close }) => {
     <B.Modal isActive={image.open}>
       <B.ModalBackground onClick={close}/>
       <B.ModalContent className="preview-modal">
-        {/*<div className="modal-image-container">*/}
+        {/* <div className="modal-image-container">*/}
         <img src={image.image.url} className="modal-image"/>
         <B.Subtitle hasTextColor="grey" isSize={6}>
-          <a href={image.image.url} style={{ fontSize: 14, color: "grey" }}>
+          <a {...anchorize(image.image.url)} style={{ fontSize: 14, color: "grey" }}>
             Open original
           </a>
         </B.Subtitle>
-        {/*</div>*/}
+        {/* </div>*/}
       </B.ModalContent>
       <B.ModalClose onClick={close}/>
     </B.Modal>

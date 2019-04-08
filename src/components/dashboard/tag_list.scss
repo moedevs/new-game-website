@@ -1,0 +1,10 @@
+@import "_vars.scss";
+
+.taglist {
+  background-color: $dashboard-secondary;
+  .card-content {
+    * {
+      color: white;
+    }
+  }
+}
