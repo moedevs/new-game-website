@@ -2,6 +2,13 @@
 
 .taglist {
   background-color: $dashboard-secondary;
+  .tag-list-count {
+    margin-right: 6px;
+  }
+  .tag-list-item {
+    display: flex;
+    align-items: center;
+  }
   .card-content {
     * {
       color: white;

@@ -1,0 +1,19 @@
+@import "vars";
+
+.dashboard-navbar {
+  display: flex;
+}
+
+.navbar {
+  background-color: $dashboard-secondary;
+  height: 9%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-items {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
