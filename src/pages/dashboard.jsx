@@ -4,8 +4,10 @@ import { ApolloProvider, useQuery } from "react-apollo-hooks";
 import ApolloClient from "apollo-boost";
 import { ImageBrowser } from "../components/dashboard/image_browser";
 import gql from "graphql-tag";
+import "isomorphic-fetch"
 
 const client = new ApolloClient({
+  ssrMode: true,
   uri: process.env.NODE_ENV === "production"
     ? "https://db.hifumi.io/v1alpha1/graphql"
     : "http://localhost:8080/v1alpha1/graphql"

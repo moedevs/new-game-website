@@ -35,6 +35,7 @@
     "gatsby-transformer-sharp": "^2.1.13",
     "gatsby-transformer-yaml": "^2.1.8",
     "graphql-tag": "^2.10.1",
+    "isomorphic-fetch": "^2.2.1",
     "node-sass": "^4.11.0",
     "react": "16.8.0-alpha.1",
     "react-apollo-hooks": "^0.4.5",

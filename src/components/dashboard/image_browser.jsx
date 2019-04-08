@@ -2,7 +2,6 @@ import * as React from "react";
 import * as B from "bloomer";
 import { GuildImage } from "./image";
 
-import StackGrid from "react-stack-grid";
 
 import "./image.scss";
 import { SearchBar } from "./searchbar";
@@ -43,9 +42,9 @@ export const ImageBrowser = ({ images }) => {
       <div className="main-content">
         <B.Columns isFullWidth>
           <B.Column className="is-four-fifths" isFullWidth>
-            <StackGrid columnWidth={200} gutterWidth={10} gutterHeight={10} monitorImagesLoaded>
-              {images.map((d, i) => <GuildImage image={d} key={i} setFocus={setImage}/>)}
-            </StackGrid>
+            {/*<StackGrid columnWidth={200} gutterWidth={10} gutterHeight={10} monitorImagesLoaded>*/}
+              {/*{images.map((d, i) => <GuildImage image={d} key={i} setFocus={setImage}/>)}*/}
+            {/*</StackGrid>*/}
           </B.Column>
           <B.Column className="sidebar is-one-fifth">
             <B.Card className="tags">
