@@ -1,6 +1,9 @@
 .guild-image {
+  max-width: 200px;
+  width: auto;
+  object-fit: cover;
   max-height: 200px;
-  max-width: 380px;
+  height: auto;
 }
 
 .guild-image-wrapper {
@@ -9,37 +12,47 @@
 }
 
 .guild-image-card {
+  align-items: center;
   justify-content: center;
-  padding: 10px;
-  flex-grow: 0;
   display: block;
   max-height: 400px;
 }
 
 .sidebar {
-
+  max-width: 100%;
 }
 
 .main-content {
-  width: 85%;
+  width: 100%;
+  justify-content: center;
   display: flex;
   flex-direction: row;
+
+  .columns {
+    width: 100%;
+  }
 }
 
-.tags-label {
-  margin: 15px 0 5px;
+.image-content {
+  padding: 5px !important;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
 }
 
 .guild-images {
-  display: grid;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 15px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .tags {
   flex-wrap: wrap;
   max-width: 100%;
+  padding: 10px;
   display: flex;
   flex-direction: row;
 }
@@ -50,23 +63,48 @@
 
 .images-page {
   align-items: center;
+  margin: 0 auto;
   justify-content: center;
   display: flex;
+  width: 80%;
+  padding: 10px;
   flex-direction: column;
 }
 
-.dashboard-title {
-  margin: 5rem 0 !important;
+.dashboard-title-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .dashboard-title {
+    margin: .7em 0 !important;
+  }
 }
 
-svg {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: auto;
+.image-poster {
+  padding: 15px;
+  margin-bottom: 0px !important;
 }
-header {
-  position: relative;
-  height: 500px;
-  background: #0b345d linear-gradient(155deg, #002f62 0%, #18496a 50%, #138b89 100%);
+
+.modal-image {
+  max-height: 600px;
+  max-width: 400px;
+}
+
+.image-link {
+  color: grey;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// OVERRIDES
+.modal-content {
+  // Bulma sets a weird 640px min width
+  width: inherit !important;
+}
+
+.modal-background {
+  background-color: black !important;
+  opacity: 0.85 !important;
 }

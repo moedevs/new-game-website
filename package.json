@@ -41,7 +41,8 @@
     "react-dom": "16.8.0-alpha.1",
     "react-github-corner": "^2.3.0",
     "react-helmet": "^5.2.0",
-    "react-spinners": "^0.5.1"
+    "react-spinners": "^0.5.1",
+    "react-stack-grid": "^0.7.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.0.6",
