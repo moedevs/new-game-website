@@ -8,7 +8,7 @@ import { Loader } from "../loaders";
 
 const imageQuery = gql`
   subscription {
-    images {
+    images(limit: 20, order_by: { created_at: desc }) {
       url
       file_name
       tags: image_tags {
@@ -26,7 +26,8 @@ export const DashboardWrapper = () => {
   const { data, error, loading } = useSubscription(imageQuery);
 
   if (error) {
-    return <div>Oops...{error}</div>;
+    console.log(error)
+    return <div>Oops...</div>;
   }
 
   if (loading) {
