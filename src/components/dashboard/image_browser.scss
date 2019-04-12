@@ -1,0 +1,14 @@
+.two-columns {
+  display: flex;
+  width: 100%;
+}
+.main-content {
+  margin-top: 4%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  .columns {
+    width: 100%;
+  }
+}

@@ -43,11 +43,12 @@
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
     "node-sass": "^4.11.0",
-    "react": "16.8.0-alpha.1",
+    "react": "^16.8.0-alpha.1",
     "react-apollo-hooks": "^0.4.5",
     "react-dom": "16.8.0-alpha.1",
     "react-github-corner": "^2.3.0",
     "react-helmet": "^5.2.0",
+    "react-paginate": "^6.3.0",
     "react-spinners": "^0.5.1",
     "react-stack-grid": "^0.7.1",
     "subscriptions-transport-ws": "^0.9.16"

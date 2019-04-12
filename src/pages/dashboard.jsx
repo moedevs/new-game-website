@@ -24,17 +24,13 @@ const imageQuery = gql`
 
 export const DashboardWrapper = () => {
   const { data, error, loading } = useSubscription(imageQuery);
-
   if (error) {
-    console.log(error)
+    console.log(error);
     return <div>Oops...</div>;
   }
-
   if (loading) {
     return <Loader media={aobaLoader}/>;
   }
-
-
   return <ImageBrowser images={data.images}/>;
 };
 
