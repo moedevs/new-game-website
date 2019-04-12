@@ -1,61 +1,106 @@
 import * as React from "react";
 import * as B from "bloomer";
-
 import "./image.scss";
 import "./image_browser.scss";
 import "./dashboard.scss";
 import "../../layouts/bulma.scss";
 import "../../../static/fonts/whitney.woff";
-
-import StackGrid from "react-stack-grid";
-
 import { ModalImage } from "./modal";
-import { GuildImage } from "./image";
 import { TagList } from "./tag_list";
 import { Navbar } from "./navbar";
-import { Paginator } from "./paginate";
-import { useEffect } from "react";
+import { useSubscription } from "react-apollo-hooks";
+import gql from "graphql-tag";
+import { Waypoint } from "react-waypoint";
+import { ImageScroller } from "./image_scroller";
 
-export const DashboardTitle = () =>
-  <B.Columns className="dashboard-title-area">
-  </B.Columns>;
+const imageQuery = gql`
+  subscription ($where: images_bool_exp, $limit: Int!, $offset: Int!) {
+    images(
+      limit: $limit,
+      offset: $offset,
+      order_by: { created_at: desc }
+      where: $where
+    ) {
+      url
+      file_name
+      tags: image_tags {
+        name
+      }
+      user {
+        name
+        avatar
+      }
+    }
+  }
+`;
 
-export const ImageBrowser = ({ images }) => {
+export const ImageBrowser = () => {
+  const IMAGES_PER_PAGE = 20;
   const PAGINATION_DELAY = 2000;
-  const [filter, setFilter] = React.useState(null);
-  const [image, setImage] = React.useState({ open: false });
-  const [paginationOpen, setPagination] = React.useState(false);
-  const closeImage = () => setImage({ open: false });
-  useEffect(() => {
-    setTimeout(() => setPagination(true), PAGINATION_DELAY);
-  }, []);
+  const [scrollable, setScrollable] = React.useState(false);
+  const [modal, setModal] = React.useState(null);
+  const [variables, setVariables] = React.useState({
+    where: {},
+    limit: IMAGES_PER_PAGE,
+    offset: 0
+  });
+
+  setTimeout(() => {
+    if (!scrollable) {
+      setScrollable(true);
+    }
+  }, PAGINATION_DELAY);
+
+  const { loading, error, data } = useSubscription(imageQuery, { variables });
+  const closeImage = () => setModal(false);
+  const search = keyword => {
+    setVariables({
+      offset: 0,
+      limit: IMAGES_PER_PAGE,
+      where: {
+        image_tags: {
+          name: {
+            _eq: keyword
+          }
+        }
+      }
+    });
+  };
+
+  const loadMore = () => {
+    // setVariables({
+    //   ...variables,
+    //   limit: variables.limit + IMAGES_PER_PAGE,
+    //   offset: variables.offset + IMAGES_PER_PAGE,
+    // });
+  };
 
   return (
     <div>
       <Navbar/>
       <div className="images-page">
-        <ModalImage image={image} close={closeImage}/>
+        <ModalImage image={modal} close={closeImage}/>
         {/* <SearchBar/>*/}
         <div className="main-content">
           <div className="two-columns">
             <B.Columns isFullWidth>
               <B.Column className="sidebar is-one-fifth">
-                <TagList/>
+                <TagList search={search}/>
               </B.Column>
               <B.Column className="is-four-fifths" isFullWidth>
-                <StackGrid
-                  columnWidth={200}
-                  gutterWidth={10}
-                  gutterHeight={10}
-                  monitorImagesLoaded
-                >
-                  {images.map((d, i) => <GuildImage image={d} key={i} setFocus={setImage}/>)}
-                </StackGrid>
-                {paginationOpen && <Paginator/>}
+                <ImageScroller
+                  data={data ? data.images : []}
+                  loading={loading}
+                  error={error}
+                  setModal={setModal}
+                />
               </B.Column>
             </B.Columns>
           </div>
         </div>
+      </div>
+      <div style={{ clear: "both" }}>
+        {scrollable && <Waypoint onEnter={e => e.currentPosition === "inside" && scrollable && loadMore()}/>}
       </div>
     </div>
   );

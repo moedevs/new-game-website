@@ -39,35 +39,36 @@ const magicSort = (a, b) => {
   } else if (a.count > b.count) {
     return down;
   }
-    return a.name < b.name ? down : up;
+  return a.name < b.name ? down : up;
 };
 
-export const TagListItem = ({ count, name }) =>
-  <span className="tag-list-item">
+export const TagListItem = ({ count, name, onClick }) =>
+  <span className="tag-list-item" onClick={onClick}>
     <span className="has-text-danger tag-list-count">{count}</span>
-    <p>{name}</p>
+    <p className="tag-list-item-name">{name}</p>
   </span>;
 
-export const TagList = () => {
+export const TagList = ({ search }) => {
   const { error, data, loading } = useSubscription(tagCounts);
   const { error: tagDataError, loading: tagDataLoading, data: tagData } = useSubscription(maxTags);
 
-  if (loading || tagDataLoading){
+  if (loading || tagDataLoading) {
     return null;
   }
   if (error || tagDataError) {
     console.log(error || tagDataError);
     return null;
   }
+
   const tags = data.counts;
   const sorted = tags.sort(magicSort);
-  console.log(tagData)
+  console.log(tagData);
   const unseen = tagData.tags.aggregate.max - tags.length;
   return (
     <B.Box className="taglist">
       <B.Title>Tags</B.Title>
       <hr/>
-      {sorted.map(({ name, count }) => <TagListItem count={count} name={name}/>)}
+      {sorted.map(({ name, count }) => <TagListItem count={count} name={name} onClick={() => search(name)}/>)}
       {unseen > 0 && <p className="has-text-grey">{`and ${unseen} more tags...`}</p>}
     </B.Box>
   );

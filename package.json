@@ -51,6 +51,7 @@
     "react-paginate": "^6.3.0",
     "react-spinners": "^0.5.1",
     "react-stack-grid": "^0.7.1",
+    "react-waypoint": "^9.0.1",
     "subscriptions-transport-ws": "^0.9.16"
   },
   "devDependencies": {
