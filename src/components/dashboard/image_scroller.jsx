@@ -2,9 +2,9 @@ import * as React from "react";
 import { GuildImage } from "./image";
 import aobaLoader from "../../loaders/aobaload.gif";
 import InfiniteScroll from "react-infinite-scroller";
-import StackGrid from "react-stack-grid"
+import StackGrid from "react-stack-grid";
 
-import "./image_scroller.scss"
+import "./image_scroller.scss";
 export const ImageScroller = ({ data, loading, error, setModal, loadMore, hasMore }) => {
   if (error) {
     console.log(error);
