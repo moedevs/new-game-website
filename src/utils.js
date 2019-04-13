@@ -1,8 +1,8 @@
 import * as React from "react";
 
 export const proxy = "https://proxy.hifumi.io";
-export const thumbnailProxy = `${proxy}/200`;
-export const previewProxy = `${proxy}/200`;
+export const thumbnailProxy = `${proxy}/250`;
+export const previewProxy = `${proxy}/600`;
 
 export const CtxFanarts = React.createContext([]);
 

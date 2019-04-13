@@ -2,14 +2,51 @@
   max-width: 200px;
   width: auto;
   object-fit: cover;
-  max-height: 200px;
+  max-height: 250px;
   height: auto;
 }
 
 .guild-image-wrapper {
   justify-content: center;
-  height: 200px;
+  height: 250px;
   display: flex;
+}
+
+.image-wrapper {
+  position: relative;
+  align-items: flex-end;
+  z-index: 399999;
+  &:hover {
+    cursor: pointer;
+    .black-panel {
+      display: block;
+    }
+  }
+}
+
+.tag-label {
+  font-size: 11px;
+}
+
+.tag-label-count {
+
+}
+
+.black-panel {
+  display: none;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  z-index: 2;
+  background-color: rgba(41,41,41, .9);
+  position: absolute;
+  .tags {
+    .tag {
+      font-size: 11px;
+      padding: 3px;
+    }
+    padding: 0px !important;;
+  }
 }
 
 .guild-image-card {
@@ -68,14 +105,28 @@
     margin: .7em 0 !important;
   }
 }
-
-.image-poster {
-  padding: 15px;
-  margin-bottom: 0px !important;
-
+.image-poster-left {
+  overflow: hidden;
+  width: 80%;
+}
+.image-poster-text-wrapper {
+  width: 100%;
+  display: inline-flex;
   .image-poster-name {
-    font-size: 14px;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: inline-flex;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 12px;
   }
+}
+.image-poster {
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  margin-bottom: 0px !important;
 }
 
 .modal-image {

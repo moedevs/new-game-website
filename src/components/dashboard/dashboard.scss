@@ -1,4 +1,6 @@
 @import "_vars.scss";
+@import url('https://fonts.googleapis.com/css?family=Overpass');
+
 @font-face {
   font-family: 'Whitney';
   src: url("../../../static/fonts/whitney.woff") format('woff');
@@ -12,6 +14,6 @@ body, html {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  font-family: 'Whitney' !important;
+  font-family: 'Overpass' !important;
   color: $dashboard-text !important;
 }
