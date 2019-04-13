@@ -17,7 +17,7 @@ export const GuildImage = ({ image, setFocus }) => {
     <B.Card className="guild-image-card">
       <div className="image-wrapper">
         {image.tags.length > 0 &&
-        <div className="black-panel">
+        <div className="black-panel animated fadeIn">
           {tagContent}
         </div>}
         <B.CardImage className="guild-image-wrapper" onClick={() => setFocus({ image, open: true })}>

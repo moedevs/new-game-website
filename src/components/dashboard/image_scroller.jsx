@@ -21,7 +21,6 @@ export const ImageScroller = ({ data, loading, error, setModal, loadMore, hasMor
           gutterWidth={10}
           columnWidth={200}
           gutterHeight={10}
-          monitorImagesLoaded
         >
           {data.map((d, i) =>
             <GuildImage
