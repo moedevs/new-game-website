@@ -1,31 +1,37 @@
 import * as React from "react";
-import StackGrid from "react-stack-grid";
 import { GuildImage } from "./image";
 import aobaLoader from "../../loaders/aobaload.gif";
-// import { Loader } from "../../loaders";
-import Loader from "react-spinners/PulseLoader";
+import InfiniteScroll from "react-infinite-scroller";
+import StackGrid from "react-stack-grid"
 
-export const ImageScroller = ({ data, loading, error, setModal }) => {
-
+import "./image_scroller.scss"
+export const ImageScroller = ({ data, loading, error, setModal, loadMore, hasMore }) => {
   if (error) {
     console.log(error);
     return <div>Oops...</div>;
   }
-
   return (
-    <StackGrid
-      columnWidth={200}
-      gutterWidth={10}
-      gutterHeight={10}
-      monitorImagesLoaded
-      duration={0}
-    >
-      {data.map((d, i) =>
-        <GuildImage
-          image={d} key={i}
-          setFocus={setModal}
-        />)}
-      {loading && <Loader/>}
-    </StackGrid>
-  )
-}
+    <div>
+      <InfiniteScroll
+        loadMore={loadMore}
+        initialLoad={false}
+        hasMore={hasMore}
+      >
+        <StackGrid
+          gutterWidth={10}
+          columnWidth={200}
+          gutterHeight={10}
+          monitorImagesLoaded
+        >
+        {data.map((d, i) =>
+          <GuildImage
+            image={d}
+            key={i}
+            setFocus={setModal}
+          />)}
+        {loading && <img src={aobaLoader}/>}
+        </StackGrid>
+      </InfiniteScroll>
+    </div>
+  );
+};

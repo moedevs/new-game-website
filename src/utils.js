@@ -1,5 +1,9 @@
 import * as React from "react";
 
+export const proxy = "https://proxy.hifumi.io";
+export const thumbnailProxy = `${proxy}/200`;
+export const previewProxy = `${proxy}/200`;
+
 export const CtxFanarts = React.createContext([]);
 
 export function* infinite(arr) {

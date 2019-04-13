@@ -10,14 +10,12 @@ import { TagList } from "./tag_list";
 import { Navbar } from "./navbar";
 import { useSubscription } from "react-apollo-hooks";
 import gql from "graphql-tag";
-import { Waypoint } from "react-waypoint";
 import { ImageScroller } from "./image_scroller";
 
 const imageQuery = gql`
-  subscription ($where: images_bool_exp, $limit: Int!, $offset: Int!) {
+  subscription ($where: images_bool_exp, $limit: Int!) {
     images(
       limit: $limit,
-      offset: $offset,
       order_by: { created_at: desc }
       where: $where
     ) {
@@ -34,6 +32,16 @@ const imageQuery = gql`
   }
 `;
 
+const aggregateQuery = gql`
+  subscription {
+    images: images_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+`;
+
 export const ImageBrowser = () => {
   const IMAGES_PER_PAGE = 20;
   const PAGINATION_DELAY = 2000;
@@ -41,9 +49,9 @@ export const ImageBrowser = () => {
   const [modal, setModal] = React.useState(null);
   const [variables, setVariables] = React.useState({
     where: {},
-    limit: IMAGES_PER_PAGE,
-    offset: 0
+    limit: IMAGES_PER_PAGE
   });
+  const { error: imageError, data: imageCount } = useSubscription(aggregateQuery);
 
   setTimeout(() => {
     if (!scrollable) {
@@ -51,11 +59,23 @@ export const ImageBrowser = () => {
     }
   }, PAGINATION_DELAY);
 
-  const { loading, error, data } = useSubscription(imageQuery, { variables });
+  const [cachedImages, setCache] = React.useState([]);
+  const { loading, error, data } = useSubscription(imageQuery, {
+    variables,
+    onSubscriptionData: ({ subscriptionData }) =>
+      setCache(subscriptionData.data.images)
+  });
   const closeImage = () => setModal(false);
   const search = keyword => {
+    setCache([]);
+    if (!keyword) {
+      return setVariables({
+        ...variables,
+        where: {},
+        limit: IMAGES_PER_PAGE
+      });
+    }
     setVariables({
-      offset: 0,
       limit: IMAGES_PER_PAGE,
       where: {
         image_tags: {
@@ -66,15 +86,15 @@ export const ImageBrowser = () => {
       }
     });
   };
-
   const loadMore = () => {
-    // setVariables({
-    //   ...variables,
-    //   limit: variables.limit + IMAGES_PER_PAGE,
-    //   offset: variables.offset + IMAGES_PER_PAGE,
-    // });
+    if (loading) {
+      return;
+    }
+    setVariables({
+      ...variables,
+      limit: variables.limit + IMAGES_PER_PAGE
+    });
   };
-
   return (
     <div>
       <Navbar/>
@@ -85,11 +105,13 @@ export const ImageBrowser = () => {
           <div className="two-columns">
             <B.Columns isFullWidth>
               <B.Column className="sidebar is-one-fifth">
-                <TagList search={search}/>
+                <TagList search={search} total={imageCount ? imageCount.images.aggregate.count : 0}/>
               </B.Column>
               <B.Column className="is-four-fifths" isFullWidth>
                 <ImageScroller
-                  data={data ? data.images : []}
+                  loadMore={loadMore}
+                  hasMore={imageCount ? cachedImages.length < imageCount.images.aggregate.count : false}
+                  data={loading ? cachedImages : data.images}
                   loading={loading}
                   error={error}
                   setModal={setModal}
@@ -100,7 +122,6 @@ export const ImageBrowser = () => {
         </div>
       </div>
       <div style={{ clear: "both" }}>
-        {scrollable && <Waypoint onEnter={e => e.currentPosition === "inside" && scrollable && loadMore()}/>}
       </div>
     </div>
   );
