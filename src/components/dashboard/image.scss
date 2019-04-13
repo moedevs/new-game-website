@@ -8,6 +8,7 @@
 
 .guild-image-wrapper {
   justify-content: center;
+  height: 250px;
   display: flex;
 }
 
@@ -71,6 +72,7 @@
 .image-poster {
   padding: 15px;
   margin-bottom: 0px !important;
+
   .image-poster-name {
     font-size: 14px;
   }
@@ -83,6 +85,7 @@
 
 .image-link {
   color: grey;
+
   &:hover {
     text-decoration: underline;
   }
@@ -98,3 +101,4 @@
   background-color: black !important;
   opacity: 0.85 !important;
 }
+

@@ -6,7 +6,7 @@ import { getMainDefinition } from "apollo-utilities";
 import { HttpLink } from "apollo-link-http";
 import fetch from "isomorphic-fetch";
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV !== "production";
 const uri = isProduction
   ? "db.hifumi.io/v1alpha1/graphql"
   : "localhost:8080/v1alpha1/graphql";
