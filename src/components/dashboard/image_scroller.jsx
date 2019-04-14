@@ -11,11 +11,11 @@ export const ImageScroller = ({ data, loading, error, setModal, loadMore, hasMor
     return <div>Uhhhh, something went wrong</div>;
   }
   return (
-    <div>
       <InfiniteScroll
         loadMore={loadMore}
         initialLoad={false}
         hasMore={hasMore}
+        className="image-grid"
       >
         <StackGrid
           gutterWidth={10}
@@ -31,6 +31,5 @@ export const ImageScroller = ({ data, loading, error, setModal, loadMore, hasMor
           {loading && <AobaLoader/>}
         </StackGrid>
       </InfiniteScroll>
-    </div>
   );
 };

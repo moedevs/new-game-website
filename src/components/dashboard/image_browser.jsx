@@ -5,8 +5,9 @@ import "./image_browser.scss";
 import "./dashboard.scss";
 import "../../layouts/bulma.scss";
 import "../../../static/fonts/whitney.woff";
+import 'react-toastify/dist/ReactToastify.css';
 import { ModalImage } from "./modal";
-import { TagList } from "./tag_list";
+import { TagList } from "./menu";
 import { Navbar } from "./navbar";
 import { useSubscription } from "react-apollo-hooks";
 import gql from "graphql-tag";
@@ -97,17 +98,18 @@ export const ImageBrowser = () => {
   };
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/>*/}
       <div className="images-page">
         <ModalImage image={modal} close={closeImage}/>
         {/* <SearchBar/>*/}
         <div className="main-content">
           <div className="two-columns">
             <B.Columns isFullWidth>
-              <B.Column className="sidebar is-one-fifth">
+              <B.Column className="sidebar is-one-fifth left-side">
                 <TagList search={search} total={imageCount ? imageCount.images.aggregate.count : 0}/>
               </B.Column>
-              <B.Column className="is-four-fifths" isFullWidth>
+              <B.Column className="is-four-fifths right-side" isFullWidth>
+                <Navbar/>
                 <ImageScroller
                   loadMore={loadMore}
                   hasMore={imageCount ? cachedImages.length < imageCount.images.aggregate.count : false}

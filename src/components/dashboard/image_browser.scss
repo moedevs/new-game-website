@@ -1,9 +1,16 @@
 .two-columns {
   display: flex;
-  width: 100%;
+  width: 100vw;
+  .left-side {
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .right-side {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 .main-content {
-  margin-top: 4%;
   width: 100%;
   justify-content: center;
   display: flex;
@@ -12,3 +19,13 @@
     width: 100%;
   }
 }
+
+.images-page {
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+

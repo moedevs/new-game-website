@@ -2,20 +2,32 @@ import * as React from "react";
 import * as B from "bloomer";
 
 import "./navbar.scss";
-import { SearchBar } from "./searchbar";
+import { toast, ToastContainer } from "react-toastify";
 
-export const Navbar = () =>
-  <nav className="navbar dashboard-navbar" role="navigation" aria-label="main navigation">
-    <div className="navbar-brand">
-      <div className="navbar-item">
-        <B.Subtitle>/r/NewGame Dashboard</B.Subtitle>
-      </div>
-      <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
-         data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  </nav>;
-
+export const Navbar = () => {
+  const popNotification = () => {
+    toast("Whoops, that's not available yet, sorry!", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      type: toast.TYPE.ERROR,
+      closeOnClick: true,
+    });
+  };
+  return (
+    <B.Level className="dashboard-navbar" role="navigation" aria-label="main navigation" isMobile>
+      <B.LevelLeft>
+        <B.LevelItem>
+          <p>You are not logged in</p>
+        </B.LevelItem>
+      </B.LevelLeft>
+      <B.LevelRight>
+        <B.LevelItem>
+          <B.Button isColor="info" onClick={popNotification} disabled>
+            <B.Icon className="fab fa-discord"/>
+            <span>Login</span>
+          </B.Button>
+          <ToastContainer/>
+        </B.LevelItem>
+      </B.LevelRight>
+    </B.Level>
+  );
+};

@@ -30,7 +30,7 @@ export const GuildImage = ({ image, setFocus }) => {
         </B.CardImage>
       </div>
       <B.CardContent className="image-content">
-        <B.Level className="image-poster">
+        <B.Level className="image-poster" isMobile>
           <B.LevelLeft className="image-poster-left">
             <B.LevelItem className="marginless">
               <figure className="image is-24x24">

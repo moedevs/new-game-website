@@ -1,14 +1,11 @@
 @import "vars";
 
 .dashboard-navbar {
+  background-color: $dashboard-alternative;
+  padding: 10px 25px;
+  height: 90px;
   display: flex;
-}
-
-.navbar {
-  background-color: $dashboard-secondary;
-  height: 9%;
-  display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .navbar-items {

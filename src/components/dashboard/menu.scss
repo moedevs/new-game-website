@@ -1,0 +1,35 @@
+@import "vars";
+
+.side-menu {
+  background-color: $dashboard-secondary;
+  height: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  .menu-brand {
+    padding: 0 10px;
+  }
+  .side-menu-title {
+    justify-content: center;
+    display: flex;
+    h1 {
+      padding: 10px;
+      font-weight: 600;
+    }
+  }
+  .tag-list-count {
+    margin-right: 6px;
+  }
+  .tag-list-item {
+    &:hover {
+      cursor: pointer;
+    }
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+  .card-content {
+    * {
+      //color: white;
+    }
+  }
+}
