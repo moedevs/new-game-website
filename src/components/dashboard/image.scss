@@ -9,7 +9,7 @@
 .guild-image-wrapper {
   justify-content: center;
   height: 250px;
-  display: flex;
+  display: flex !important;
 }
 
 .image-wrapper {
@@ -64,7 +64,7 @@
 
 
 .image-content {
-  background-color: #303030;
+  background-color: #303030 !important;
   padding: 5px !important;
 }
 
