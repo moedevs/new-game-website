@@ -4,8 +4,12 @@
   .left-side {
     padding-right: 0 !important;
     padding-bottom: 0 !important;
+    width: 240px !important;
+    min-width: 240px !important;
   }
   .right-side {
+    width: 100%;
+    position: relative;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }

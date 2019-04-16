@@ -1,0 +1,46 @@
+@import "vars";
+
+.server-list {
+  background-color: $dashboard-server-list;
+  width: 70px;
+  min-width: 70px;
+}
+
+.server-list-header {
+  width: 100%;
+  margin-top: 2px;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  img {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.server-list-separator {
+  margin: 10px 15px;
+  height: 1px;
+  background-color: #2f3136;
+}
+.server-icons {
+  padding: 10px;
+}
+
+.server-icon {
+  max-width: 50px;
+  max-height: 50px;
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    &:hover {
+      border-radius: 25px;
+    }
+    border-radius: 999999px;
+  }
+}

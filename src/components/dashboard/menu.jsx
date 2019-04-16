@@ -54,14 +54,25 @@ const TagLoading = () =>
     </div>
   </div>;
 
-export const TagListItem = ({ count, name, onClick, isActive }) =>
-  <B.MenuLink className="tag-list-item" isActive={isActive} onClick={onClick}>
-    <span className="has-text-danger tag-list-count">{count}</span>
-    <p className="tag-list-item-name">{name}</p>
+export const TagListItem = ({ count, name, onClick, isActive, className, disabled, style = {} }) =>
+  <B.MenuLink className="tag-list-item" isActive={isActive} onClick={onClick} disabled={disabled} style={style}>
+    <div className="name-container">
+      <B.Icon className={["channel-icon", className].join(" ")}/>
+      <p className="tag-list-item-name">{name}</p>
+    </div>
+    {count && <span className="has-text-danger tag-list-count">{count}</span>}
   </B.MenuLink>;
+
+const ServerTitle = ({ name }) =>
+  <div className="server-title-container">
+    <p className="server-title">
+      {name}
+    </p>
+  </div>;
 
 export const TagList = ({ search, total }) => {
   const [active, setActive] = React.useState(null);
+  const [toTop, setToTop] = React.useState(false);
   const { error, data, loading } = useSubscription(tagCounts);
   const { error: tagDataError, loading: tagDataLoading, data: tagData } = useSubscription(maxTags);
 
@@ -69,6 +80,14 @@ export const TagList = ({ search, total }) => {
     console.log(error || tagDataError);
     return null;
   }
+
+  const handleScroll = e => {
+    setToTop(Boolean(window.scrollY));
+  };
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener(handleScroll);
+  }, []);
 
   const sorted = data ? data.counts.sort(magicSort) : [];
   const unseen = tagDataLoading || loading ? 0 : tagData.tags.aggregate.max - sorted.length;
@@ -78,38 +97,46 @@ export const TagList = ({ search, total }) => {
     return setActive(name);
   };
 
-  // if (loading) {
-  // return (
-  //   <TagLoading/>);
-  // }
+  const toTopButton =
+    <B.MenuList style={{ position: "fixed", width: "100%" }}>
+      <li>
+        <TagListItem
+          style={{ alignSelf: "flex-end" }}
+          name="To Top"
+          className="fas fa-chevron-circle-up"
+          onClick={() => window.scrollTo(0, 0)}
+        />
+      </li>
+    </B.MenuList>;
+
   return (
     <B.Menu className="side-menu">
-      <B.Level className="menu-brand">
-        <B.LevelLeft>
-          <B.LevelItem>
-            <B.Image className="is-marginless" isSize="32x32" src="https://i.love.miki.ai/hifumi_avatar.png"/>
-          </B.LevelItem>
-          <B.LevelItem className="side-menu-title">
-            <h1>/r/NewGame Dashboard</h1>
-          </B.LevelItem>
-        </B.LevelLeft>
-      </B.Level>
-      {tagDataLoading
-        ? <h2>Loading...</h2>
-        :
-        <>
-      <B.MenuLabel>All Tags</B.MenuLabel>
+      <ServerTitle name="/r/NewGame"/>
       <B.MenuList>
-        <li><TagListItem name={"All"} count={total} onClick={handleTagClick(null)} isActive={!active}/></li>
-        {sorted.map(({ name, count }) =>
-          <li>
-            <TagListItem count={count} name={name} onClick={handleTagClick(name)} isActive={active === name}/>
-          </li>
-        )}
-        {unseen > 0 && <p className="has-text-grey">{`and ${unseen} more tags...`}</p>}
+        <li><TagListItem name="Starboard" className="fas fa-star" disabled/></li>
       </B.MenuList>
-      </>
-      }
+      <div className="tag-list">
+        {tagDataLoading
+          ? <h2>Loading...</h2>
+          :
+          <>
+            <B.MenuLabel>Tags</B.MenuLabel>
+            <B.MenuList>
+              <li><TagListItem name={"All"} count={total} className="fas fa-tags" onClick={handleTagClick(null)}
+                               isActive={!active}/></li>
+              {sorted.map(({ name, count }) =>
+                <li>
+                  <TagListItem count={count} className="fas fa-tags" name={name} onClick={handleTagClick(name)}
+                               isActive={active === name}/>
+                </li>
+              )}
+              {unseen > 0 && <TagListItem className="has-text-grey fas fa-tags" name={`${unseen} more tags...`}/>}
+            </B.MenuList>
+          </>
+        }
+      </div>
+
+      {toTop && toTopButton}
     </B.Menu>
   );
 };

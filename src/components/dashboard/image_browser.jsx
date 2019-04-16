@@ -5,13 +5,14 @@ import "./image_browser.scss";
 import "./dashboard.scss";
 import "../../layouts/bulma.scss";
 import "../../../static/fonts/whitney.woff";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { ModalImage } from "./modal";
 import { TagList } from "./menu";
 import { Navbar } from "./navbar";
 import { useSubscription } from "react-apollo-hooks";
 import gql from "graphql-tag";
 import { ImageScroller } from "./image_scroller";
+import { ServerList } from "./server_list";
 
 const imageQuery = gql`
   subscription ($where: images_bool_exp, $limit: Int!) {
@@ -104,22 +105,21 @@ export const ImageBrowser = () => {
         {/* <SearchBar/>*/}
         <div className="main-content">
           <div className="two-columns">
-            <B.Columns isFullWidth>
-              <B.Column className="sidebar is-one-fifth left-side">
-                <TagList search={search} total={imageCount ? imageCount.images.aggregate.count : 0}/>
-              </B.Column>
-              <B.Column className="is-four-fifths right-side" isFullWidth>
-                <Navbar/>
-                <ImageScroller
-                  loadMore={loadMore}
-                  hasMore={imageCount ? cachedImages.length < imageCount.images.aggregate.count : false}
-                  data={loading ? cachedImages : data.images}
-                  loading={loading}
-                  error={error}
-                  setModal={setModal}
-                />
-              </B.Column>
-            </B.Columns>
+            <ServerList/>
+            <div className="sidebar left-side">
+              <TagList search={search} total={imageCount ? imageCount.images.aggregate.count : 0}/>
+            </div>
+            <div className="right-side">
+              <Navbar activeChannel={}/>
+              <ImageScroller
+                loadMore={loadMore}
+                hasMore={imageCount ? cachedImages.length < imageCount.images.aggregate.count : false}
+                data={loading ? cachedImages : data.images}
+                loading={loading}
+                error={error}
+                setModal={setModal}
+              />
+            </div>
           </div>
         </div>
       </div>

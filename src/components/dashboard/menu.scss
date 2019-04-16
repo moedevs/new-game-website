@@ -1,32 +1,80 @@
 @import "vars";
 
+.server-title-container {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 48px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px 0px, rgba(0, 0, 0, 0.06) 0px 2px 0px 0px;
+}
+
+.server-title {
+  padding: 0 15px;
+  font-weight: 500;
+  color: #ffffff !important;
+  font-size: 16px !important;
+}
+
 .side-menu {
   background-color: $dashboard-secondary;
   height: 100%;
   min-height: 100vh;
-  padding: 10px;
+
+  .menu-label {
+    letter-spacing: 0.05px !important;
+  }
+
+  .tag-list {
+    padding: 10px;
+  }
+
   .menu-brand {
     padding: 0 10px;
   }
-  .side-menu-title {
-    justify-content: center;
-    display: flex;
-    h1 {
-      padding: 10px;
-      font-weight: 600;
-    }
-  }
+
   .tag-list-count {
     margin-right: 6px;
   }
+
+  .is-active.tag-list-item {
+    background-color: rgba(79, 84, 92, 0.6) !important;
+  }
+
   .tag-list-item {
+    .channel-icon {
+      color: rgb(185, 187, 190);
+      opacity: 0.3;
+    }
+    .tag-list-item-name {
+      margin-left: 5px;
+    }
+    .name-container {
+      align-items: center;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: flex;
+    }
+    display: flex;
+    justify-content: space-between;
+    height: 32px;
+    margin-bottom: 2px;
+    color: rgb(220, 221, 222);
+
     &:hover {
+      background-color: rgb(54, 57, 63);
       cursor: pointer;
     }
+
     font-weight: 500;
     display: flex;
     align-items: center;
   }
+
   .card-content {
     * {
       //color: white;
