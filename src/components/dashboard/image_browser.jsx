@@ -110,7 +110,7 @@ export const ImageBrowser = () => {
               <TagList search={search} total={imageCount ? imageCount.images.aggregate.count : 0}/>
             </div>
             <div className="right-side">
-              <Navbar activeChannel={}/>
+              <Navbar/>
               <ImageScroller
                 loadMore={loadMore}
                 hasMore={imageCount ? cachedImages.length < imageCount.images.aggregate.count : false}
@@ -122,8 +122,6 @@ export const ImageBrowser = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div style={{ clear: "both" }}>
       </div>
     </div>
   );
