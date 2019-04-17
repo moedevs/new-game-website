@@ -1,6 +1,6 @@
 ---
 name: Hajime
 verified: true
-tag: "@HShinado"
+tag: "@ranger_girl3"
 avatar: "./avatars/hajime.jpg"
 ---

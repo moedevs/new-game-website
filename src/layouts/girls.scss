@@ -35,6 +35,10 @@
      */
     .girl-content .columns {
       flex-direction: row-reverse;
+      // Removing alternation on mobile
+      @media(max-width: $merge-breakpoint) {
+        flex-direction: row;
+      }
     }
   }
 

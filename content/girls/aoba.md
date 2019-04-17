@@ -2,18 +2,18 @@
 order: 1
 image: "./media/aoba.png"
 thumbnail: "./media/aoba-thumbnail.png"
-name: Aoba
+name: Suzukaze Aoba
+japanese: 涼風 青葉
 quote: "Kyou mo ichinichi GABARUZOI!"
 color: "#c6b6fb"
-role: "Lead Char. Design"
+role: "Character Designer"
 strengths:
   - Is adorable
-  - Is a legal loli
-  - Can do the art thing
-  - Has occasional sadism
+  - Surprisingly talented
 weaknesses:
-  - Has occasional sadism towards Hifumi
   - Has a hard time navigating bathrooms
+  - Still lives with her mom
 ---
 
-Legal Loli
+Lead character of the show, everyone's favorite. 
+One of the hardest workers who ends up becoming very successful.

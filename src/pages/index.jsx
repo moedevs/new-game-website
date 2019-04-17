@@ -5,11 +5,10 @@ import { SiteIntro } from "../components/intro/intro";
 import { MarkdownGirl } from "../components/girls/girls";
 import { graphql } from "gatsby";
 import { MarkdownTweet } from "../components/intro/twitter/tweet";
-import { CtxFanarts } from "../utils";
 import { OutroPanel } from "../components/outro/outro_panel";
 import { GirlsHeader } from "../components/intro/girls_header";
 
-export default ({ data: { girls, tweets, users, fanarts } }) => {
+export default ({ data: { girls, tweets, users } }) => {
   const allTweets = tweets.edges.map(tweet => ({
     ...tweet.node.frontmatter,
     html: tweet.node.html
@@ -37,20 +36,13 @@ export default ({ data: { girls, tweets, users, fanarts } }) => {
 
   const tweetInfo = allTweets.map(tweet => ({ ...tweet, ...allUsers[tweet.name] }));
 
-  const allFanart = fanarts.images.map(({ image: { image }, src }) => ({
-    image: image.fixed,
-    src
-  }));
-
   return (
     <Layout>
       <LandingPanel/>
-      <CtxFanarts.Provider value={allFanart}>
-        <SiteIntro fanart={allFanart}>
-          {tweetInfo.map((tweet, i) => <MarkdownTweet {...tweet} key={i}/>)}
-        </SiteIntro>
-      </CtxFanarts.Provider>
-      <GirlsHeader/>
+      <SiteIntro>
+        {tweetInfo.map((tweet, i) => <MarkdownTweet {...tweet} key={i}/>)}
+      </SiteIntro>
+      <GirlsHeader name="Meet the girls" className="girls-header-box"/>
       <div className="girls">
         {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}
       </div>
@@ -86,8 +78,10 @@ export const pageQuery = graphql`{
           name
           quote
           role
+          department
           strengths
           weaknesses
+          japanese
         }
       }
     }
@@ -130,16 +124,16 @@ export const pageQuery = graphql`{
       }
     }
   }
-  fanarts: imagesYaml {
-    images {
-      src
-      image {
-        image: childImageSharp {
-          fixed(width: 250 height: 350 quality: 90) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-    }
-  }
+  #  fanarts: imagesYaml {
+  #    images {
+  #      src
+  #      image {
+  #        image: childImageSharp {
+  #          fixed(width: 250 height: 350 quality: 90) {
+  #            ...GatsbyImageSharpFixed_withWebp
+  #          }
+  #        }
+  #      }
+  #    }
+  #  }
 }`;

@@ -15,6 +15,7 @@ module.exports = {
     url: "https://hifumi.io",
   },
   plugins: [
+    `gatsby-plugin-extract-schema`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-sass",
     "gatsby-transformer-sharp",
@@ -51,9 +52,9 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-transformer-yaml",
+      resolve: "gatsby-source-filesystem",
       options: {
-        path: "./content/images"
+        path: "./content/tweets/"
       }
     },
     {

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { MediaSection } from "./fan_art";
+import { GirlsHeader } from "./girls_header";
 
 export class SiteIntro extends React.Component {
   state = {
@@ -36,16 +37,17 @@ export class SiteIntro extends React.Component {
   render() {
     return (
       <div className="intro">
-        {/* <Description/>*/}
-        <MediaSection/>
-        <div style={{ position: "relative" }}>
-          <div className="twitter-slides main-carousel no-padding-top"
-               id="carousel">
+        <div style={{ position: "relative", background: "white" }}>
+          <GirlsHeader name="Twitter Feed" className="tweets-header"/>
+          <div
+            className="twitter-slides main-carousel no-padding-top"
+            id="carousel"
+          >
             {this.props.children}
           </div>
           <h1
             className="title has-text-grey is-7"
-            style={{ bottom: "0",  padding: "8px", position: "absolute" }}
+            style={{ bottom: "0", padding: "8px", position: "absolute" }}
           >
             {this.state.currentTweet}/{this.props.children.length}
           </h1>

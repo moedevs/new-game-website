@@ -41,6 +41,7 @@ export const Tweet = (props) => {
     <a href={`https://twitter.com/hashtag/${tag}`} key={tag}>{`#${tag} `}</a>
   ));
 
+  console.log(props)
   // get fake mentions a link color
   const content = props.content
     .replace(/(@[^\b]*)/g, "<span class='has-text-link'>$1</span>");

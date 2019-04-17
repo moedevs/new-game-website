@@ -1,6 +1,6 @@
 ---
 name: Hifumi
 verified: true
-tag: "@HTakimoto"
+tag: "@sojiro"
 avatar: "./avatars/hifumi.jpg"
 ---
