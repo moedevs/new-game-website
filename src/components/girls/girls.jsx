@@ -10,7 +10,7 @@ import {
   LevelLeft, LevelRight,
   Section, Tag
 } from "bloomer";
-import "./girls.scss"
+import "./girls.scss";
 
 const GirlList = ({ name, items }) => (
   <div className="card is-size-6-mobile is-size-6-tablet is-size-5-desktop">
