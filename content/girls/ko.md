@@ -12,6 +12,7 @@ strengths:
 weaknesses:
   - Overworks herself constantly
   - Dense
+  - Is afraid of thunder.
 ---
 
 Heavy Sleeper, Rin's Girlfriend. Ambitious character designer who Aoba looks up to.
