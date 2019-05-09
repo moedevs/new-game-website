@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^4.5.3",
+    "babel-plugin-styled-components": "^1.10.0",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
     "date-fns": "^1.30.1",
@@ -29,6 +30,7 @@
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.31",
+    "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-remark-images": "^3.0.3",
     "gatsby-remark-relative-images": "^0.2.2",
     "gatsby-source-filesystem": "^2.0.22",
@@ -42,7 +44,8 @@
     "react-github-corner": "^2.3.0",
     "react-helmet": "^5.2.0",
     "react-spinners": "^0.5.1",
-    "remark-html": "^9.0.0"
+    "remark-html": "^9.0.0",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "eslint": "^5.13.0",

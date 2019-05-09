@@ -2,7 +2,7 @@ import * as React from "react";
 import { Layout } from "../layouts/layout";
 import { LandingPanel } from "../components/landing/landing_panel";
 import { SiteIntro } from "../components/intro/intro";
-import { MarkdownGirl } from "../components/girls/girls";
+import { MarkdownGirl } from "../components/Girl/Girl"
 import { graphql } from "gatsby";
 import { MarkdownTweet } from "../components/intro/twitter/tweet";
 import { OutroPanel } from "../components/outro/outro_panel";
@@ -38,15 +38,15 @@ export default ({ data: { girls, tweets, users } }) => {
 
   return (
     <Layout>
-      <LandingPanel/>
+      <LandingPanel />
       <SiteIntro>
-        {tweetInfo.map((tweet, i) => <MarkdownTweet {...tweet} key={i}/>)}
+        {tweetInfo.map((tweet, i) => <MarkdownTweet {...tweet} key={i} />)}
       </SiteIntro>
-      <GirlsHeader name="Meet the girls" className="girls-header-box"/>
+      <GirlsHeader name="Meet the girls" className="girls-header-box" />
       <div className="girls">
-        {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color}/>)}
+        {allGirls.map(girl => <MarkdownGirl {...girl} key={girl.color} />)}
       </div>
-      <OutroPanel/>
+      <OutroPanel />
     </Layout>
   );
 };

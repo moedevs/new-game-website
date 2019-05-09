@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-sass",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -30,7 +31,7 @@ module.exports = {
     },
     ...imageSourceFolders,
     {
-      resolve:"gatsby-transformer-remark",
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {

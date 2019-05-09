@@ -2,14 +2,6 @@
 @import "~bulma/sass/utilities/initial-variables";
 
 .girl-section {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-size: cover;
-  overflow: hidden;
-  width: 100%;
 
   &:last-child {
     border-bottom-left-radius: 6px;
