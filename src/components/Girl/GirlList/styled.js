@@ -1,5 +1,5 @@
-import styled from "./node_modules/styled-components";
-import { CardHeaderTitle } from "./node_modules/bloomer";
+import styled from "styled-components";
+import { CardHeaderTitle } from "bloomer";
 
 export const HeaderTitle = styled(CardHeaderTitle)`
   padding: 10px;

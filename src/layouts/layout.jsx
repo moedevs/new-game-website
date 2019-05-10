@@ -3,7 +3,6 @@ import { Header } from "./header";
 import * as Sentry from "@sentry/browser";
 import { ErrorBoundary } from "./boundary";
 import "./bulma.scss";
-import "./girls.scss";
 import "./style.scss";
 import "./github.scss";
 

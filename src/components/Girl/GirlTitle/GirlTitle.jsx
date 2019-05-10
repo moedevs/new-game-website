@@ -10,7 +10,7 @@ const GirlTitle = ({ thumbnail, name, quote, japanese }) => (
         <LevelLeft className="shrink">
           {thumbnail && <GirlImage image={thumbnail} />}
           <div className="level-item no-grow shrink">
-            <GirlTitleText className="title is-size-4-tablet is-size-4-mobile">{name}</GirlTitleText>
+            <GirlTitleText className="is-size-4-tablet is-size-4-mobile">{name}</GirlTitleText>
           </div>
         </LevelLeft>
         {japanese &&

@@ -5,16 +5,15 @@ import {
   Content,
   Section
 } from "bloomer";
-import "./girls.scss";
 import GirlList from "./GirlList/GirlList";
 import GirlContent from "./GirlContent/GirlContent";
 import GirlTitleText from "./GirlTitle/GirlTitle";
-import { GirlSection } from "./styled";
+import { GirlImageColumn, GirlSection } from "./styled";
 
 export const Girl = (options) =>
   <GirlSection className="girl-section" style={{ backgroundColor: options.color }}>
     <Columns isMobile className="narrow-width">
-      <Column isSize="1/4" className="girl-image-column">
+      <GirlImageColumn isSize="1/4">
         {/*
          * We have to use <img> here instead of <Img> because for SOME reason
          * the girls images don't seem to work with gatsby-image. They're
@@ -22,7 +21,7 @@ export const Girl = (options) =>
          * out with gatsby-image but I couldn't make it work lol @Xetera
          */}
         <img srcSet={options.image.srcSetWebp} alt="Best girl" className="image girl" />
-      </Column>
+      </GirlImageColumn>
       <Column className="girl-content">
         <Section>
           <Content>
