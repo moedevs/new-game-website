@@ -2,9 +2,9 @@ import * as React from "react";
 import { Layout } from "../layouts/layout";
 import { LandingPanel } from "../components/landing/landing_panel";
 import { SiteIntro } from "../components/intro/intro";
-import { MarkdownGirl } from "../components/Girl/Girl"
+import { MarkdownGirl } from "../components/Girl/Girl";
 import { graphql } from "gatsby";
-import { MarkdownTweet } from "../components/intro/twitter/tweet";
+import { MarkdownTweet } from "../components/intro/Tweet/Tweet";
 import { OutroPanel } from "../components/outro/outro_panel";
 import { GirlsHeader } from "../components/intro/girls_header";
 

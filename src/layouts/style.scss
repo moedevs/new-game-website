@@ -156,37 +156,6 @@ body {
   transition: height 0.2s;
 }
 
-.tweet {
-  box-shadow: 5px 12px 15px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1) !important;
-  margin: 1rem 1.5rem;
-  width: 550px;
-
-  @media (max-width: $tablet) {
-    width: 250px;
-    height: auto;
-  }
-
-  .twitter-controls-container {
-    margin-top: 10px;
-  }
-
-  .twitter-tag {
-    margin-top: 0 !important;
-  }
-
-  .tweet-name {
-    margin-bottom: 0 !important;
-  }
-
-  .tweet-image {
-    margin: 10px 0;
-  }
-
-  .gatsby-resp-image-link {
-    margin-bottom: 5px;
-  }
-}
-
 .section-header {
   background: #7676ae;
   box-shadow: black inset;

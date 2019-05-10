@@ -16,6 +16,7 @@ import {
 } from "bloomer";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import { TweetContainer, TweetName, TwitterTag } from "./styled";
 
 export const Tweet = (props) => {
   const verifiedQuery = graphql`{
@@ -51,7 +52,7 @@ export const Tweet = (props) => {
   const readableDate = format(parsed, "MMMM Do YYYY");
   return (
     <div className="tweet-container carousel-cell">
-      <Card className="tweet">
+      <TweetContainer>
         <CardContent>
           <Media>
             <MediaLeft>
@@ -61,11 +62,11 @@ export const Tweet = (props) => {
             </MediaLeft>
             <MediaContent>
               <Container>
-                <span className="title is-4 tweet-name is-flex">
+                <TweetName className="title is-4 is-flex">
                   {props.name}
                   {props.verified && badge}
-                </span>
-                <p className="subtitle has-text-grey is-6 twitter-tag">{props.tag}</p>
+                </TweetName>
+                <TwitterTag className="subtitle has-text-grey is-6">{props.tag}</TwitterTag>
               </Container>
             </MediaContent>
           </Media>
@@ -91,7 +92,7 @@ export const Tweet = (props) => {
             </Level>
           </Content>
         </CardContent>
-      </Card>
+      </TweetContainer>
     </div>
   );
 };
