@@ -26,7 +26,7 @@ const Affiliated = ({ users, type }) => {
   return (
     <a
       className={`button is-fullwidth is-large ${type}`}
-      href="https://reddit.com/r/NewGame"
+      href={isDiscord ? "https://discord.gg/ZWW5CJw" : "https://reddit.com/r/NewGame"}
     >
       <Icon isSize="large" className={`fab fa-${type}`}/>
       {users ? content : placeholder}
