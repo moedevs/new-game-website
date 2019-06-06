@@ -35,7 +35,7 @@
     "gatsby-transformer-remark": "^2.2.4",
     "gatsby-transformer-sharp": "^2.1.13",
     "gatsby-transformer-yaml": "^2.1.11",
-    "gatsby-transformer-yaml-plus": "^0.1.0",
+    "gatsby-transformer-yaml-plus": "^0.2.0",
     "node-sass": "^4.11.0",
     "react": "16.8.0-alpha.1",
     "react-dom": "16.8.0-alpha.1",
