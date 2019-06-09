@@ -16,10 +16,10 @@ Most discussion will be in the `#tech-talk` channel.
 
 <img width="64" align="left" src="https://seeklogo.com/images/G/gatsby-logo-1A245AD37F-seeklogo.com.png">
 
-The website is made using [gatsby](https://www.gatsbyjs.org/) which lets us to separate our dynamic 
+The website is made using [gatsby](https://www.gatsbyjs.org/) which lets us to separate our dynamic
 data from our components, allowing us to optimize and add new content much more easily.
 
-Netlify builds automatically from `master` so your changes are 
+Netlify builds automatically from `master` so your changes are
 a single pull request away from going live!
 
 ### Contributing
@@ -31,7 +31,7 @@ a single pull request away from going live!
 
 #### Adding new tweets
 
-Tweets are declared under `/content/tweets`. 
+Tweets are declared under `/content/tweets`.
 
 To add a new user, create a new `.md` file similar to the
 existing ones.
@@ -44,5 +44,4 @@ The tweets are sorted by date in the format`YYYY-MM-DD`.
 To reference a user, give the `name` property in the markdown
 frontmatter the same name as the user inside the `/users` folder.
 
-##### Made with <3 by the /r/NewGame community
-
+##### Made with <3 by the New Game community

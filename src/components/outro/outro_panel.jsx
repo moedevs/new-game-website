@@ -76,7 +76,7 @@ export const OutroPanel = () => {
             </div>
           </Section>
           <div className="outro-bottom has-text-white-ter has-text-centered">
-            <h4>Made with {love} by the /r/NewGame community</h4>
+            <h4>Made with {love} by the New Game community</h4>
           </div>
         </div>
       </div>
