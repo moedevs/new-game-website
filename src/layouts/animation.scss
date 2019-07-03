@@ -1,3 +1,26 @@
+.example-enter {
+  height: 170px;
+}
+
+.example-enter.example-enter-active {
+  height: 170px;
+  > * {
+    height: 0;
+  }
+  transition: height 300ms ease-in-out;
+}
+
+.example-leave {
+  height: 170px;
+}
+
+.example-leave.example-leave-active {
+  height: 0;
+  transition: height 300ms ease-in-out;
+}
+
+
+
 .sk-circle {
   margin: 100px auto;
   width: 40px;

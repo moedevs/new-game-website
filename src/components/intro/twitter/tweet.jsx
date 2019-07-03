@@ -38,13 +38,12 @@ export const Tweet = (props) => {
   );
 
   const hashTags = props.hashtags && props.hashtags.map(tag => (
-    <a href={`https://twitter.com/hashtag/${tag}`} key={tag}>{`#${tag} `}</a>
+    <a rel="noopener nofollow" target="_blank" href={`https://twitter.com/hashtag/${tag}`} key={tag}>{`#${tag} `}</a>
   ));
 
-  console.log(props);
   // get fake mentions a link color
   const content = props.content
-    .replace(/(@[^\b]*)/g, "<span class='has-text-link'>$1</span>");
+    .replace(/(@[\w\d]+)/g, "<span class='has-text-link'>$1</span>");
 
   const parsed = parse(props.time).toISOString();
 

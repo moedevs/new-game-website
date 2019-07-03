@@ -102,7 +102,15 @@ body {
     width: 100%;
   }
   margin: 0 auto;
-  width: 85%;
+  width: 90%;
+}
+
+.narrower-width {
+  @media(max-width: $merge-breakpoint) {
+    width: 100%;
+  }
+  margin: 0 auto;
+  width: 55%;
 }
 
 .shrink {

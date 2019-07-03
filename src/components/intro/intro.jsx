@@ -1,6 +1,9 @@
 import * as React from "react";
-import { MediaSection } from "./fan_art";
 import { GirlsHeader } from "./girls_header";
+import { Description } from "./description";
+import { Subtitle } from "bloomer/lib/elements/Subtitle";
+
+import "./flickity.scss";
 
 export class SiteIntro extends React.Component {
   state = {
@@ -10,8 +13,7 @@ export class SiteIntro extends React.Component {
       lazyLoad: 1,
       alignCell: "center",
       imagesLoaded: true,
-      pageDots: false,
-      contain: true,
+      pageDots: true,
       on: {
         change: (index) => this.setState({ currentTweet: index + 1 })
       }
@@ -36,9 +38,14 @@ export class SiteIntro extends React.Component {
 
   render() {
     return (
+      <>
       <div className="intro">
         <div style={{ position: "relative", background: "white" }}>
-          <GirlsHeader name="Twitter Feed" className="tweets-header"/>
+          <GirlsHeader name="Twitter Feed" className="tweets-header">
+            <Subtitle className="is-size-6 has-text-grey">
+              If the newgames were on Twitter
+            </Subtitle>
+          </GirlsHeader>
           <div
             className="twitter-slides main-carousel no-padding-top"
             id="carousel"
@@ -53,6 +60,7 @@ export class SiteIntro extends React.Component {
           </h1>
         </div>
       </div>
+        </>
     );
   }
 }

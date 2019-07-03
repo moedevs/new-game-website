@@ -1,6 +1,6 @@
 ---
 order: 3
-name: Yagami Kō
+name: Yagami Ko
 japanese: 八神 コウ 
 quote: "\"What? I'm only sleeping at work every other day...\""
 image: "./media/ko.png"

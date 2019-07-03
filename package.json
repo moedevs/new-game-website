@@ -2,6 +2,7 @@
   "name": "hifumi.io",
   "description": "New Game website",
   "version": "1.0.0",
+  "browserslist": [],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -19,7 +20,7 @@
     "eslint-plugin-react": "^7.12.4",
     "flickity": "^2.2.0",
     "flickity-imagesloaded": "^2.0.0",
-    "gatsby": "^2.0.116",
+    "gatsby": "^2.1.0",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-extract-schema": "0.0.5",
     "gatsby-plugin-favicon": "^3.1.5",
@@ -37,11 +38,16 @@
     "gatsby-transformer-yaml": "^2.1.8",
     "gatsby-transformer-yaml-plus": "^0.1.0",
     "node-sass": "^4.11.0",
+    "pose": "^2.3.1",
     "react": "16.8.0-alpha.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "16.8.0-alpha.1",
     "react-github-corner": "^2.3.0",
     "react-helmet": "^5.2.0",
+    "react-perfect-scrollbar": "^1.5.3",
     "react-spinners": "^0.5.1",
+    "react-spring": "^8.0.27",
+    "react-transition-group": "^4.2.0",
     "remark-html": "^9.0.0"
   },
   "devDependencies": {

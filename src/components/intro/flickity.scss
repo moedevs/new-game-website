@@ -1,0 +1,10 @@
+/* flickity overrides */
+.flickity-page-dots {
+  bottom: 5px !important;
+  .dot {
+    height: 12px !important;
+    border-radius: 0 !important;
+    width: 12px !important;
+  }
+}
+

@@ -42,7 +42,7 @@
     }
   }
 
-  &:nth-child(odd) > .columns {
+  :nth-child(odd) > .columns {
     flex-direction: row;
 
     .girl-content .columns {

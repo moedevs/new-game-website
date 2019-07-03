@@ -1,6 +1,10 @@
+.girls-header {
+  border-radius: 30px 30px 0 0 !important;
+  border-bottom: 0;
+  box-shadow: unset;
+}
 .girls-header-box {
-  border-radius: 30px 30px 0 0;
   background: linear-gradient(to bottom, #b0a4e8, #c6b6fb);
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 0 !important;
 }

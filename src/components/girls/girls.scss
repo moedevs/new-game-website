@@ -1,3 +1,4 @@
+@import "../../layouts/style";
 .girl-title {
   color: #0e1e25;
 }
@@ -37,4 +38,38 @@
     color: white;
     margin-bottom: 0;
   }
+}
+
+.girl-wrapper {
+  border-bottom: 1px #131313;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+
+.girl-collapsed {
+  @extend .section;
+  @extend .narrow-width;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 20vh;
+}
+
+.girl-collapsed-wrapper:hover {
+  filter: brightness(95%);
+}
+
+.girl-collapsed-name {
+  color: #212121;
+  margin-bottom: 0 !important;
+  text-shadow: 0 2px 3px rgba(10, 10, 10, 0.3);
+}
+
+.girl-collapsed-titles {
+  margin-left: 10px;
+}
+
+.girl-collapsed-description {
+  font-weight: lighter;
+  color: #22222e;
 }

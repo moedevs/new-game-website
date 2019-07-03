@@ -26,8 +26,9 @@ export const Checklist = () =>
       <Item tag="span" checked text={
         <p className={textClass}>
           Won the best anime award 3 times
-          <span className="is-size-7-desktop is-size-7-mobile"> probably... we didn't check</span>
+          <span className="is-size-7-desktop is-size-7-mobile"> maybe... we didn't check</span>
         </p>
       }/>
-      <Item checked={false} text="Momo exists"/>
+      <Item checked text="Ongoing manga"/>
+      <Item checked={false} text="No season 3 (yet)"/>
     </Content>;

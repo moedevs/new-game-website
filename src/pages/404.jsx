@@ -22,7 +22,7 @@ export default ({ data }) => (
           <h2 className="subtitle has-text-grey-dark">
             Or maybe it's empty... sorry
           </h2>
-          <Button isColor="primary" href={process.env.WEBSITE_URL}>Get me out of here!</Button>
+          <Button isColor="primary" href="/">Get me out of here!</Button>
         </Section>
       </div>
     </div>

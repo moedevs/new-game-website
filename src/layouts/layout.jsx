@@ -6,6 +6,7 @@ import "./bulma.scss";
 import "./girls.scss";
 import "./style.scss";
 import "./github.scss";
+import "./animation.scss";
 
 export const Layout = ({ children }) => {
   if (process.env.NODE_ENV === "production") {
