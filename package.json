@@ -45,7 +45,7 @@
     "react-helmet": "^5.2.0",
     "react-spinners": "^0.5.1",
     "remark-html": "^9.0.0",
-    "snyk": "^1.192.0"
+    "snyk": "^1.193.1"
   },
   "devDependencies": {
     "eslint": "^5.13.0",
