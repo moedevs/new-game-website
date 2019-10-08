@@ -51,6 +51,5 @@
     "eslint": "^5.13.0",
     "eslint-loader": "^2.1.2",
     "prettier": "^1.8.2"
-  },
-  "snyk": true
+  }
 }
