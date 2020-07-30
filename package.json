@@ -9,7 +9,9 @@
     "dev": "npm run develop",
     "format": "prettier --write \"src/**/*.jsx*\"",
     "lint": "eslint \"src/**/*.jsx\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@sentry/browser": "^4.6.6",
@@ -42,11 +44,13 @@
     "react-github-corner": "^2.3.0",
     "react-helmet": "^5.2.1",
     "react-spinners": "^0.5.12",
-    "remark-html": "^9.0.1"
+    "remark-html": "^9.0.1",
+    "snyk": "^1.369.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-loader": "^2.2.1",
     "prettier": "^1.18.2"
-  }
+  },
+  "snyk": true
 }
