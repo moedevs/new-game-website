@@ -38,7 +38,7 @@
     "gatsby-transformer-sharp": "^2.2.20",
     "gatsby-transformer-yaml": "^2.2.12",
     "gatsby-transformer-yaml-plus": "^0.2.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "react": "16.8.0-alpha.1",
     "react-dom": "16.8.0-alpha.1",
     "react-github-corner": "^2.3.0",
