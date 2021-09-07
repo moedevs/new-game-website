@@ -44,7 +44,7 @@
     "react-github-corner": "^2.3.0",
     "react-helmet": "^5.2.1",
     "react-spinners": "^0.5.12",
-    "remark-html": "^9.0.1",
+    "remark-html": "^13.0.2",
     "snyk": "^1.369.2"
   },
   "devDependencies": {
